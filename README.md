@@ -25,13 +25,29 @@ See [`PREREGISTRATION.md`](PREREGISTRATION.md) for the full design.
 | **House** | Party-aggregate attention share vs. seat share, 33 cycles |
 | **Attention metric** | Mention share = candidate mentions ÷ total candidate mentions, 12 months pre-election |
 | **Primary outcome** | Popular vote winner (Presidential); race winner (Senate); chamber majority (House) |
-| **Data sources** | GDELT (1979–2024), Google Ngrams (1960–1979) |
+| **Data sources** | 7 independent sources (see below) |
+
+---
+
+## Data Sources
+
+The study triangulates across 7 independent media measurement channels. Convergent results across sources strengthen causal inference — if the pattern holds in books, TV transcripts, search queries, and Reddit posts independently, it is harder to attribute to any single platform's quirks.
+
+| Source | Coverage | What it measures |
+|--------|----------|-----------------|
+| **GDELT News** | 1979–2024 | ~800 global news outlets (wire services, newspapers, online) |
+| **Google Ngrams** | 1960–2024 | Book corpus frequency — slower-moving, editorial prestige signal |
+| **Google Trends** | 2004–2024 | Search query volume — public curiosity, not just journalist coverage |
+| **Wikipedia Pageviews** | 2008–2024 | Article views — crowd-sourced interest signal |
+| **GDELT TV** | 2009–2024 | Broadcast TV transcripts (CNN, Fox, MSNBC, ABC, CBS, NBC) |
+| **Reddit Posts** | 2007–2024 | Political subreddit post counts — grassroots online attention |
+| **MediaCloud** | 2010–2024 | Academic news index — curated, deduplicated outlet sample |
 
 ---
 
 ## Results
 
-> ⚠️ **The figures below use synthetic data** generated to validate the analysis pipeline and figure layouts. All candidate names are fictional placeholders. Real data collection is in progress.
+> ⚠️ **The figures below use synthetic data** generated to validate the analysis pipeline and figure layouts. All candidate names are fictional Zorblaxian placeholders. Real data collection is in progress.
 
 ---
 
@@ -39,7 +55,7 @@ See [`PREREGISTRATION.md`](PREREGISTRATION.md) for the full design.
 
 #### Figure 1. Does the attention leader win the popular vote?
 
-The candidate with higher mention share in the 12 months before election day wins the popular vote in **14 out of 17 elections (82%)** — significantly above the 50% you'd expect by chance.
+The candidate with higher mention share in the 12 months before election day wins the popular vote in **13 out of 17 elections (76%)** — significantly above the 50% you'd expect by chance (p = 0.049).
 
 ![Figure 1](figures/fig1_h1_win_rate.png)
 
@@ -47,63 +63,57 @@ The candidate with higher mention share in the 12 months before election day win
 
 #### Figure 2. Does mention share track vote share continuously?
 
-Beyond predicting winners, mention share correlates with the actual vote percentage each candidate receives. A candidate who dominates coverage doesn't just tend to win — they tend to win by more.
+Beyond predicting winners, mention share correlates with the actual vote percentage each candidate receives. Left panel: presidential elections (r = 0.44). Right panel: Senate races (r = 0.72, n = 2,178).
 
 ![Figure 2](figures/fig2_h2_scatter.png)
 
-*Each dot is a candidate-election. Blue = Democrat, Red = Republican. Labels shown for notable outliers; hover for all.*
+*Each dot is a candidate-election. Blue = Democrat, Red = Republican. Zorblaxian placeholder names.*
 
 ---
 
 #### Figure 3. Does a bigger attention gap mean a bigger win?
 
-When one candidate dominates coverage by a larger margin, do they win by a larger vote margin? Red dots are **attention upsets** — elections where the less-covered candidate won.
+Left: scatter of attention ratio vs. vote margin. Right: timeline of attention ratios by election year. Red bars = attention upsets — elections where the less-covered candidate won.
 
-![Figure 3](figures/fig3_h3_gap_margin.png)
-
----
-
-#### Figure 4. The attention gap across 64 years of presidential elections
-
-![Figure 4](figures/fig4_timeline.png)
-
-*Dark = attention predicted the winner. Red = the less-covered candidate won (attention upset).*
+![Figure 3](figures/fig3_gap_and_timeline.png)
 
 ---
 
 ### Part 2 — Scaling Up: Senate and House
 
-The presidential finding is suggestive but rests on only 17 elections. Senate races provide ~500 independent tests of the same hypothesis. The House adds a different question: does the party that dominates national political coverage win more seats that cycle?
+The presidential finding is suggestive but rests on only 17 elections. Senate races provide ~1,089 independent tests of the same hypothesis. The House adds a different question: does the party that dominates national political coverage win more seats that cycle?
 
-#### Figure 5. The effect holds at every level of government
+#### Figure 4. The effect holds at every level of government
 
-![Figure 5](figures/fig5_win_rate_comparison.png)
+![Figure 4](figures/fig4_win_rate_comparison.png)
 
-The effect replicates in Senate races (1,089 contests). The House signal is weaker — most individual House races fly below the national media radar, diluting the party-aggregate signal.
-
----
-
-#### Figure 6. Senate: mention share vs. vote share (~1,100 races)
-
-With hundreds of races, the scatter fills in. The correlation is consistent with the presidential finding, and the volume of points makes the linear trend hard to dismiss.
-
-![Figure 6](figures/fig6_senate_scatter.png)
+The effect replicates in Senate races (1,089 contests, 81% win rate). The House signal is weaker — most individual House races fly below the national media radar, diluting the party-aggregate signal.
 
 ---
 
-#### Figure 7. House: does the party dominating coverage win the chamber?
+#### Figure 5. House: does the party dominating coverage win the chamber?
 
 Each point is one election cycle. Color indicates which party held the majority. The positive slope suggests that the party with more national coverage tends to win more seats — but the signal is noisier than at the individual-race level.
 
-![Figure 7](figures/fig7_house_seat_share.png)
+![Figure 5](figures/fig5_house_seat_share.png)
 
 ---
 
-#### Figure 8. How lopsided is attention, and does it vary by race type?
+#### Figure 6. How lopsided is attention, and does it vary by race type?
 
-Presidential races (tick marks at bottom, KDE curve) show a wider spread than Senate races — some elections see dramatic attention asymmetries while others are near 1×. Senate races cluster more tightly around modest coverage advantages.
+Presidential races (right) show a tighter spread than Senate races (left) — Senate contests include many blowouts with large attention asymmetries, while presidential races cluster more tightly.
 
-![Figure 8](figures/fig8_gap_distribution.png)
+![Figure 6](figures/fig6_gap_distribution.png)
+
+---
+
+### Part 3 — Multi-Source Triangulation
+
+#### Figure 7. Does the finding replicate across 7 independent data sources?
+
+Forest plot showing H1 (win rate) and H2 (Pearson r) for each of the 7 data sources independently. If the effect is real, it should appear across all channels — book corpora, search queries, broadcast TV, and social media alike.
+
+![Figure 7](figures/fig7_multi_source_forest.png)
 
 ---
 
@@ -111,7 +121,7 @@ Presidential races (tick marks at bottom, KDE curve) show a wider spread than Se
 
 #### Figure S1. Does the effect vary by media era?
 
-The attention–outcome link appears across all four media eras, though with wide confidence intervals given the small number of elections per era. The social media era shows the strongest signal in this synthetic data — an empirical question for the real analysis.
+The attention–outcome link appears across all four media eras, though with wide confidence intervals given the small number of elections per era.
 
 ![Figure S1](figures/figS1_by_era.png)
 
@@ -119,7 +129,7 @@ The attention–outcome link appears across all four media eras, though with wid
 
 #### Figure S2. Sensitivity: does the measurement window matter?
 
-The 12-month window (primary pre-registered measure) performs best. Shorter windows are noisier proxies. This is consistent with the hypothesis that sustained, cumulative attention — not just late-campaign coverage — drives the effect.
+The 12-month window (primary pre-registered measure) performs consistently. Shorter windows are noisier proxies of sustained attention.
 
 ![Figure S2](figures/figS2_window_sensitivity.png)
 
@@ -127,7 +137,7 @@ The 12-month window (primary pre-registered measure) performs best. Shorter wind
 
 #### Table S1. Presidential elections: complete data
 
-[`data/processed/table_s1_presidential_FAKE.csv`](data/processed/table_s1_presidential_FAKE.csv) — all 17 elections with candidate names, mention shares, vote shares, and whether the attention leader won. *(Synthetic data.)*
+[`data/processed/table_s1_presidential_FAKE.csv`](data/processed/table_s1_presidential_FAKE.csv) — all 17 elections with Zorblaxian placeholder names, mention shares, vote shares, and whether the attention leader won. *(Synthetic data.)*
 
 ---
 
@@ -143,7 +153,7 @@ attention-wins-elections/
 │   │   ├── mention_share.csv               # Computed mention shares (post-collection)
 │   │   └── table_s1_presidential_FAKE.csv  # Supplemental Table S1 (synthetic)
 │   └── edge_cases.md                       # Disambiguation decisions (Bush, Clinton, etc.)
-├── figures/                                # All exported figures (fig1–fig8, figS1–figS2)
+├── figures/                                # All exported figures (fig1–fig7, figS1–figS2)
 ├── notebooks/
 │   ├── 01_data_collection.ipynb            # GDELT + Ngrams queries
 │   ├── 02_data_cleaning.ipynb              # Standardize and compute mention share
@@ -172,10 +182,12 @@ jupyter lab  # → notebooks/01_data_collection.ipynb
 ## Status
 
 - [x] Pre-registration committed
-- [x] Figure layout validated with synthetic data (presidential + senate + house)
+- [x] Figure layout validated with synthetic data (presidential + senate + house + multi-source)
 - [x] Supplemental figures (by era, window sensitivity) + Table S1
+- [x] 7-source triangulation plan (GDELT, Ngrams, Trends, Wikipedia, GDELT TV, Reddit, MediaCloud)
 - [ ] Data collection — GDELT 1979–2024
 - [ ] Data collection — Google Ngrams 1960–1978
+- [ ] Data collection — Google Trends, Wikipedia API, GDELT TV, Reddit/Pushshift, MediaCloud
 - [ ] Data cleaning and mention share computation
 - [ ] Analysis with real data
 - [ ] Blog post
