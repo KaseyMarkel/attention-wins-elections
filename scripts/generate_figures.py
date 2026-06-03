@@ -258,6 +258,7 @@ fig.add_trace(go.Scatter(x=xr_s, y=m_s2 * xr_s + b_s2, mode='lines',
     name=f'OLS (r={r_s:.2f})',
 ), row=1, col=2)
 
+senate_pct_extreme = (senate_scatter['ms'] > 0.95).mean() + (senate_scatter['ms'] < 0.05).mean()
 fig.update_xaxes(tickformat='.0%', title_text='Mention share (12 months pre-election)', row=1, col=1)
 fig.update_xaxes(tickformat='.0%', title_text='Mention share (12 months pre-election)', row=1, col=2)
 fig.update_yaxes(tickformat='.0%', title_text='Popular vote share', row=1, col=1)
@@ -266,7 +267,9 @@ fig.update_xaxes(showgrid=True, gridcolor=GRID, zeroline=False)
 fig.update_yaxes(showgrid=True, gridcolor=GRID, zeroline=False)
 style(fig,
       'Figure 2. Mention share vs. vote share — presidential and Senate',
-      f'Google Ngrams · Pres r = {r_p:.2f} · Senate r = {r_s:.2f}',
+      f'Google Ngrams · Pres r = {r_p:.2f} · Senate r = {r_s:.2f} · '
+      f'{senate_pct_extreme:.0%} of Senate races have one candidate at <5% or >95% share '
+      f'(famous incumbents vs. unknown challengers)',
       w=1100, h=540)
 save(fig, 'figures/fig2_h2_scatter.png')
 
@@ -415,10 +418,17 @@ fig.add_trace(go.Box(
 fig.add_hline(y=1, line_dash='dot', line_color='#555', line_width=2,
     annotation_text='Equal attention (1×)', annotation_position='top right',
     annotation_font=dict(size=11))
-fig.update_yaxes(title='Mention ratio (winner ÷ loser)', range=[0, None])
+senate_p99 = gaps_s['gap'].quantile(0.99)
+fig.update_yaxes(
+    title='Mention ratio (winner ÷ loser, log scale)',
+    type='log',
+    tickvals=[0.1, 0.3, 1, 3, 10, 30, 100, 300, 1000],
+    ticktext=['0.1×', '0.3×', '1×', '3×', '10×', '30×', '100×', '300×', '1000×'],
+)
 style(fig,
       'Figure 6. Distribution of attention gaps by race type',
-      'Google Ngrams · Values > 1× = winner received more coverage · Box: median, IQR, ±1 SD',
+      f'Google Ngrams · Log scale · Senate median 6×, max {gaps_s["gap"].max():.0f}× '
+      f'(famous incumbents vs unknown challengers) · Box: median, IQR',
       w=680, h=560)
 save(fig, 'figures/fig6_gap_distribution.png')
 
