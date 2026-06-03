@@ -1,0 +1,72 @@
+year,state,source,winner,loser,winner_party,winner_mention_share,loser_mention_share,winner_vote_pct,loser_vote_pct,attention_leader_won,winner_views,loser_views,winner_article,loser_article
+2016,AK,Wikipedia Pageviews,Lisa Murkowski,Ray Metcalfe,R,0.825883,0.174117,0.4435800039172748,0.1162338934180149,1,57811,12188,Frank_Murkowski,Ray_Metcalfe
+2016,AZ,Wikipedia Pageviews,John Mccain,Ann Kirkpatrick,R,0.957875,0.042125,0.5371047089179802,0.4074891434487282,1,2905766,127790,John_McCain,Ann_Kirkpatrick
+2016,AR,Wikipedia Pageviews,John Boozman,Conner Eldridge,R,0.677794,0.322206,0.5977163433322318,0.3617101962760107,1,66009,31379,John_Boozman,Conner_Eldridge
+2016,FL,Wikipedia Pageviews,Marco Rubio,Patrick Murphy,R,0.938203,0.061797,0.5198112842432986,0.4431485451234274,1,4944108,325655,Marco_Rubio,Patrick_Murphy_(Florida_politician)
+2016,HI,Wikipedia Pageviews,Brian Schatz,John Carroll,D,0.952179,0.047821,0.7005465379834759,0.2116989288586678,1,114310,5741,Brian_Schatz,John_Carroll_(Hawaii_politician)
+2016,IL,Wikipedia Pageviews,Tammy Duckworth,Mark Kirk,D,0.682438,0.317562,0.5486174310499978,0.3978041755479637,1,767391,357093,Tammy_Duckworth,Mark_Kirk
+2016,IN,Wikipedia Pageviews,Todd C. Young,Evan Bayh,R,0.294284,0.705716,0.5211224257523935,0.4241271693138926,0,124388,298292,Todd_Young,Evan_Bayh
+2016,KY,Wikipedia Pageviews,Rand Paul,Jim Gray,R,0.937989,0.062011,0.5727328845027359,0.4272450504737413,1,1196221,79083,Rand_Paul,Jim_Gray_(American_politician)
+2016,MD,Wikipedia Pageviews,Chris Van Hollen,Kathy Szeliga,D,0.756317,0.243683,0.6088787566439363,0.3567484786348613,1,150911,48623,Chris_Van_Hollen,Kathy_Szeliga
+2016,MO,Wikipedia Pageviews,Roy Blunt,Jason Kander,R,0.507054,0.492946,0.4918432176553724,0.463920229412514,1,190391,185094,Roy_Blunt,Jason_Kander
+2016,NV,Wikipedia Pageviews,Catherine Cortez Masto,Joseph J. Heck,D,0.552233,0.447767,0.4709887448637275,0.4467036724912342,1,153276,124281,Catherine_Cortez_Masto,Joe_Heck
+2016,NH,Wikipedia Pageviews,Maggie Hassan,Kelly Ayotte,D,0.477118,0.522882,0.4798130259490759,0.4784371025786725,0,404934,443775,Maggie_Hassan,Kelly_Ayotte
+2016,ND,Wikipedia Pageviews,John Hoeven,Eliot Glassheim,R,0.880984,0.119016,0.7847801904228017,0.1696812564050908,1,55961,7560,John_Hoeven,Eliot_Glassheim
+2016,OH,Wikipedia Pageviews,Rob Portman,Ted Strickland,R,0.536764,0.463236,0.5802887667737717,0.3715755604034413,1,250322,216032,Rob_Portman,Ted_Strickland
+2016,OR,Wikipedia Pageviews,Ron Wyden,Mark Callahan,D,0.942203,0.057797,0.5660084262153018,0.3334767408390773,1,144110,8840,Ron_Wyden,Mark_Callahan
+2016,PA,Wikipedia Pageviews,Patrick J. Toomey,Katie Mcginty,R,0.929955,0.070045,0.4877350022869017,0.4734104711017579,1,294140,22155,Pat_Toomey,Katie_McGinty
+2016,UT,Wikipedia Pageviews,Mike Lee,Misty K. Snow,R,0.15409,0.84591,0.6814553466662723,0.270583183859919,0,7139,39191,Mike_Lee,Misty_Snow
+2016,VT,Wikipedia Pageviews,Patrick J. Leahy,Scott Milne,D,0.967339,0.032661,0.5998839194051182,0.3233936723594005,1,455522,15380,Patrick_Leahy,Scott_Milne
+2016,WA,Wikipedia Pageviews,Patty Murray,Chris Vance,D,0.874891,0.125109,0.5901301044578745,0.4098698955421255,1,149979,21447,Patty_Murray,Chris_Vance_(politician)
+2016,WI,Wikipedia Pageviews,Ron Johnson,Russ Feingold,R,0.024067,0.975933,0.5017297212607007,0.468109949297005,0,6777,274811,Ron_Johnson,Russ_Feingold
+2018,AZ,Wikipedia Pageviews,Kyrsten Sinema,Martha Mcsally,D,0.654301,0.345699,0.4995579430174289,0.4761129854028926,1,1529014,807853,Kyrsten_Sinema,Martha_McSally
+2018,FL,Wikipedia Pageviews,Rick Scott,Bill Nelson,R,0.535032,0.464968,0.5005497554641297,0.4993247256869806,1,1093788,950554,Rick_Scott,Bill_Nelson
+2018,HI,Wikipedia Pageviews,Mazie K. Hirono,Ron Curtis,D,0.995127,0.004873,0.7115109784705074,0.2884890215294926,1,536642,2628,Mazie_Hirono,John_Walsh_(Montana_politician)
+2018,IN,Wikipedia Pageviews,Mike Braun,Joe Donnelly,R,0.416484,0.583516,0.507323997345092,0.4484222793217279,0,251918,352951,Mike_Braun,Joe_Donnelly
+2018,MA,Wikipedia Pageviews,Elizabeth A. Warren,Geoff Diehl,D,0.956498,0.043502,0.6033678230129031,0.3617205190813752,1,2286631,103996,Elizabeth_Warren,Geoff_Diehl
+2018,MI,Wikipedia Pageviews,Debbie Stabenow,John James,D,0.981514,0.018486,0.5226189214709184,0.457562898384361,1,277425,5225,Debbie_Stabenow,John_James_(Michigan_politician)
+2018,MS,Wikipedia Pageviews,Roger F. Wicker,David Baria,R,0.762422,0.237578,0.5849286755713164,0.3947458649989586,1,134097,41786,Roger_Wicker,David_Baria
+2018,MO,Wikipedia Pageviews,Josh Hawley,Claire Mccaskill,R,0.374824,0.625176,0.5138323105905976,0.4556934089290825,0,373852,623555,Josh_Hawley,Claire_McCaskill
+2018,MT,Wikipedia Pageviews,Jon Tester,Matt Rosendale,D,0.818971,0.181029,0.5033387260499936,0.4678241181322167,1,407760,90133,Jon_Tester,Matt_Rosendale
+2018,NE,Wikipedia Pageviews,Deb Fischer,Jane Raybould,R,0.921677,0.078323,0.576850488565325,0.3862119982886978,1,121159,10296,Deb_Fischer,Jane_Raybould
+2018,NV,Wikipedia Pageviews,Jacky Rosen,Dean Heller,D,0.536162,0.463838,0.5041198108898791,0.4538498886982426,1,256962,222300,Jacky_Rosen,Dean_Heller
+2018,NJ,Wikipedia Pageviews,Robert Menendez,Bob Hugin,D,0.731596,0.268404,0.5400714982125446,0.4282809191906124,1,605316,222075,Bob_Menendez,Bob_Hugin
+2018,ND,Wikipedia Pageviews,Kevin Cramer,Heidi Heitkamp,R,0.231298,0.768702,0.5510550748456176,0.4426837719002385,0,140789,467902,Kevin_Cramer,Heidi_Heitkamp
+2018,OH,Wikipedia Pageviews,Sherrod Brown,Jim Renacci,D,0.765551,0.234449,0.5341141418368777,0.4656564264238257,1,440065,134769,Sherrod_Brown,Jim_Renacci
+2018,PA,Wikipedia Pageviews,Robert P Casey Jr,Louis J. Barletta,D,0.578764,0.421236,0.5561318396530043,0.427427545872648,1,240531,175063,Bob_Casey_Jr.,Lou_Barletta
+2018,TN,Wikipedia Pageviews,Marsha Blackburn,Phil Bredesen,R,0.612128,0.387872,0.5470700705072781,0.4391997290238619,1,620038,392884,Marsha_Blackburn,Phil_Bredesen
+2018,TX,Wikipedia Pageviews,Ted Cruz,Beto O'Rourke,R,0.264911,0.735089,0.508926012837366,0.4832535502239402,0,2060995,5718963,Ted_Cruz,Beto_O'Rourke
+2018,UT,Wikipedia Pageviews,Mitt Romney,Jenny Wilson,R,0.950688,0.049312,0.6258814784846333,0.3091146874661875,1,1693675,87850,Mitt_Romney,Jenny_Wilson_(politician)
+2018,WA,Wikipedia Pageviews,Maria Cantwell,Susan Hutchison,D,0.803838,0.196162,0.5843375992492955,0.4156624007507044,1,238473,58195,Maria_Cantwell,Susan_Hutchison
+2018,WV,Wikipedia Pageviews,Joe Manchin,Patrick Morrisey,D,0.818662,0.181338,0.4954581402649804,0.4629729066701434,1,642053,142218,Joe_Manchin,Patrick_Morrisey
+2018,WI,Wikipedia Pageviews,Tammy Baldwin,Leah Vukmir,D,0.766027,0.233973,0.5541768676154819,0.445807330084832,1,421248,128665,Tammy_Baldwin,Leah_Vukmir
+2018,WY,Wikipedia Pageviews,John Barrasso,Gary Trauner,R,0.812987,0.187013,0.669599842690001,0.3009881034313243,1,110989,25531,John_Barrasso,Gary_Trauner
+2020,AL,Wikipedia Pageviews,Tommy Tuberville,Doug Jones,R,0.619612,0.380388,0.6009536164251688,0.3973666545072298,1,1116088,685181,Tommy_Tuberville,Doug_Jones_(politician)
+2020,AK,Wikipedia Pageviews,Dan Sullivan,Al Gross,R,0.419202,0.580798,0.5389706898448053,0.4119383959366812,0,189106,262003,Dan_Sullivan_(U.S._senator),2020_United_States_Senate_election_in_Alaska
+2020,CO,Wikipedia Pageviews,John W. Hickenlooper,Cory Gardner,D,0.477695,0.522305,0.5349896006848405,0.4417752697177505,0,417026,455970,2020_United_States_Senate_election_in_Colorado,Cory_Gardner
+2020,DE,Wikipedia Pageviews,Christopher A. Coons,Lauren Witzke,D,0.988799,0.011201,0.5943841852791103,0.3789788872253964,1,460624,5218,Chris_Coons,Lauren_Witzke
+2020,GA,Wikipedia Pageviews,David A. Perdue,Jon Ossoff,R,0.365765,0.634235,0.4972798820720188,0.4794901230267508,0,761950,1321218,David_Perdue,Jon_Ossoff
+2020,ID,Wikipedia Pageviews,Jim Risch,Paulette Jordan,R,0.636737,0.363263,0.6262259733644093,0.3324668799653884,1,146510,83585,Jim_Risch,Paulette_Jordan
+2020,IL,Wikipedia Pageviews,Richard J. Durbin,Mark C. Curran Jr.,D,0.907397,0.092603,0.5493356314671662,0.3886594868971691,1,578178,59005,Dick_Durbin,Mark_Curran
+2020,IA,Wikipedia Pageviews,Joni Ernst,Theresa Greenfield,R,0.878188,0.121812,0.5087828577814638,0.444000752883603,1,686531,95228,Joni_Ernst,Theresa_Greenfield
+2020,KS,Wikipedia Pageviews,Roger Marshall,Barbara Bollier,R,0.012663,0.987337,0.5322312841115551,0.4178599237436529,0,2716,211769,Roger_Marshall,Barbara_Bollier
+2020,KY,Wikipedia Pageviews,Mitch Mcconnell,Amy Mcgrath,R,0.810093,0.189907,0.5776496833573999,0.382311572946296,1,4935789,1157076,Mitch_McConnell,Amy_McGrath
+2020,LA,Wikipedia Pageviews,"\Bill\"" Cassidy""",Adrian Perkins,R,0.691177,0.308823,0.5932331600164709,0.1902200437065511,1,196201,87664,Bill_Cassidy,Adrian_Perkins
+2020,ME,Wikipedia Pageviews,Susan Margaret Collins,Sara I. Gideon,R,0.678376,0.321624,0.504216442011095,0.4191970349086387,1,1079659,511876,Susan_Collins,Sara_Gideon
+2020,MA,Wikipedia Pageviews,Edward J. Markey,Kevin J. O'Conner,D,0.302402,0.697598,0.644561448111744,0.3219692154603397,0,832821,1921198,Ed_Markey,Sandra_Day_O'Connor
+2020,MI,Wikipedia Pageviews,Gary Peters,John James,D,0.986834,0.013166,0.4990342572248217,0.4821839437051528,1,441089,5885,Gary_Peters,John_James_(Michigan_politician)
+2020,MN,Wikipedia Pageviews,Tina Smith,Jason Lewis,D,0.733019,0.266981,0.4873669054362813,0.4349824656156821,1,314905,114695,Tina_Smith,Jason_Lewis_(Minnesota_politician)
+2020,MS,Wikipedia Pageviews,Cindy Hyde-Smith,Mike Espy,R,0.466919,0.533081,0.5410522254097673,0.4412927401754217,0,166036,189563,Cindy_Hyde-Smith,Mike_Espy
+2020,MT,Wikipedia Pageviews,Steve Daines,Steve Bullock,R,0.33698,0.66302,0.5501216074975604,0.4498783925024396,0,220062,432979,Steve_Daines,Steve_Bullock_(American_politician)
+2020,NE,Wikipedia Pageviews,Ben Sasse,Chris Janicek,R,0.845793,0.154207,0.6274187859941592,0.2442882457430656,1,708070,129097,Ben_Sasse,2020_United_States_Senate_election_in_Nebraska
+2020,NH,Wikipedia Pageviews,Jeanne Shaheen,Corky Messner,D,0.634649,0.365351,0.5663652103116669,0.4098797106220018,1,303806,174893,Jeanne_Shaheen,2020_United_States_Senate_election_in_New_Hampshire
+2020,NM,Wikipedia Pageviews,Ben R. Lujan,Mark V. Ronchetti,D,0.998896,0.001104,0.5172959660371311,0.4562430429649043,1,194506,215,Ben_Ray_Luján,2026_United_States_Senate_election_in_New_Mexico
+2020,NC,Wikipedia Pageviews,Thom Tillis,Cal Cunningham,R,0.477624,0.522376,0.4868714830741895,0.4694041153237507,0,531176,580945,Thom_Tillis,Cal_Cunningham
+2020,OK,Wikipedia Pageviews,Jim Inhofe ,Abby Broyles,R,0.723834,0.276166,0.629121392787406,0.327535192670595,1,300276,114565,Jim_Inhofe,2020_United_States_Senate_election_in_Oklahoma
+2020,OR,Wikipedia Pageviews,Jeff Merkley,Jo Rae Perkins,D,0.670025,0.329975,0.5691104228800961,0.3932426034432325,1,183438,90340,Jeff_Merkley,Jo_Rae_Perkins
+2020,RI,Wikipedia Pageviews,John F. Reed,Allen R. Waters,D,0.678765,0.321235,0.6647769806297065,0.3335376783972872,1,101624,48095,Jack_Reed_(Rhode_Island_politician),2020_United_States_Senate_election_in_Rhode_Island
+2020,SC,Wikipedia Pageviews,Lindsey Graham,Jaime Harrison,R,0.790447,0.209553,0.544365958624375,0.4416628497270888,1,2703391,716688,Lindsey_Graham,Jaime_Harrison
+2020,SD,Wikipedia Pageviews,Mike Rounds,Dan Ahlers,R,0.988322,0.011678,0.6573524757328917,0.3426475242671083,1,87847,1038,Mike_Rounds,Dan_Ahlers
+2020,TN,Wikipedia Pageviews,Bill Hagerty,Marquita Bradshaw,R,0.047247,0.952753,0.6219846805198123,0.3516131876864382,0,3117,62855,Bill_Hagerty,Marquita_Bradshaw
+2020,VA,Wikipedia Pageviews,Mark R. Warner,Daniel M. Gade,D,0.754701,0.245299,0.559920836977794,0.4390830419467311,1,487896,158580,Mark_Warner,Daniel_Gade
+2020,WV,Wikipedia Pageviews,Shelley Moore Capito,Paula Jean Swearengin,R,0.542611,0.457389,0.7028390664999397,0.270001463568694,1,272082,229349,Shelley_Moore_Capito,Paula_Jean_Swearengin
