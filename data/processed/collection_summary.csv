@@ -1,0 +1,8 @@
+source,status,n,h1_win_rate,h1_k,h1_p,h1_ci_lo,h1_ci_hi,h2_r,h2_p
+Google Ngrams,ok,15,0.8,12.0,0.03516,0.5191,0.9567,0.4022,0.13727
+Google Trends,ok,6,0.1667,1.0,0.21875,0.0042,0.6412,0.3807,0.45651
+Wikipedia Pageviews,ok,3,0.3333,1.0,1.0,0.0084,0.9057,-0.0461,0.97064
+GDELT News,ok,2,0.5,1.0,1.0,0.0126,0.9874,-1.0,1.0
+GDELT TV,missing,0,,,,,,,
+Reddit,ok,2,0.5,1.0,1.0,0.0126,0.9874,-1.0,1.0
+MediaCloud,missing,0,,,,,,,

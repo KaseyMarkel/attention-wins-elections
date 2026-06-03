@@ -1,0 +1,72 @@
+[
+  {
+    "source": "Google Ngrams",
+    "status": "ok",
+    "n": 15,
+    "h1_win_rate": 0.8,
+    "h1_k": 12,
+    "h1_p": 0.03516,
+    "h1_ci_lo": 0.5191,
+    "h1_ci_hi": 0.9567,
+    "h2_r": 0.4022,
+    "h2_p": 0.13727
+  },
+  {
+    "source": "Google Trends",
+    "status": "ok",
+    "n": 6,
+    "h1_win_rate": 0.1667,
+    "h1_k": 1,
+    "h1_p": 0.21875,
+    "h1_ci_lo": 0.0042,
+    "h1_ci_hi": 0.6412,
+    "h2_r": 0.3807,
+    "h2_p": 0.45651
+  },
+  {
+    "source": "Wikipedia Pageviews",
+    "status": "ok",
+    "n": 3,
+    "h1_win_rate": 0.3333,
+    "h1_k": 1,
+    "h1_p": 1.0,
+    "h1_ci_lo": 0.0084,
+    "h1_ci_hi": 0.9057,
+    "h2_r": -0.0461,
+    "h2_p": 0.97064
+  },
+  {
+    "source": "GDELT News",
+    "status": "ok",
+    "n": 2,
+    "h1_win_rate": 0.5,
+    "h1_k": 1,
+    "h1_p": 1.0,
+    "h1_ci_lo": 0.0126,
+    "h1_ci_hi": 0.9874,
+    "h2_r": -1.0,
+    "h2_p": 1.0
+  },
+  {
+    "source": "GDELT TV",
+    "status": "missing",
+    "n": 0
+  },
+  {
+    "source": "Reddit",
+    "status": "ok",
+    "n": 2,
+    "h1_win_rate": 0.5,
+    "h1_k": 1,
+    "h1_p": 1.0,
+    "h1_ci_lo": 0.0126,
+    "h1_ci_hi": 0.9874,
+    "h2_r": -1.0,
+    "h2_p": 1.0
+  },
+  {
+    "source": "MediaCloud",
+    "status": "missing",
+    "n": 0
+  }
+]
