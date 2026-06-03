@@ -1,0 +1,4 @@
+year,source,winner_name,winner_article,loser_name,loser_article,winner_party,winner_mention_share,loser_mention_share,winner_vote_pct,loser_vote_pct,attention_leader_won,winner_total_views,loser_total_views,n_months_winner,n_months_loser
+2016,Wikipedia Pageviews,Hillary Clinton,Hillary_Clinton,Donald Trump,Donald_Trump,D,0.189452,0.810548,48.18,46.09,0,18581462,79498403,13,13
+2020,Wikipedia Pageviews,Joe Biden,Joe_Biden,Donald Trump,Donald_Trump,D,0.142475,0.857525,51.31,46.86,0,35128114,211428988,13,13
+2024,Wikipedia Pageviews,Donald Trump,Donald_Trump,Kamala Harris,Kamala_Harris,R,0.666224,0.333776,49.84,48.36,1,60596588,30358671,13,13

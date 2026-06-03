@@ -1,0 +1,7 @@
+year,source,winner_name,loser_name,winner_party,winner_mention_share,loser_mention_share,winner_vote_pct,loser_vote_pct,attention_leader_won,winner_raw_sum,loser_raw_sum,n_weeks,timeframe
+2004,Google Trends,George W. Bush,John Kerry,R,0.158416,0.841584,50.73,48.27,0,304,1615,45,2003-11-03 2004-11-02
+2008,Google Trends,Barack Obama,John McCain,D,0.638431,0.361569,52.93,45.65,1,814,461,53,2007-11-05 2008-11-04
+2012,Google Trends,Barack Obama,Mitt Romney,D,0.2739,0.7261,51.06,47.2,0,361,957,53,2011-11-07 2012-11-06
+2016,Google Trends,Hillary Clinton,Donald Trump,D,0.359088,0.640912,48.18,46.09,0,488,871,53,2015-11-09 2016-11-08
+2020,Google Trends,Joe Biden,Donald Trump,D,0.390843,0.609157,51.31,46.86,0,589,918,53,2019-11-04 2020-11-03
+2024,Google Trends,Donald Trump,Kamala Harris,R,0.483936,0.516064,49.84,48.36,0,482,514,53,2023-11-06 2024-11-05
