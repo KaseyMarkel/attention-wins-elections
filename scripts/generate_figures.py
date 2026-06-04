@@ -30,11 +30,13 @@ Path('figures').mkdir(exist_ok=True)
 
 FONT     = 'Georgia, serif'
 BG, GRID = '#FAFAFA', '#E8E8E8'
-D_COLOR  = '#1060C8'
-R_COLOR  = '#C82010'
+D_COLOR  = '#1060C8'   # Democratic party blue
+R_COLOR  = '#C82010'   # Republican party red
 NAVY     = '#1a1a2e'
 GRAY     = '#CCCCCC'
-UPSET    = '#E05050'
+# Attention outcome colors — deliberately different from D/R party colors
+WINNER_CLR = '#2c7873'   # teal  — attention → winner
+UPSET_CLR  = '#f4a261'   # amber — attention underdog won
 SRC_PALETTE = ['#1a1a2e','#2d4a7a','#3d6b9e','#5a8ec4','#7fb3d9','#a8cceb','#c5dff0']
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
@@ -68,6 +70,23 @@ def pct_above_ci(fig, rates, ci_hi_errs, x_positions, color=NAVY, size=14, row=N
             yanchor='bottom', xanchor='center',
             **kw,
         )
+
+def ols_label(fig, r, xdata, ydata, row=None, col=None, color='#444', dx=0, dy=0):
+    """Annotate OLS line near its midpoint with r value."""
+    x_mid = float(np.percentile(xdata, 60))
+    m, b  = np.polyfit(xdata, ydata, 1)
+    y_mid = m * x_mid + b
+    kw = dict(row=row, col=col) if row else {}
+    fig.add_annotation(
+        x=x_mid + dx, y=y_mid + dy,
+        text=f'<i>r</i> = {r:.2f}',
+        showarrow=False,
+        font=dict(size=11, color=color),
+        bgcolor='rgba(255,255,255,0.75)',
+        borderpad=2,
+        xanchor='left', yanchor='bottom',
+        **kw,
+    )
 
 def pearson_r_ci(r, n, alpha=0.05):
     if abs(r) >= 0.999 or n <= 3:
@@ -239,8 +258,9 @@ m_p, b_p = np.polyfit(pres_scatter['ms'], pres_scatter['vs'], 1)
 xr_p = np.linspace(pres_scatter['ms'].min() - 0.02, pres_scatter['ms'].max() + 0.02, 200)
 fig.add_trace(go.Scatter(x=xr_p, y=m_p * xr_p + b_p, mode='lines',
     line=dict(color='#555', dash='dash', width=1.5),
-    name=f'OLS (r={r_p:.2f})',
+    showlegend=False,
 ), row=1, col=1)
+ols_label(fig, r_p, pres_scatter['ms'].values, pres_scatter['vs'].values, row=1, col=1)
 
 # Panel B — Senate Ngrams
 for party, color, label in [('D', D_COLOR, 'Democrat'), ('R', R_COLOR, 'Republican')]:
@@ -255,8 +275,9 @@ m_s2, b_s2 = np.polyfit(senate_scatter['ms'], senate_scatter['vs'], 1)
 xr_s = np.linspace(senate_scatter['ms'].min() - 0.01, senate_scatter['ms'].max() + 0.01, 200)
 fig.add_trace(go.Scatter(x=xr_s, y=m_s2 * xr_s + b_s2, mode='lines',
     line=dict(color='#222', dash='dash', width=2),
-    name=f'OLS (r={r_s:.2f})',
+    showlegend=False,
 ), row=1, col=2)
+ols_label(fig, r_s, senate_scatter['ms'].values, senate_scatter['vs'].values, row=1, col=2)
 
 senate_pct_extreme = (senate_scatter['ms'] > 0.95).mean() + (senate_scatter['ms'] < 0.05).mean()
 fig.update_xaxes(tickformat='.0%', title_text='Mention share (12 months pre-election)', row=1, col=1)
@@ -298,8 +319,11 @@ fig = make_subplots(rows=1, cols=2,
     ],
     horizontal_spacing=0.12)
 
-# Panel A — Presidential (labeled points, linear scale)
-for upset, color, label in [(False, NAVY, 'Attention → winner'), (True, UPSET, 'Attention upset')]:
+# Panel A — Presidential (teal/amber, no party colors)
+for upset, color, label in [
+    (False, WINNER_CLR, 'Attention → winner'),
+    (True,  UPSET_CLR,  'Attention upset'),
+]:
     sub = h3[h3['upset'] == upset]
     fig.add_trace(go.Scatter(
         x=sub['gap'], y=sub['margin'], mode='markers+text',
@@ -307,30 +331,39 @@ for upset, color, label in [(False, NAVY, 'Attention → winner'), (True, UPSET,
         marker=dict(color=color, size=10, line=dict(color='white', width=1.5)), name=label,
     ), row=1, col=1)
 fig.add_trace(go.Scatter(x=xr3, y=m3 * xr3 + b3, mode='lines',
-    line=dict(color='#888', dash='dash', width=1.5), name=f'OLS (r={r3:.2f})',
+    line=dict(color='#888', dash='dash', width=1.5), showlegend=False,
 ), row=1, col=1)
+ols_label(fig, r3, h3['gap'], h3['margin'], row=1, col=1)
 fig.add_vline(x=1, line_dash='dot', line_color='#aaa', line_width=1.5, row=1, col=1)
 fig.add_hline(y=0, line_dash='dot', line_color='#aaa', line_width=1, row=1, col=1)
 
-# Panel B — Senate (dots, log x-axis to handle extreme outliers)
-for upset, color, label in [(False, '#3d6b9e', 'Attention → winner'), (True, UPSET, 'Attention upset')]:
+# Panel B — Senate (teal/amber, log x-axis)
+for upset, color, label in [
+    (False, WINNER_CLR, 'Attention → winner'),
+    (True,  UPSET_CLR,  'Attention upset'),
+]:
     sub = senate_ng[senate_ng['upset'] == upset]
     fig.add_trace(go.Scatter(
         x=sub['gap'], y=sub['margin'], mode='markers',
-        marker=dict(color=color, size=4, opacity=0.4, line=dict(width=0)),
+        marker=dict(color=color, size=4, opacity=0.45, line=dict(width=0)),
         name=label, legendgroup=label, showlegend=False,
         hovertemplate='%{x:.1f}× gap · %{y:.1%} margin<extra></extra>',
     ), row=1, col=2)
 
-# OLS on log-scale gap for Senate panel
 log_gap_s = np.log10(senate_ng['gap'].clip(lower=0.001))
 m3s_log, b3s_log = np.polyfit(log_gap_s, senate_ng['margin'], 1)
 xlog_range = np.linspace(log_gap_s.min(), log_gap_s.quantile(0.99), 200)
 fig.add_trace(go.Scatter(
     x=10**xlog_range, y=m3s_log * xlog_range + b3s_log, mode='lines',
-    line=dict(color='#222', dash='dash', width=2),
-    name=f'OLS log-gap (r={r3s_log:.2f})', showlegend=True,
+    line=dict(color='#444', dash='dash', width=2), showlegend=False,
 ), row=1, col=2)
+# r label near midpoint of log-scale line
+x_mid_log = 10 ** float(np.percentile(log_gap_s, 60))
+y_mid_log  = m3s_log * np.log10(x_mid_log) + b3s_log
+fig.add_annotation(x=x_mid_log, y=y_mid_log + 0.01,
+    text=f'<i>r</i>(log) = {r3s_log:.2f}', showarrow=False,
+    font=dict(size=11, color='#444'), bgcolor='rgba(255,255,255,0.75)',
+    borderpad=2, xanchor='left', yanchor='bottom', row=1, col=2)
 fig.add_vline(x=1, line_dash='dot', line_color='#aaa', line_width=1.5, row=1, col=2)
 fig.add_hline(y=0, line_dash='dot', line_color='#aaa', line_width=1, row=1, col=2)
 
@@ -344,40 +377,126 @@ fig.update_yaxes(showgrid=True, gridcolor=GRID, zeroline=False)
 style(fig,
       'Figure 3. Attention gap vs. vote margin — presidential and Senate',
       f'Google Ngrams · Pres r={r3:.2f} · Senate r(log)={r3s_log:.2f} · '
-      f'Red = attention underdog won',
+      f'Amber = attention underdog won',
       w=1100, h=520)
 save(fig, 'figures/fig3_gap_and_timeline.png')
 
 
-# ── Figure 4: Cross-level win rate comparison ─────────────────────────────────
+# ── Figure 4: Win rate + vote margin by level — 2 panels ─────────────────────
+# Note: House is party-level (29 election cycles, 'Democrats' vs 'Republicans'
+# in Ngrams). Individual House candidates are too obscure for Ngrams.
+# Governors will be added as a 4th group once collection completes.
+
 rates4 = [rate_p, rate_s, rate_h]
 hi4    = [ci_p_hi - rate_p, ci_s_hi - rate_s, ci_h_hi - rate_h]
 lo4    = [rate_p - ci_p_lo, rate_s - ci_s_lo, rate_h - ci_h_lo]
 p4     = [p_p, p_s, p_h]
-xlabs4 = [
-    f'Presidential<br>(n={n_p} elections)',
-    f'Senate<br>(n={n_s:,} races)',
-    f'House cycles<br>(n={n_h} cycles)',
-]
+xlabs4 = ['Presidential', 'Senate', 'House\n(party-level)']
+bar_colors4 = [NAVY, '#2d4a7a', '#3d6b9e']
 
-fig = go.Figure()
-fig.add_trace(go.Bar(
-    x=xlabs4, y=rates4,
-    error_y=dict(type='data', array=hi4, arrayminus=lo4, thickness=2),
-    marker_color=[NAVY, '#2d4a7a', '#3d6b9e'], marker_line_width=0, width=0.45,
-    customdata=[f'{"p < 0.001" if pv < 0.001 else f"p = {pv:.3f}"}  n={n:,}'
-                for pv, n in zip(p4, [n_p, n_s, n_h])],
-    hovertemplate='%{x}<br>Win rate: %{y:.1%}<br>%{customdata}<extra></extra>',
-))
-pct_above_ci(fig, rates4, hi4, xlabs4)
+fig = make_subplots(rows=1, cols=2,
+    subplot_titles=[
+        '(A) H1: attention leader win rate',
+        '(B) Vote margin: attention leaders vs underdogs',
+    ],
+    horizontal_spacing=0.10)
+
+# Panel A: bars + raw data jittered
+rng4 = np.random.default_rng(99)
+for xi, (xlab, rate, hi, lo, bc, pv) in enumerate(zip(xlabs4, rates4, hi4, lo4, bar_colors4, p4)):
+    fig.add_trace(go.Bar(
+        x=[xlab], y=[rate],
+        error_y=dict(type='data', array=[hi], arrayminus=[lo], thickness=2),
+        marker_color=bc, marker_line_width=0, width=0.45,
+        hovertemplate=f'{xlab}<br>Win rate: {rate:.1%}<br>'
+                      f'{"p < 0.001" if pv < 0.001 else f"p = {pv:.3f}"}<extra></extra>',
+        showlegend=False,
+    ), row=1, col=1)
+
+# Raw outcome points overlaid (jittered x)
+# Presidential
+pres_outcomes = pres_ng['attention_leader_won'].values.astype(float)
+fig.add_trace(go.Scatter(
+    x=rng4.uniform(-0.15, 0.15, len(pres_outcomes)) + 0,
+    y=pres_outcomes + rng4.uniform(-0.02, 0.02, len(pres_outcomes)),
+    xaxis='x', yaxis='y',
+    mode='markers',
+    marker=dict(color=WINNER_CLR, size=7, opacity=0.7, line=dict(color='white', width=1)),
+    showlegend=False, hoverinfo='skip',
+    x0='Presidential',
+), row=1, col=1)
+# Senate (too many to show all — sample 200)
+senate_samp = senate_ng.sample(min(200, len(senate_ng)), random_state=42)
+senate_outcomes = senate_samp['attention_leader_won'].values.astype(float)
+fig.add_trace(go.Scatter(
+    x=rng4.uniform(-0.18, 0.18, len(senate_outcomes)) + 1,
+    y=senate_outcomes + rng4.uniform(-0.02, 0.02, len(senate_outcomes)),
+    mode='markers',
+    marker=dict(color=WINNER_CLR, size=4, opacity=0.4, line=dict(width=0)),
+    showlegend=False, hoverinfo='skip',
+), row=1, col=1)
+# House
+house_outcomes = house_ng['attn_predicts_majority'].values.astype(float)
+fig.add_trace(go.Scatter(
+    x=rng4.uniform(-0.12, 0.12, len(house_outcomes)) + 2,
+    y=house_outcomes + rng4.uniform(-0.02, 0.02, len(house_outcomes)),
+    mode='markers',
+    marker=dict(color=WINNER_CLR, size=7, opacity=0.7, line=dict(color='white', width=1)),
+    showlegend=False, hoverinfo='skip',
+), row=1, col=1)
+
+pct_above_ci(fig, rates4, hi4, xlabs4, row=1, col=1)
 fig.add_hline(y=0.5, line_dash='dot', line_color='#999', line_width=1.5,
-    annotation_text='Chance (50%)', annotation_position='right')
-fig.update_yaxes(range=[0, 1.18], tickformat='.0%', title='Attention leader win rate')
+    annotation_text='Chance', annotation_position='right', row=1, col=1)
+fig.add_hline(y=1.0, line_dash='dot', line_color='#ccc', line_width=1, row=1, col=1)
+fig.add_hline(y=0.0, line_dash='dot', line_color='#ccc', line_width=1, row=1, col=1)
+fig.update_yaxes(range=[-0.15, 1.25], tickformat='.0%',
+    title='Attention leader win rate', row=1, col=1)
+fig.update_xaxes(row=1, col=1, categoryorder='array', categoryarray=xlabs4)
+
+# Panel B: vote margin distribution by level, split by attention outcome
+# Presidential
+for attn_won, color, label, show_leg in [
+    (1, WINNER_CLR, 'Attention leader won', True),
+    (0, UPSET_CLR,  'Attention underdog won', True),
+]:
+    sub_p = pres_ng[pres_ng['attention_leader_won'] == attn_won]
+    sub_s = senate_ng[senate_ng['attention_leader_won'] == attn_won]
+    sub_h = house_ng[house_ng['attn_predicts_majority'] == attn_won]
+
+    for xi, (sub, xlab) in enumerate([(sub_p, 'Presidential'),
+                                       (sub_s, 'Senate'),
+                                       (sub_h, 'House<br>(party-level)')]):
+        margin_col = 'margin' if 'margin' in sub.columns else \
+                     sub.assign(margin=abs(sub['d_seat_share'] - 0.5) * 2)['margin'] \
+                     if 'd_seat_share' in sub.columns else None
+        if margin_col is None:
+            continue
+        y_vals = sub[margin_col] if isinstance(margin_col, str) else margin_col
+
+        fig.add_trace(go.Box(
+            x=[xlab] * len(y_vals), y=y_vals,
+            name=label, legendgroup=label, showlegend=(show_leg and xi == 0),
+            marker_color=color, line_color=color,
+            fillcolor=color.replace(')', ', 0.15)').replace('rgb', 'rgba') if 'rgb' in color
+                else f'rgba({int(color[1:3],16)},{int(color[3:5],16)},{int(color[5:7],16)},0.15)',
+            boxpoints='all', jitter=0.4, pointpos=0,
+            marker=dict(size=5 if xlab != 'Senate' else 3, opacity=0.5),
+            width=0.35,
+        ), row=1, col=2)
+
+house_ng['margin'] = abs(house_ng['d_seat_share'] - 0.5) * 2
+
+fig.update_yaxes(tickformat='.1%', title='Vote margin (winner − loser)', row=1, col=2)
+fig.update_xaxes(categoryorder='array',
+    categoryarray=['Presidential', 'Senate', 'House<br>(party-level)'], row=1, col=2)
+fig.update_xaxes(showgrid=True, gridcolor=GRID, zeroline=False)
+fig.update_yaxes(showgrid=True, gridcolor=GRID, zeroline=False)
 p4l = ['p < 0.001' if pv < 0.001 else f'p = {pv:.3f}' for pv in p4]
 style(fig,
-      'Figure 4. Attention leader win rate at every level of government',
+      'Figure 4. Attention leader win rate and vote margin at every level of government',
       f'Google Ngrams · Presidential {p4l[0]} · Senate {p4l[1]} · House {p4l[2]}',
-      w=700, h=540)
+      w=1100, h=560)
 save(fig, 'figures/fig4_win_rate_comparison.png')
 
 
@@ -402,7 +521,8 @@ m7, b7 = np.polyfit(house_ng['d_attention_share'], house_ng['d_seat_share'], 1)
 xr7 = np.linspace(house_ng['d_attention_share'].min() - 0.01,
                    house_ng['d_attention_share'].max() + 0.01, 200)
 fig.add_trace(go.Scatter(x=xr7, y=m7 * xr7 + b7, mode='lines',
-    line=dict(color='#666', dash='dash', width=1.5), name=f'OLS (r={r7:.2f})'))
+    line=dict(color='#666', dash='dash', width=1.5), showlegend=False))
+ols_label(fig, r7, house_ng['d_attention_share'].values, house_ng['d_seat_share'].values)
 fig.add_vline(x=0.5, line_dash='dot', line_color='#aaa', line_width=1.2)
 fig.add_hline(y=0.5, line_dash='dot', line_color='#aaa', line_width=1.2)
 p7s = 'p < 0.001' if p_h_h2 < 0.001 else f'p = {p_h_h2:.3f}'
@@ -523,17 +643,8 @@ LEVEL_OFFSETS = {'Presidential': 0.22, 'Senate': 0.0, 'House': -0.22}
 LEVEL_COLORS  = {'Presidential': NAVY,  'Senate': '#3d6b9e', 'House': '#7fb3d9'}
 LEVEL_SYMBOLS = {'Presidential': 'circle', 'Senate': 'square', 'House': 'diamond'}
 
-# ── 4-panel layout ─────────────────────────────────────────────────────────────
-fig = make_subplots(
-    rows=1, cols=4,
-    subplot_titles=[
-        '(A) H1: win rate',
-        '(B) H2: Presidential',
-        '(C) H2: Senate',
-        '(D) H2: House cycles',
-    ],
-    horizontal_spacing=0.06,
-)
+# ── Single-panel layout ────────────────────────────────────────────────────────
+fig = go.Figure()
 
 # Panel A — H1 (numeric y, levels offset per row)
 legend_added = set()
@@ -558,9 +669,9 @@ for sname, scolor, levels in SOURCE_LEVELS:
                         line=dict(color='white', width=1.5)),
             name=lvl, legendgroup=lvl, showlegend=show_leg,
             hovertemplate=f'{sname} ({lvl})<br>Win rate: %{{x:.0%}}<br>n={entry["n"]:,}<extra></extra>',
-        ), row=1, col=1)
+        ))
 
-# Pending sources on panel A
+# Pending sources
 for pname, _ in PENDING_SOURCES:
     fig.add_trace(go.Scatter(
         x=[0.5], y=[src_y[pname]],
@@ -569,64 +680,21 @@ for pname, _ in PENDING_SOURCES:
         marker=dict(color='white', size=10, symbol='circle',
                     line=dict(color='#bbb', width=1.5)),
         showlegend=False,
-    ), row=1, col=1)
+    ))
 
-fig.add_vline(x=0.5, line_dash='dot', line_color='#999', line_width=1, row=1, col=1)
-fig.update_xaxes(tickformat='.0%', range=[0, 1.15], title_text='Win rate', row=1, col=1)
+fig.add_vline(x=0.5, line_dash='dot', line_color='#999', line_width=1)
+fig.update_xaxes(tickformat='.0%', range=[0, 1.15], title_text='H1 win rate', showgrid=True, gridcolor=GRID)
 fig.update_yaxes(
     tickmode='array',
     tickvals=list(src_y.values()),
     ticktext=list(src_y.keys()),
     range=[-0.6, max(src_y.values()) + 0.6],
-    row=1, col=1,
+    showgrid=False,
 )
-
-# Panels B/C/D — H2 forest plots by level
-LEVEL_PANELS = [
-    ('Presidential', 2, [s for s in SOURCE_LEVELS if any(e and e['level']=='Presidential' for e in s[2])]),
-    ('Senate',       3, [s for s in SOURCE_LEVELS if any(e and e['level']=='Senate'        for e in s[2])]),
-    ('House',        4, [s for s in SOURCE_LEVELS if any(e and e['level']=='House'          for e in s[2])]),
-]
-for lvl, col, lvl_sources in LEVEL_PANELS:
-    col_color = LEVEL_COLORS[lvl]
-    rows_in_panel = []
-    for sname, scolor, levels in lvl_sources:
-        entry = next((e for e in levels if e and e['level'] == lvl), None)
-        if entry is None:
-            continue
-        rows_in_panel.append(sname)
-        if np.isnan(entry['r']):
-            continue
-        r_lo = entry['r_lo'] if not np.isnan(entry['r_lo']) else entry['r']
-        r_hi = entry['r_hi'] if not np.isnan(entry['r_hi']) else entry['r']
-        fig.add_trace(go.Scatter(
-            x=[entry['r']], y=[sname],
-            error_x=dict(type='data', symmetric=False,
-                         array=[r_hi - entry['r']],
-                         arrayminus=[entry['r'] - r_lo],
-                         thickness=2, width=6),
-            mode='markers+text',
-            text=[f"n={entry['n']:,}"], textposition='middle right',
-            textfont=dict(size=9, color='#777'),
-            marker=dict(color=scolor, size=12, symbol=LEVEL_SYMBOLS[lvl],
-                        line=dict(color='white', width=1.5)),
-            showlegend=False,
-            hovertemplate=f'{sname}<br>r = %{{x:.2f}}<br>n={entry["n"]:,}<extra></extra>',
-        ), row=1, col=col)
-
-    fig.add_vline(x=0.0, line_dash='dot', line_color='#999', line_width=1, row=1, col=col)
-    fig.update_xaxes(tickformat='.2f', range=[-0.65, 1.1], title_text='Pearson r', row=1, col=col)
-    if rows_in_panel:
-        fig.update_yaxes(categoryorder='array', categoryarray=rows_in_panel[::-1],
-                         row=1, col=col)
-
-fig.update_xaxes(showgrid=True, gridcolor=GRID, zeroline=False)
-fig.update_yaxes(showgrid=False)
 style(fig,
-      'Figure 7. Replication across 7 sources and 3 race levels',
-      '(A) H1 win rate: ● Presidential  ■ Senate  ◆ House · '
-      '(B–D) H2 correlation by level · 2 sources pending',
-      w=1400, h=540)
+      'Figure 7. Attention leader win rate across 7 sources and 3 race levels',
+      'H1 win rate by source and race level · ● Presidential  ■ Senate  ◆ House · 2 sources pending',
+      w=820, h=540)
 save(fig, 'figures/fig7_multi_source_forest.png')
 
 
@@ -683,6 +751,81 @@ fig = blank_fig(
     'Only the 12-month window has been collected so far.',
     w=640, h=500)
 save(fig, 'figures/figS2_window_sensitivity.png')
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# INTERNATIONAL FIGURES (Google Ngrams — UK + Australia)
+# ══════════════════════════════════════════════════════════════════════════════
+
+uk_ng  = pd.read_csv('data/raw/ngrams/uk_mention_shares.csv')
+aus_ng = pd.read_csv('data/raw/ngrams/australia_mention_shares.csv')
+
+# ── Figure I1: H1 win rate — UK + Australia ───────────────────────────────────
+INTL = [
+    ('UK General Elections',   uk_ng,  '#8B0000'),
+    ('Australian Federal',     aus_ng, '#00614A'),
+]
+
+fig = make_subplots(rows=1, cols=2,
+    subplot_titles=[f'(A) {n} (n={len(d)})' for n, d, _ in INTL],
+    horizontal_spacing=0.14)
+
+for ci, (country, df, color) in enumerate(INTL, 1):
+    k, n, rate, lo, hi, pval = h1_stats(df)
+    err_lo = rate - lo
+    err_hi = hi - rate
+    fig.add_trace(go.Bar(
+        x=[country], y=[rate],
+        error_y=dict(type='data', array=[err_hi], arrayminus=[err_lo], thickness=2, width=10),
+        marker_color=color, showlegend=False,
+        hovertemplate=f'{rate:.0%}<br>n={n}<br>p={pval:.3f}<extra></extra>',
+    ), row=1, col=ci)
+    ps = 'p < 0.001' if pval < 0.001 else f'p = {pval:.3f}'
+    fig.add_annotation(x=country, y=rate + err_hi + 0.04,
+        text=f'<b>{rate:.0%}</b><br><span style="font-size:10px">{ps}</span>',
+        showarrow=False, font=dict(size=12, color=color),
+        yanchor='bottom', xanchor='center', row=1, col=ci)
+    fig.add_hline(y=0.5, line_dash='dot', line_color='#999', line_width=1.5, row=1, col=ci)
+    fig.update_yaxes(tickformat='.0%', range=[0, 1.1], title_text='Attention leader win rate',
+                     row=1, col=ci)
+
+style(fig, 'Figure I1. International replication: does the attention leader win?',
+      'Google Ngrams · UK 1945–2019 · Australia 1949–2019',
+      w=900, h=520)
+save(fig, 'figures/figI1_international_h1.png')
+
+
+# ── Figure I2: H2 scatter — mention share vs. vote share (UK + Australia) ────
+fig = make_subplots(rows=1, cols=2,
+    subplot_titles=[f'(A) UK (n={len(uk_ng)})', f'(B) Australia (n={len(aus_ng)})'],
+    horizontal_spacing=0.14)
+
+for ci, (country, df, color) in enumerate(INTL, 1):
+    r_i, p_i = pearsonr(df['winner_mention_share'], df['winner_vote_pct'])
+    m_i, b_i = np.polyfit(df['winner_mention_share'], df['winner_vote_pct'], 1)
+    xr = np.linspace(df['winner_mention_share'].min() - 0.02,
+                     df['winner_mention_share'].max() + 0.02, 200)
+    fig.add_trace(go.Scatter(
+        x=df['winner_mention_share'], y=df['winner_vote_pct'],
+        mode='markers+text',
+        text=df['winner_name'].str.split().str[-1] + " '" + df['year'].astype(str).str[-2:],
+        textposition='top center', textfont=dict(size=8, color='#555'),
+        marker=dict(color=color, size=9, line=dict(color='white', width=1.5)),
+        showlegend=False,
+        hovertemplate='%{text}<br>Mention: %{x:.1%}<br>Vote: %{y:.1f}%<extra></extra>',
+    ), row=1, col=ci)
+    fig.add_trace(go.Scatter(x=xr, y=m_i * xr + b_i, mode='lines',
+        line=dict(color=color, dash='dash', width=1.5), showlegend=False,
+    ), row=1, col=ci)
+    ols_label(fig, r_i, df['winner_mention_share'].values, df['winner_vote_pct'].values,
+              row=1, col=ci, color=color)
+    fig.update_xaxes(tickformat='.0%', title_text='Winner mention share', row=1, col=ci)
+    fig.update_yaxes(title_text='Winner vote %', row=1, col=ci)
+
+style(fig, 'Figure I2. Mention share vs. vote share — UK and Australia',
+      'Google Ngrams · winner mention share in year of election',
+      w=1050, h=520)
+save(fig, 'figures/figI2_international_h2.png')
 
 
 # ── Table S1: Real presidential data ─────────────────────────────────────────
