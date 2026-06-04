@@ -9,9 +9,9 @@ Figure inventory:
   fig1  — H1 presidential win rate          [REAL: Ngrams presidential]
   fig2  — H2 scatter pres + senate          [REAL: Ngrams pres + senate]
   fig3  — Attention gap vs margin           [REAL: Ngrams presidential]
-  fig4  — Cross-level win rate comparison   [REAL: Ngrams pres + senate + house]
+  fig4  — Cross-level win rate comparison   [REAL: Ngrams pres + senate + governor + house]
   fig5  — House party attention vs seats    [REAL: Ngrams house]
-  fig6  — Gap distribution box              [REAL: Ngrams pres + senate]
+  fig6  — Gap distribution box              [REAL: Ngrams pres + senate + governor + house]
   fig7  — Multi-source forest plot          [REAL: 5 sources, 2 pending]
   figS1 — By media era                      [REAL: Ngrams pres, n limited in Social Media era]
   figS2 — Window sensitivity                [PENDING — requires multi-window collection]
@@ -137,6 +137,12 @@ senate_ng['loser_party'] = senate_ng['winner_party'].map({'D':'R','R':'D'})
 # House Ngrams
 house_ng = pd.read_csv('data/raw/ngrams/house_attention_shares.csv')
 
+# Governor Ngrams — vote_pct as fraction (matches Senate convention)
+gov_ng = pd.read_csv('data/raw/ngrams/governors_mention_shares.csv')
+gov_ng['margin'] = gov_ng['winner_vote_pct'] - gov_ng['loser_vote_pct']
+
+senate_ng['margin'] = senate_ng['winner_vote_pct'] - senate_ng['loser_vote_pct']
+
 # Multi-source presidential data
 trends_pres   = pd.read_csv('data/raw/trends/presidential_mention_shares.csv')
 wiki_pres     = pd.read_csv('data/raw/wikipedia/presidential_mention_shares.csv')
@@ -187,12 +193,17 @@ senate_scatter = pd.concat([
 ], ignore_index=True)
 r_s, p_s_h2, r_s_lo, r_s_hi = h2_stats('ms', 'vs', senate_scatter)
 
+# Governor Ngrams
+k_g, n_g, rate_g, ci_g_lo, ci_g_hi, p_g = h1_stats(gov_ng)
+r_g, p_g_h2, r_g_lo, r_g_hi = h2_stats('winner_mention_share', 'winner_vote_pct', gov_ng)
+
 # House Ngrams
 k_h, n_h, rate_h, ci_h_lo, ci_h_hi, p_h = h1_stats(house_ng, 'attn_predicts_majority')
 r_h, p_h_h2, r_h_lo, r_h_hi = h2_stats('d_attention_share', 'd_seat_share', house_ng)
 
 print(f'Presidential Ngrams:  H1={k_p}/{n_p} ({rate_p:.0%}), p={p_p:.4f}  H2: r={r_p:.3f}')
 print(f'Senate Ngrams:        H1={k_s}/{n_s} ({rate_s:.0%}), p={p_s:.4f}  H2: r={r_s:.3f}')
+print(f'Governor Ngrams:      H1={k_g}/{n_g} ({rate_g:.0%}), p={p_g:.4f}  H2: r={r_g:.3f}')
 print(f'House Ngrams:         H1={k_h}/{n_h} ({rate_h:.0%}), p={p_h:.4f}  H2: r={r_h:.3f}')
 
 
@@ -385,14 +396,13 @@ save(fig, 'figures/fig3_gap_and_timeline.png')
 # ── Figure 4: Win rate + vote margin by level — 2 panels ─────────────────────
 # Note: House is party-level (29 election cycles, 'Democrats' vs 'Republicans'
 # in Ngrams). Individual House candidates are too obscure for Ngrams.
-# Governors will be added as a 4th group once collection completes.
 
-rates4 = [rate_p, rate_s, rate_h]
-hi4    = [ci_p_hi - rate_p, ci_s_hi - rate_s, ci_h_hi - rate_h]
-lo4    = [rate_p - ci_p_lo, rate_s - ci_s_lo, rate_h - ci_h_lo]
-p4     = [p_p, p_s, p_h]
-xlabs4 = ['Presidential', 'Senate', 'House\n(party-level)']
-bar_colors4 = [NAVY, '#2d4a7a', '#3d6b9e']
+rates4 = [rate_p, rate_s, rate_g, rate_h]
+hi4    = [ci_p_hi - rate_p, ci_s_hi - rate_s, ci_g_hi - rate_g, ci_h_hi - rate_h]
+lo4    = [rate_p - ci_p_lo, rate_s - ci_s_lo, rate_g - ci_g_lo, rate_h - ci_h_lo]
+p4     = [p_p, p_s, p_g, p_h]
+xlabs4 = ['Presidential', 'Senate', 'Governor', 'House\n(party-level)']
+bar_colors4 = [NAVY, '#2d4a7a', '#3d6b9e', '#5a8ec4']
 
 fig = make_subplots(rows=1, cols=2,
     subplot_titles=[
@@ -403,9 +413,11 @@ fig = make_subplots(rows=1, cols=2,
 
 # Panel A: bars + raw data jittered
 rng4 = np.random.default_rng(99)
+# Numeric x positions (0,1,2,3) so the jittered scatter overlays align with
+# the bars without polluting a category axis with their jitter values.
 for xi, (xlab, rate, hi, lo, bc, pv) in enumerate(zip(xlabs4, rates4, hi4, lo4, bar_colors4, p4)):
     fig.add_trace(go.Bar(
-        x=[xlab], y=[rate],
+        x=[xi], y=[rate],
         error_y=dict(type='data', array=[hi], arrayminus=[lo], thickness=2),
         marker_color=bc, marker_line_width=0, width=0.45,
         hovertemplate=f'{xlab}<br>Win rate: {rate:.1%}<br>'
@@ -423,7 +435,6 @@ fig.add_trace(go.Scatter(
     mode='markers',
     marker=dict(color=WINNER_CLR, size=7, opacity=0.7, line=dict(color='white', width=1)),
     showlegend=False, hoverinfo='skip',
-    x0='Presidential',
 ), row=1, col=1)
 # Senate (too many to show all — sample 200)
 senate_samp = senate_ng.sample(min(200, len(senate_ng)), random_state=42)
@@ -435,24 +446,37 @@ fig.add_trace(go.Scatter(
     marker=dict(color=WINNER_CLR, size=4, opacity=0.4, line=dict(width=0)),
     showlegend=False, hoverinfo='skip',
 ), row=1, col=1)
+# Governor (too many to show all — sample 200)
+gov_samp = gov_ng.sample(min(200, len(gov_ng)), random_state=42)
+gov_outcomes = gov_samp['attention_leader_won'].values.astype(float)
+fig.add_trace(go.Scatter(
+    x=rng4.uniform(-0.18, 0.18, len(gov_outcomes)) + 2,
+    y=gov_outcomes + rng4.uniform(-0.02, 0.02, len(gov_outcomes)),
+    mode='markers',
+    marker=dict(color=WINNER_CLR, size=4, opacity=0.4, line=dict(width=0)),
+    showlegend=False, hoverinfo='skip',
+), row=1, col=1)
 # House
 house_outcomes = house_ng['attn_predicts_majority'].values.astype(float)
 fig.add_trace(go.Scatter(
-    x=rng4.uniform(-0.12, 0.12, len(house_outcomes)) + 2,
+    x=rng4.uniform(-0.12, 0.12, len(house_outcomes)) + 3,
     y=house_outcomes + rng4.uniform(-0.02, 0.02, len(house_outcomes)),
     mode='markers',
     marker=dict(color=WINNER_CLR, size=7, opacity=0.7, line=dict(color='white', width=1)),
     showlegend=False, hoverinfo='skip',
 ), row=1, col=1)
 
-pct_above_ci(fig, rates4, hi4, xlabs4, row=1, col=1)
+pct_above_ci(fig, rates4, hi4, list(range(len(xlabs4))), row=1, col=1)
 fig.add_hline(y=0.5, line_dash='dot', line_color='#999', line_width=1.5,
     annotation_text='Chance', annotation_position='right', row=1, col=1)
 fig.add_hline(y=1.0, line_dash='dot', line_color='#ccc', line_width=1, row=1, col=1)
 fig.add_hline(y=0.0, line_dash='dot', line_color='#ccc', line_width=1, row=1, col=1)
 fig.update_yaxes(range=[-0.15, 1.25], tickformat='.0%',
     title='Attention leader win rate', row=1, col=1)
-fig.update_xaxes(row=1, col=1, categoryorder='array', categoryarray=xlabs4)
+fig.update_xaxes(row=1, col=1, tickmode='array',
+    tickvals=list(range(len(xlabs4))),
+    ticktext=[x.replace('\n', '<br>') for x in xlabs4],
+    range=[-0.5, len(xlabs4) - 0.5])
 
 # Panel B: vote margin distribution by level, split by attention outcome
 # Presidential
@@ -462,10 +486,12 @@ for attn_won, color, label, show_leg in [
 ]:
     sub_p = pres_ng[pres_ng['attention_leader_won'] == attn_won]
     sub_s = senate_ng[senate_ng['attention_leader_won'] == attn_won]
+    sub_g = gov_ng[gov_ng['attention_leader_won'] == attn_won]
     sub_h = house_ng[house_ng['attn_predicts_majority'] == attn_won]
 
     for xi, (sub, xlab) in enumerate([(sub_p, 'Presidential'),
                                        (sub_s, 'Senate'),
+                                       (sub_g, 'Governor'),
                                        (sub_h, 'House<br>(party-level)')]):
         margin_col = 'margin' if 'margin' in sub.columns else \
                      sub.assign(margin=abs(sub['d_seat_share'] - 0.5) * 2)['margin'] \
@@ -481,7 +507,7 @@ for attn_won, color, label, show_leg in [
             fillcolor=color.replace(')', ', 0.15)').replace('rgb', 'rgba') if 'rgb' in color
                 else f'rgba({int(color[1:3],16)},{int(color[3:5],16)},{int(color[5:7],16)},0.15)',
             boxpoints='all', jitter=0.4, pointpos=0,
-            marker=dict(size=5 if xlab != 'Senate' else 3, opacity=0.5),
+            marker=dict(size=5 if xlab not in ('Senate', 'Governor') else 3, opacity=0.5),
             width=0.35,
         ), row=1, col=2)
 
@@ -489,13 +515,13 @@ house_ng['margin'] = abs(house_ng['d_seat_share'] - 0.5) * 2
 
 fig.update_yaxes(tickformat='.1%', title='Vote margin (winner − loser)', row=1, col=2)
 fig.update_xaxes(categoryorder='array',
-    categoryarray=['Presidential', 'Senate', 'House<br>(party-level)'], row=1, col=2)
+    categoryarray=['Presidential', 'Senate', 'Governor', 'House<br>(party-level)'], row=1, col=2)
 fig.update_xaxes(showgrid=True, gridcolor=GRID, zeroline=False)
 fig.update_yaxes(showgrid=True, gridcolor=GRID, zeroline=False)
 p4l = ['p < 0.001' if pv < 0.001 else f'p = {pv:.3f}' for pv in p4]
 style(fig,
       'Figure 4. Attention leader win rate and vote margin at every level of government',
-      f'Google Ngrams · Presidential {p4l[0]} · Senate {p4l[1]} · House {p4l[2]}',
+      f'Google Ngrams · Presidential {p4l[0]} · Senate {p4l[1]} · Governor {p4l[2]} · House {p4l[3]}',
       w=1100, h=560)
 save(fig, 'figures/fig4_win_rate_comparison.png')
 
@@ -544,9 +570,11 @@ house_ng['winner_attn'] = house_ng.apply(
     lambda r: r['d_attention_share'] if r['majority'] == 'D' else r['r_attention_share'], axis=1)
 house_ng['loser_attn']  = 1.0 - house_ng['winner_attn']
 gaps_h = house_ng.assign(gap=house_ng['winner_attn'] / house_ng['loser_attn'])[['year', 'gap']]
+gaps_g = gov_ng.assign(gap=gov_ng['winner_mention_share'] / gov_ng['loser_mention_share'])[['year', 'gap']]
 
 BOX_CONFIGS = [
     (gaps_s, f'Senate (n={len(gaps_s):,})',      '#3d6b9e', 'rgba(61,107,158,0.18)',   '#2d4a7a', 3,  0.45),
+    (gaps_g, f'Governor (n={len(gaps_g):,})',    '#4a7ab0', 'rgba(74,122,176,0.18)',   '#33567e', 3,  0.45),
     (gaps_h, f'House cycles (n={len(gaps_h)})',  '#5a8ec4', 'rgba(90,142,196,0.18)',   '#3d6b9e', 6,  0.45),
     (gaps_p, f'Presidential (n={len(gaps_p)})',  NAVY,      'rgba(26,26,46,0.15)',      NAVY,      8,  0.45),
 ]
@@ -577,8 +605,8 @@ fig.update_yaxes(
 style(fig,
       'Figure 6. Distribution of attention gaps by race type',
       f'Google Ngrams · Log scale · All raw data shown · '
-      f'Senate median {gaps_s["gap"].median():.0f}×, House median {gaps_h["gap"].median():.1f}×, '
-      f'Pres median {gaps_p["gap"].median():.1f}×',
+      f'Senate median {gaps_s["gap"].median():.0f}×, Governor median {gaps_g["gap"].median():.1f}×, '
+      f'House median {gaps_h["gap"].median():.1f}×, Pres median {gaps_p["gap"].median():.1f}×',
       w=760, h=580)
 save(fig, 'figures/fig6_gap_distribution.png')
 
@@ -620,6 +648,7 @@ SOURCE_LEVELS = [
     ('Google Ngrams',       SRC_PALETTE[1], [
         level_entry(pres_ng,      'Presidential', 'winner_vote_pct', is_pct=True),
         level_entry(senate_ng,    'Senate',        'winner_vote_pct', is_pct=False),
+        level_entry(gov_ng,       'Governor',      'winner_vote_pct', is_pct=False),
         house_level_entry(),
     ]),
     ('Google Trends',       SRC_PALETTE[2], [
@@ -636,12 +665,12 @@ SOURCE_LEVELS = [
 PENDING_SOURCES = [('GDELT TV', SRC_PALETTE[4]), ('MediaCloud', SRC_PALETTE[6])]
 
 # ── H1 panel: sources on numeric y-axis, levels offset vertically ─────────────
-# source_idx 0=bottom … n=top; levels offset ±0.22 around row centre
+# source_idx 0=bottom … n=top; levels offset ±0.17 around row centre (4 levels)
 SOURCE_ORDER = [s[0] for s in SOURCE_LEVELS] + [p[0] for p in PENDING_SOURCES]
 src_y = {name: i for i, name in enumerate(SOURCE_ORDER)}   # bottom=0
-LEVEL_OFFSETS = {'Presidential': 0.22, 'Senate': 0.0, 'House': -0.22}
-LEVEL_COLORS  = {'Presidential': NAVY,  'Senate': '#3d6b9e', 'House': '#7fb3d9'}
-LEVEL_SYMBOLS = {'Presidential': 'circle', 'Senate': 'square', 'House': 'diamond'}
+LEVEL_OFFSETS = {'Presidential': 0.255, 'Senate': 0.085, 'Governor': -0.085, 'House': -0.255}
+LEVEL_COLORS  = {'Presidential': NAVY,  'Senate': '#3d6b9e', 'Governor': '#5a8ec4', 'House': '#7fb3d9'}
+LEVEL_SYMBOLS = {'Presidential': 'circle', 'Senate': 'square', 'Governor': 'triangle-up', 'House': 'diamond'}
 
 # ── Single-panel layout ────────────────────────────────────────────────────────
 fig = go.Figure()
@@ -692,9 +721,9 @@ fig.update_yaxes(
     showgrid=False,
 )
 style(fig,
-      'Figure 7. Attention leader win rate across 7 sources and 3 race levels',
-      'H1 win rate by source and race level · ● Presidential  ■ Senate  ◆ House · 2 sources pending',
-      w=820, h=540)
+      'Figure 7. Attention leader win rate across 7 sources and 4 race levels',
+      'H1 win rate by source and race level · ● Presidential  ■ Senate  ▲ Governor  ◆ House · 2 sources pending',
+      w=820, h=560)
 save(fig, 'figures/fig7_multi_source_forest.png')
 
 

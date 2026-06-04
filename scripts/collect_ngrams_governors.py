@@ -40,13 +40,16 @@ def ngram_term(name):
     """Make a queryable Ngrams term from a candidate name.
 
     'W. P. "Bill" Atkinson' -> 'Bill Atkinson' (nickname + surname);
-    Ngrams n-grams max out at 5 tokens and never contain quote marks.
+    'Otto Kerner Jr.' -> 'Otto Kerner' (books rarely print suffixes,
+    and the Senate comparator data has no suffixes either).
     """
-    nick = re.search(r'"([^"]+)"', name)
+    s = name.strip()
+    s = re.sub(r',?\s+(Jr\.?|Sr\.?|II|III|IV)$', '', s)
+    nick = re.search(r'"([^"]+)"', s)
     if nick:
-        surname = name.split()[-1]
+        surname = s.split()[-1]
         return f'{nick.group(1)} {surname}'
-    return name.strip()
+    return s
 
 
 def ngrams_pair(term1, term2, year):
