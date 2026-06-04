@@ -1,0 +1,802 @@
+year,state,winner,loser,winner_party,loser_party,winner_pct,loser_pct
+1960,Arizona,Paul Fannin,Lee Ackerman,R,D,0.593,0.407
+1960,Arkansas,Orval Faubus,Henry M. Britt,D,R,0.6920999999999999,0.3079
+1960,Delaware,Elbert N. Carvel,John W. Rollins,D,R,0.5173,0.4827
+1960,Florida,C. Farris Bryant,George C. Petersen,D,R,0.5985,0.4015999999999999
+1960,Illinois,Otto Kerner Jr.,William Stratton,D,R,0.5550999999999999,0.4429999999999999
+1960,Indiana,Matthew E. Welsh,Crawford F. Parker,D,R,0.5039,0.493
+1960,Iowa,Norman Erbe,Edward McManus,R,D,0.5214,0.4785999999999999
+1960,Kansas,John Anderson Jr.,George Docking,R,D,0.555,0.436
+1960,Louisiana,Jimmie Davis,Francis Grevemberg,D,R,0.8151999999999999,0.17
+1960,Maine,John H. Reed,Frank M. Coffin,R,D,0.527,0.473
+1960,Massachusetts,John A. Volpe,Joseph D. Ward,R,D,0.5251,0.4679
+1960,Michigan,John B. Swainson,Paul Douglas Bagwell,D,R,0.5047999999999999,0.492
+1960,Minnesota,Elmer Andersen,Orville Freeman,R,D,0.5056,0.4907999999999999
+1960,Missouri,John M. Dalton,Edward G. Farmer,D,R,0.58,0.42
+1960,Montana,Donald Grant Nutter,Paul C. Cannon,R,D,0.5511,0.4489
+1960,Nebraska,Frank B. Morrison,John Cooper,D,R,0.52,0.48
+1960,New Hampshire,Wesley Powell,Bernard L. Boutin,R,D,0.5546,0.4454
+1960,New Mexico,Edwin L. Mechem,John Burroughs,R,D,0.5032,0.4967
+1960,North Carolina,Terry Sanford,Robert L. Gavin,D,R,0.5445,0.4547
+1960,North Dakota,William L. Guy,Clarence P. Dahl,D,R,0.4943999999999999,0.4448
+1960,Rhode Island,John A. Notte Jr.,Christopher Del Sesto,D,R,0.5664,0.4336
+1960,South Dakota,Archie M. Gubbrud,Ralph Herseth,R,D,0.5073,0.4927
+1960,Texas,Price Daniel,William Steger,D,R,0.728,0.272
+1960,Utah,George Dewey Clyde,William A. Barlocker,R,D,0.5266,0.4734
+1960,Vermont,F. Ray Keyser Jr.,Russell Niquette,R,D,0.564,0.436
+1960,Washington,Albert Rosellini,Lloyd J. Andrews,D,R,0.5034000000000001,0.4886999999999999
+1960,West Virginia,Wally Barron,Harold E. Neely,D,R,0.5399,0.4600999999999999
+1960,Wisconsin,Gaylord A. Nelson,Philip G. Kuehn,D,R,0.5155,0.4844
+1961,New Jersey,Richard J. Hughes,James P. Mitchell,D,R,0.504,0.487
+1961,Virginia,Albertis Harrison,H. Clyde Pearson,D,R,0.639,0.361
+1962,Alaska,William A. Egan,Mike Stepovich,D,R,0.5227,0.4772999999999999
+1962,Arizona,Paul Fannin,Samuel Goddard,R,D,0.5479999999999999,0.452
+1962,Arkansas,Orval Faubus,Willis Ricketts,D,R,0.7326999999999999,0.2673
+1962,California,Pat Brown,Richard Nixon,D,R,0.5194,0.4686999999999999
+1962,Colorado,John Arthur Love,Stephen McNichols,R,D,0.5667,0.4264
+1962,Connecticut,John N. Dempsey,John deKoven Alsop,D,R,0.5321,0.4679
+1962,Hawaii,John A. Burns,William F. Quinn,D,R,0.583,0.417
+1962,Idaho,Robert E. Smylie,Vernon K. Smith,R,D,0.5464,0.4536
+1962,Iowa,Harold Hughes,Norman A. Erbe,D,R,0.5256000000000001,0.4744
+1962,Kansas,John Anderson Jr.,Dale E. Saffels,R,D,0.534,0.456
+1962,Maine,John H. Reed,Maynard Dolloff,R,D,0.501,0.499
+1962,Maryland,J. Millard Tawes,Frank Small Jr.,D,R,0.5564,0.4436
+1962,Massachusetts,Endicott Peabody,John Volpe,D,R,0.4992,0.4971
+1962,Michigan,George W. Romney,John B. Swainson,R,D,0.5136,0.4845
+1962,Minnesota,Karl Rolvaag,Elmer Andersen,D,R,0.49713,0.49706
+1962,Nebraska,Frank B. Morrison,Fred A. Seaton,D,R,0.522,0.478
+1962,Nevada,Grant Sawyer,Oran K. Gragson,D,R,0.6684,0.3315999999999999
+1962,New Hampshire,John W. King,John Pillsbury,D,R,0.5889,0.4111
+1962,New Mexico,Jack M. Campbell,Edwin L. Mechem,D,R,0.5297999999999999,0.4700999999999999
+1962,New York,Nelson Rockefeller,Robert Morgenthau,R,D,0.531,0.44
+1962,North Dakota,William L. Guy,Mark Andrews,D,R,0.5044,0.4956
+1962,Ohio,Jim Rhodes,Michael DiSalle,R,D,0.5892000000000001,0.4108
+1962,Oklahoma,Henry Bellmon,"W. P. ""Bill"" Atkinson",R,D,0.5527000000000001,0.4443
+1962,Oregon,Mark Hatfield,Robert Y. Thornton,R,D,0.542,0.4163
+1962,Pennsylvania,Bill Scranton,Richardson Dilworth,R,D,0.5539999999999999,0.4429999999999999
+1962,Rhode Island,John Chafee,John A. Notte Jr.,R,D,0.5006,0.4993999999999999
+1962,South Dakota,Archie M. Gubbrud,Ralph Herseth,R,D,0.561,0.439
+1962,Texas,John Connally,Jack Cox,D,R,0.54,0.456
+1962,Vermont,Philip H. Hoff,F. Ray Keyser Jr.,D,R,0.505,0.495
+1962,Wisconsin,John W. Reynolds,Philip Kuehn,D,R,0.5036,0.4941
+1962,Wyoming,Clifford Hansen,Jack R. Gage,R,D,0.5447,0.4553
+1963,Kentucky,Ned Breathitt,Louie Nunn,D,R,0.5074000000000001,0.4926
+1963,Mississippi,Paul B. Johnson Jr.,Rubel Phillips,D,R,0.6194,0.3806
+1964,Arizona,Samuel Goddard,Richard Kleindienst,D,R,0.532,0.4679999999999999
+1964,Arkansas,Orval Faubus,Winthrop Rockefeller,D,R,0.57,0.4299
+1964,Delaware,Charles L. Terry Jr.,David P. Buckson,D,R,0.5135000000000001,0.4865
+1964,Florida,W. Haydon Burns,Charles R. Holley,D,R,0.5611999999999999,0.4125999999999999
+1964,Illinois,Otto Kerner Jr.,Charles H. Percy,D,R,0.5193,0.4808
+1964,Indiana,Roger D. Branigin,Richard O. Ristine,D,R,0.5618,0.4347999999999999
+1964,Iowa,Harold Hughes,Evan Hultman,D,R,0.6805,0.3127
+1964,Kansas,William H. Avery,Harry G. Wiles,R,D,0.509,0.471
+1964,Louisiana,John McKeithen,Charlton Lyons,D,R,0.6072,0.375
+1964,Massachusetts,John Volpe,Francis Bellotti,R,D,0.5027,0.4929
+1964,Michigan,George W. Romney,Neil O. Staebler,R,D,0.5587,0.4374
+1964,Missouri,Warren E. Hearnes,Ethan A.H. Shepley,D,R,0.621,0.379
+1964,Montana,Tim Babcock,Roland Renne,R,D,0.5129,0.4871
+1964,Nebraska,Frank B. Morrison,Dwight W. Burney,D,R,0.6,0.4
+1964,New Hampshire,John W. King,John Pillsbury,D,R,0.6677,0.3317
+1964,New Mexico,Jack M. Campbell,Merle H. Tucker,D,R,0.6021,0.3979
+1964,North Carolina,Dan K. Moore,Robert L. Gavin,D,R,0.5659000000000001,0.4341
+1964,North Dakota,William L. Guy,Donald Halcrow,D,R,0.5574,0.4426
+1964,Rhode Island,John Chafee,Edward P. Gallogly,R,D,0.6114999999999999,0.3885
+1964,South Dakota,Nils Boe,John F. Lindley,R,D,0.5167,0.4833
+1964,Texas,John Connally,Jack Crichton,D,R,0.738,0.26
+1964,Utah,Cal Rampton,Mitchell Melich,D,R,0.5699000000000001,0.4301
+1964,Vermont,Philip H. Hoff,Ralph A. Foote,D,R,0.649,0.351
+1964,Washington,Daniel J. Evans,Albert Rosellini,R,D,0.5577000000000001,0.4389
+1964,West Virginia,Hulett C. Smith,Cecil H. Underwood,D,R,0.5490999999999999,0.4509
+1964,Wisconsin,Warren P. Knowles,John W. Reynolds,R,D,0.5055,0.4943999999999999
+1965,New Jersey,Richard J. Hughes,Wayne Dumont,D,R,0.574,0.411
+1965,Virginia,Mills Godwin,Linwood Holton,D,R,0.479,0.377
+1966,Alabama,Lurleen Wallace,James D. Martin,D,R,0.6338,0.31
+1966,Alaska,Wally Hickel,William A. Egan,R,D,0.4999,0.4836999999999999
+1966,Arizona,Jack Williams,Samuel Goddard,R,D,0.5379999999999999,0.462
+1966,Arkansas,Winthrop Rockefeller,James D. Johnson,R,D,0.5436,0.4564
+1966,California,Ronald Reagan,Pat Brown,R,D,0.5755,0.4227
+1966,Colorado,John Arthur Love,Robert Lee Knous,R,D,0.5405,0.435
+1966,Connecticut,John N. Dempsey,E. Clayton Gengras,D,R,0.5568,0.4428
+1966,Florida,Claude R. Kirk Jr.,Robert K. High,R,D,0.5513,0.4486
+1966,Georgia,Bo Callaway,Lester Maddox,R,D,0.4653,0.4622
+1966,Hawaii,John A. Burns,Randolph Crossley,D,R,0.511,0.489
+1966,Idaho,Don Samuelson,Cecil Andrus,R,D,0.4140999999999999,0.3711
+1966,Iowa,Harold Hughes,William G. Murray,D,R,0.5534,0.4417
+1966,Kansas,Robert Docking,William H. Avery,D,R,0.5479999999999999,0.439
+1966,Maine,Kenneth Curtis,John Reed,D,R,0.5312,0.4688
+1966,Maryland,Spiro Agnew,George P. Mahoney,R,D,0.495,0.4061
+1966,Massachusetts,John Volpe,Edward McCormack Jr.,R,D,0.6258,0.3688
+1966,Michigan,George W. Romney,Zolton Ferency,R,D,0.6053999999999999,0.3913
+1966,Minnesota,Harold LeVander,Karl Rolvaag,R,D,0.5255,0.4694
+1966,Nebraska,Norbert Tiemann,Philip Sorensen,R,D,0.615,0.384
+1966,Nevada,Paul Laxalt,Grant Sawyer,R,D,0.5216,0.4784
+1966,New Hampshire,John W. King,Hugh Gregg,D,R,0.5388000000000001,0.4590999999999999
+1966,New Mexico,David Cargo,Gene Lusk,R,D,0.5173,0.4826
+1966,New York,Nelson Rockefeller,Frank D. O'Connor,R,D,0.446,0.381
+1966,Ohio,Jim Rhodes,Frazier Reams Jr.,R,D,0.6218,0.3782
+1966,Oklahoma,Dewey F. Bartlett,Preston J. Moore,R,D,0.5568,0.4375
+1966,Oregon,Tom McCall,Robert Straub,R,D,0.5526,0.4467
+1966,Pennsylvania,Ray Shafer,Milton Shapp,R,D,0.521,0.461
+1966,Rhode Island,John Chafee,Horace E. Hobbs,R,D,0.633,0.367
+1966,South Carolina,Robert Evander McNair,Joseph O. Rogers Jr.,D,R,0.5820000000000001,0.418
+1966,South Dakota,Nils Boe,Robert Chamberlin,R,D,0.5771000000000001,0.4229
+1966,Texas,John Connally,T. E. Kennerly,D,R,0.728,0.258
+1966,Vermont,Philip H. Hoff,Richard A. Snelling,D,R,0.5770000000000001,0.423
+1966,Wisconsin,Warren P. Knowles,Patrick Lucey,R,D,0.535,0.4608
+1966,Wyoming,Stanley Hathaway,Ernest Wilkerson,R,D,0.5428999999999999,0.4571
+1967,Kentucky,Louie Nunn,Henry Ward,R,D,0.512,0.4799
+1967,Mississippi,John Bell Williams,Rubel Phillips,D,R,0.7027,0.2973
+1968,Arizona,Jack Williams,Samuel Goddard,R,D,0.578,0.422
+1968,Arkansas,Winthrop Rockefeller,Marion H. Crank,R,D,0.5243,0.4757
+1968,Delaware,Russell W. Peterson,Charles L. Terry Jr.,R,D,0.5051,0.4949
+1968,Illinois,Richard B. Ogilvie,Samuel H. Shapiro,R,D,0.5121,0.4836999999999999
+1968,Indiana,Edgar Whitcomb,Robert L. Rock,R,D,0.5272,0.4713
+1968,Iowa,Robert D. Ray,Paul Franzenburg,R,D,0.5406,0.4586
+1968,Kansas,Robert Docking,Rick Harman,D,R,0.519,0.476
+1968,Missouri,Warren E. Hearnes,Lawrence K. Roos,D,R,0.608,0.392
+1968,Montana,Forrest H. Anderson,Tim Babcock,D,R,0.5411,0.4186999999999999
+1968,New Hampshire,Walter R. Peterson Jr.,Emile R. Bussiere,R,D,0.5253,0.4744
+1968,New Mexico,David Cargo,Fabian Chavez Jr.,R,D,0.502,0.4929
+1968,North Carolina,Robert W. Scott,Jim Gardner,D,R,0.527,0.473
+1968,North Dakota,William L. Guy,Robert P. McCarney,D,R,0.5482,0.437
+1968,Rhode Island,Frank Licht,John Chafee,D,R,0.5102,0.4897999999999999
+1968,South Dakota,Frank Farrar,Robert Chamberlin,R,D,0.5765,0.4235
+1968,Texas,Preston Smith,Paul Eggers,D,R,0.57,0.43
+1968,Utah,Cal Rampton,Carl W. Buehner,D,R,0.6870999999999999,0.3129
+1968,Vermont,Deane C. Davis,John J. Daley,R,D,0.555,0.445
+1968,Washington,Daniel J. Evans,John J. O'Connell,R,D,0.5472,0.4428
+1968,West Virginia,Arch A. Moore Jr.,James M. Sprouse,R,D,0.5009,0.4901
+1968,Wisconsin,Warren P. Knowles,Bronson C. La Follette,R,D,0.5288,0.4682
+1969,Maryland,Marvin Mandel,Rogers Morton,D,R,0.7,0.1444
+1969,New Jersey,William T. Cahill,Robert B. Meyner,R,D,0.597,0.385
+1969,Virginia,Linwood Holton,William C. Battle,R,D,0.525,0.4539999999999999
+1970,Alaska,Bill Egan,Keith H. Miller,D,R,0.5238,0.4613
+1970,Arizona,Jack Williams,Raúl Héctor Castro,R,D,0.509,0.491
+1970,Arkansas,Dale Bumpers,Winthrop Rockefeller,D,R,0.6165999999999999,0.3240999999999999
+1970,California,Ronald Reagan,Jesse Unruh,R,D,0.5284,0.4514
+1970,Colorado,John Arthur Love,Mark Anthony Hogan,R,D,0.5246,0.4524
+1970,Connecticut,Thomas J. Meskill,Emilio Q. Daddario,R,D,0.5376,0.4623
+1970,Florida,Reubin Askew,Claude R. Kirk Jr.,D,R,0.569,0.431
+1970,Georgia,Jimmy Carter,Hal Suit,D,R,0.5935,0.4065
+1970,Hawaii,John A. Burns,Samuel King,D,R,0.5760000000000001,0.424
+1970,Idaho,Cecil Andrus,Don Samuelson,D,R,0.5222,0.4778
+1970,Iowa,Robert D. Ray,Robert D. Fulton,R,D,0.51,0.466
+1970,Kansas,Robert Docking,Kent Frizzell,D,R,0.5429999999999999,0.447
+1970,Maine,Kenneth Curtis,James Erwin,D,R,0.5014,0.4986
+1970,Maryland,Marvin Mandel,Charles Stanley Blair,D,R,0.6573,0.3229999999999999
+1970,Massachusetts,Francis Sargent,Kevin White,R,D,0.5667,0.4279
+1970,Michigan,William Milliken,Sander Levin,R,D,0.504,0.487
+1970,Minnesota,Wendell Anderson,Douglas M. Head,D,R,0.5404,0.4553999999999999
+1970,Nebraska,James Exon,Norbert Tiemann,D,R,0.5379999999999999,0.4379999999999999
+1970,Nevada,Mike O'Callaghan,Ed Fike,D,R,0.481,0.4381
+1970,New Hampshire,Walter R. Peterson Jr.,Roger J. Crowley,R,D,0.4599,0.441
+1970,New Mexico,Bruce King,Pete Domenici,D,R,0.5126,0.4637
+1970,New York,Nelson Rockefeller,Arthur Goldberg,R,D,0.524,0.4029999999999999
+1970,Ohio,John J. Gilligan,Roger Cloud,D,R,0.5418999999999999,0.4342
+1970,Oklahoma,David Hall,Dewey F. Bartlett,D,R,0.4842,0.4810999999999999
+1970,Oregon,Tom McCall,Robert Straub,R,D,0.5552,0.441
+1970,Pennsylvania,Milton Shapp,Ray Broderick,D,R,0.5529999999999999,0.4175999999999999
+1970,Rhode Island,Frank Licht,Herbert DeSimone,D,R,0.5007,0.4953
+1970,South Carolina,John C. West,Albert Watson,D,R,0.521,0.4589999999999999
+1970,South Dakota,Richard F. Kneip,Frank Farrar,D,R,0.5485,0.4515
+1970,Tennessee,Winfield Dunn,John Jay Hooker,R,D,0.5195000000000001,0.4598
+1970,Texas,Preston Smith,Paul Eggers,D,R,0.534,0.466
+1970,Vermont,Deane C. Davis,Leo O'Brien Jr.,R,D,0.57,0.43
+1970,Wisconsin,Patrick Lucey,Jack B. Olson,D,R,0.5424,0.4488
+1970,Wyoming,Stanley Hathaway,John J. Rooney,R,D,0.6279,0.3721
+1971,Kentucky,Wendell Ford,Thomas Emberton,D,R,0.5056,0.4435
+1971,Louisiana,Edwin Edwards,David Treen,D,R,0.5717,0.4282999999999999
+1972,Arkansas,Dale Bumpers,Len E. Blaylock,D,R,0.7544,0.2455999999999999
+1972,Delaware,Sherman W. Tribbitt,Russell W. Peterson,D,R,0.5127,0.4790999999999999
+1972,Illinois,Dan Walker,Richard B. Ogilvie,D,R,0.5068,0.4902
+1972,Indiana,Otis Bowen,Matthew E. Welsh,R,D,0.5677,0.4246
+1972,Iowa,Robert D. Ray,Paul Franzenburg,R,D,0.584,0.4029999999999999
+1972,Kansas,Robert Docking,Morris Kay,D,R,0.62,0.371
+1972,Louisiana,Edwin Edwards,David Treen,D,R,0.5717,0.4282999999999999
+1972,Missouri,Kit Bond,Edward L. Dowd,R,D,0.552,0.446
+1972,Montana,Thomas Lee Judge,Ed Smith,D,R,0.5412,0.4588
+1972,New Hampshire,Meldrim Thomson,Roger J. Crowley,R,D,0.4138,0.3903
+1972,North Carolina,James Holshouser,Skipper Bowles,R,D,0.51,0.4845
+1972,North Dakota,Arthur A. Link,Richard F. Larsen,D,R,0.51,0.49
+1972,Rhode Island,Philip Noel,Herbert DeSimone,D,R,0.5255,0.4707
+1972,South Dakota,Richard F. Kneip,Carveth Thompson,D,R,0.6,0.4
+1972,Texas,Dolph Briscoe,Henry Grover,D,R,0.479,0.45
+1972,Utah,Cal Rampton,Nicholas L. Strike,D,R,0.6968000000000001,0.3032
+1972,Vermont,Thomas P. Salmon,Luther F. Hackett,D,R,0.5529999999999999,0.436
+1972,Washington,Daniel J. Evans,Albert Rosellini,R,D,0.5078,0.4282
+1972,West Virginia,Arch A. Moore Jr.,Jay Rockefeller,R,D,0.5474,0.4526
+1973,New Jersey,Brendan Byrne,Charles W. Sandman Jr.,D,R,0.667,0.319
+1974,Alabama,George Wallace,Elvin McCary,D,R,0.8316,0.1477
+1974,Alaska,Jay Hammond,Bill Egan,R,D,0.4767,0.4736999999999999
+1974,Arizona,Raúl Héctor Castro,Russell Williams,D,R,0.504,0.496
+1974,Arkansas,David Pryor,Ken Coon,D,R,0.6557,0.3440999999999999
+1974,California,Jerry Brown,Houston Flournoy,D,R,0.5011,0.4725
+1974,Colorado,Richard Lamm,John Vanderhoof,D,R,0.5322,0.4571
+1974,Connecticut,Ella Grasso,Robert H. Steele,D,R,0.5835,0.3992
+1974,Florida,Reubin Askew,Jerry Thomas,D,R,0.612,0.3879999999999999
+1974,Georgia,George Busbee,Ronnie Thompson,D,R,0.691,0.309
+1974,Hawaii,George Ariyoshi,Randolph Crossley,D,R,0.546,0.4539999999999999
+1974,Idaho,Cecil Andrus,Jack Murphy,D,R,0.7092,0.2647
+1974,Iowa,Robert D. Ray,James Schaben,R,D,0.581,0.41
+1974,Kansas,Robert F. Bennett,Vern Miller,R,D,0.495,0.49
+1974,Maryland,Marvin Mandel,Louise Gore,D,R,0.635,0.365
+1974,Massachusetts,Michael Dukakis,Francis Sargent,D,R,0.535,0.4229
+1974,Michigan,William Milliken,Sander Levin,R,D,0.511,0.4679999999999999
+1974,Minnesota,Wendell Anderson,John W. Johnson,D,R,0.628,0.2935
+1974,Nebraska,James Exon,Richard D. Marvel,D,R,0.5920000000000001,0.354
+1974,Nevada,Mike O'Callaghan,Shirley Crumpler,D,R,0.6738,0.171
+1974,New Hampshire,Meldrim Thomson,Richard W. Leonard,R,D,0.5115,0.4879
+1974,New Mexico,Jerry Apodaca,Joe Skeen,D,R,0.4993999999999999,0.488
+1974,New York,Hugh Carey,Malcolm Wilson,D,R,0.5722,0.4194
+1974,Ohio,Jim Rhodes,John J. Gilligan,R,D,0.4861999999999999,0.4825
+1974,Oklahoma,David Boren,Jim Inhofe,D,R,0.6391,0.3609
+1974,Oregon,Robert Straub,Victor Atiyeh,D,R,0.5771999999999999,0.4214
+1974,Pennsylvania,Milton Shapp,Drew Lewis,D,R,0.5366,0.4511
+1974,Rhode Island,Philip Noel,James W. Nugent,D,R,0.7848,0.2152
+1974,South Carolina,James B. Edwards,W.J. Bryan Dorn,R,D,0.503,0.47
+1974,South Dakota,Richard F. Kneip,John E. Olson,D,R,0.536,0.4639999999999999
+1974,Tennessee,Ray Blanton,Lamar Alexander,D,R,0.5543,0.4377
+1974,Texas,Dolph Briscoe,Jim Granberry,D,R,0.614,0.311
+1974,Vermont,Thomas P. Salmon,Walter L. Kennedy,D,R,0.565,0.381
+1974,Wisconsin,Patrick Lucey,William Dyke,D,R,0.5318999999999999,0.4206
+1974,Wyoming,Edgar Herschler,Dick Jones,D,R,0.5588000000000001,0.4412
+1975,Kentucky,Julian Carroll,Bob Gable,D,R,0.6284000000000001,0.3716
+1975,Mississippi,Cliff Finch,Gil Carmichael,D,R,0.5219,0.4514
+1976,Arkansas,David Pryor,Leon Griffith,D,R,0.8323999999999999,0.1674
+1976,Delaware,Pete du Pont,Sherman W. Tribbitt,R,D,0.5686,0.4246
+1976,Illinois,Jim Thompson,Michael Howlett,R,D,0.6468,0.3471
+1976,Indiana,Otis Bowen,Larry A. Conrad,R,D,0.5685,0.4263
+1976,Missouri,Joseph Teasdale,Kit Bond,D,R,0.502,0.496
+1976,Montana,Thomas Lee Judge,Bob Woodahl,D,R,0.617,0.366
+1976,New Hampshire,Meldrim Thomson,Harry V. Spanos,R,D,0.5766,0.4232
+1976,North Carolina,Jim Hunt,David Flaherty,D,R,0.6498999999999999,0.3389999999999999
+1976,North Dakota,Arthur A. Link,Richard Elkin,D,R,0.516,0.465
+1976,Rhode Island,J. Joseph Garrahy,James L. Taft Jr.,D,R,0.5482,0.4471
+1976,Utah,Scott M. Matheson,Vernon B. Romney,D,R,0.5202,0.4596
+1976,Vermont,Richard Snelling,Stella B. Hackel,R,D,0.534,0.4039999999999999
+1976,Washington,Dixy Lee Ray,John Spellman,D,R,0.5314,0.4443
+1976,West Virginia,Jay Rockefeller,Cecil H. Underwood,D,R,0.6615000000000001,0.3382
+1977,New Jersey,Brendan Byrne,Raymond Bateman,D,R,0.557,0.418
+1977,Virginia,John N. Dalton,Henry Howell,R,D,0.5589999999999999,0.433
+1978,Alabama,Fob James,H. Guy Hunt,D,R,0.726,0.259
+1978,Arizona,Bruce Babbitt,Evan Mecham,D,R,0.525,0.4479999999999999
+1978,Arkansas,Bill Clinton,Lynn Lowe,D,R,0.6335999999999999,0.3664
+1978,California,Jerry Brown,Evelle Younger,D,R,0.5605,0.365
+1978,Colorado,Richard Lamm,Ted L. Strickland,D,R,0.5876,0.3853
+1978,Connecticut,Ella Grasso,Ronald Sarasin,D,R,0.5915,0.4074
+1978,Florida,Bob Graham,Jack Eckerd,D,R,0.5559000000000001,0.4440999999999999
+1978,Georgia,George Busbee,Rodney Mims Cook Sr.,D,R,0.807,0.193
+1978,Hawaii,George Ariyoshi,John Leopold,D,R,0.545,0.4429999999999999
+1978,Idaho,John Evans,Allan Larsen,D,R,0.5875,0.3956
+1978,Illinois,Jim Thompson,Michael Bakalis,R,D,0.5904,0.401
+1978,Iowa,Robert D. Ray,Jerome D. Fitzgerald,R,D,0.583,0.41
+1978,Kansas,John W. Carlin,Robert F. Bennett,D,R,0.494,0.473
+1978,Maine,Joseph Brennan,Linwood E. Palmer Jr.,D,R,0.478,0.344
+1978,Maryland,Harry Hughes,John Glenn Beall Jr.,D,R,0.7062,0.2938
+1978,Massachusetts,Edward J. King,Francis W. Hatch Jr.,D,R,0.5251,0.4719
+1978,Michigan,William Milliken,William B. Fitzgerald Jr.,R,D,0.568,0.431
+1978,Minnesota,Al Quie,Rudy Perpich,R,D,0.5235,0.4529999999999999
+1978,Nebraska,Charles Thone,Gerald T. Whelan,R,D,0.5589999999999999,0.44
+1978,Nevada,Robert List,Robert E. Rose,R,D,0.562,0.397
+1978,New Hampshire,Hugh Gallen,Meldrim Thomson,D,R,0.4938,0.4543
+1978,New Mexico,Bruce King,Joe Skeen,D,R,0.5055,0.4945
+1978,New York,Hugh Carey,Perry Duryea,D,R,0.5095000000000001,0.4522
+1978,Ohio,Jim Rhodes,Dick Celeste,R,D,0.4931,0.4764
+1978,Oklahoma,George Nigh,Ron Shotts,D,R,0.5174,0.4721
+1978,Oregon,Victor Atiyeh,Robert Straub,R,D,0.5471,0.4493
+1978,Pennsylvania,Dick Thornburgh,Pete Flaherty,R,D,0.5254,0.4644
+1978,Rhode Island,J. Joseph Garrahy,Lincoln Almond,D,R,0.6279,0.3073
+1978,South Carolina,Richard Riley,Edward Lunn Young,D,R,0.613,0.377
+1978,South Dakota,Bill Janklow,Roger D. McKellips,R,D,0.5660000000000001,0.434
+1978,Tennessee,Lamar Alexander,Jake Butcher,R,D,0.5584,0.4416
+1978,Texas,Bill Clements,John Hill,R,D,0.4996,0.4924
+1978,Vermont,Richard Snelling,Edwin Granai,R,D,0.628,0.341
+1978,Wisconsin,Lee S. Dreyfus,Martin J. Schreiber,R,D,0.5437,0.4489
+1978,Wyoming,Edgar Herschler,John Ostlund,D,R,0.5085999999999999,0.4914
+1979,Kentucky,John Y. Brown Jr.,Louie Nunn,D,R,0.5941,0.4059
+1979,Mississippi,William F. Winter,Gil Carmichael,D,R,0.611,0.389
+1980,Arkansas,Frank D. White,Bill Clinton,R,D,0.5193,0.4807
+1980,Delaware,Pete du Pont,William J. Gordy,R,D,0.7066,0.2854
+1980,Indiana,Robert D. Orr,John A. Hillenbrand II,R,D,0.5771999999999999,0.4192
+1980,Missouri,Kit Bond,Joseph Teasdale,R,D,0.5263,0.4702
+1980,Montana,Ted Schwinden,Jack Ramirez,D,R,0.5537,0.4463
+1980,New Hampshire,Hugh Gallen,Meldrim Thomson,D,R,0.5896,0.4067
+1980,North Carolina,Jim Hunt,I. Beverly Lake,D,R,0.6188,0.3743
+1980,North Dakota,Allen I. Olson,Arthur A. Link,R,D,0.5361,0.4639
+1980,Rhode Island,J. Joseph Garrahy,Buddy Cianci,D,R,0.7371,0.2628999999999999
+1980,Utah,Scott M. Matheson,Bob Wright,D,R,0.5516,0.4443
+1980,Vermont,Richard Snelling,M. Jerome Diamond,R,D,0.5870000000000001,0.366
+1980,Washington,John Spellman,Jim McDermott,R,D,0.5668,0.4332
+1980,West Virginia,Jay Rockefeller,Arch A. Moore Jr.,D,R,0.5415,0.4543999999999999
+1981,New Jersey,Thomas Kean,James Florio,R,D,0.4946,0.4938
+1981,Virginia,Chuck Robb,Marshall Coleman,D,R,0.5356000000000001,0.4644
+1982,Alabama,George Wallace,Emory Folmar,D,R,0.5760000000000001,0.391
+1982,Alaska,Bill Sheffield,Tom Fink,D,R,0.4612,0.3709
+1982,Arizona,Bruce Babbitt,Leo Corbet,D,R,0.625,0.325
+1982,Arkansas,Bill Clinton,Frank D. White,D,R,0.5471,0.4528999999999999
+1982,California,George Deukmejian,Tom Bradley,R,D,0.4928,0.4809
+1982,Colorado,Richard Lamm,John Fuhr,D,R,0.6568999999999999,0.3167
+1982,Connecticut,Bill O'Neill,Lewis Rome,D,R,0.5335,0.4593
+1982,Florida,Bob Graham,Skip Bafalis,D,R,0.647,0.353
+1982,Georgia,Joe Frank Harris,Robert H. Bell,D,R,0.6282,0.3718
+1982,Idaho,John V. Evans,Phil Batt,D,R,0.506,0.494
+1982,Illinois,Jim Thompson,Adlai Stevenson III,R,D,0.4943999999999999,0.493
+1982,Iowa,Terry Branstad,Roxanne Conlin,R,D,0.528,0.465
+1982,Kansas,John W. Carlin,Sam Hardage,D,R,0.532,0.445
+1982,Maine,Joseph Brennan,Charles Cragin,D,R,0.6191,0.3809
+1982,Maryland,Harry Hughes,Robert A. Pascal,D,R,0.6197,0.38
+1982,Massachusetts,Michael Dukakis,John W. Sears,D,R,0.5948,0.3657
+1982,Michigan,James J. Blanchard,Richard Headlee,D,R,0.514,0.451
+1982,Minnesota,Rudy Perpich,"Wheelock Whitney, Jr.",D,R,0.5876,0.3986
+1982,Nebraska,Bob Kerrey,Charles Thone,D,R,0.506,0.493
+1982,Nevada,Richard Bryan,Robert List,D,R,0.5329999999999999,0.4165
+1982,New Hampshire,John H. Sununu,Hugh Gallen,R,D,0.5146999999999999,0.4684
+1982,New Mexico,Toney Anaya,John B. Irick,D,R,0.5297,0.4703
+1982,New York,Mario Cuomo,Lewis Lehrman,D,R,0.5091,0.4747999999999999
+1982,Ohio,Dick Celeste,Bud Brown,D,R,0.5904,0.3885
+1982,Oklahoma,George Nigh,Tom Daxon,D,R,0.6207,0.3762
+1982,Oregon,Victor Atiyeh,Ted Kulongoski,R,D,0.614,0.3592
+1982,Pennsylvania,Dick Thornburgh,Allen Ertel,R,D,0.5084000000000001,0.4810999999999999
+1982,Rhode Island,J. Joseph Garrahy,Vincent Marzullo,D,R,0.733,0.236
+1982,South Carolina,Richard Riley,"W. D. Workman, Jr.",D,R,0.698,0.302
+1982,South Dakota,Bill Janklow,Mike O'Connor,R,D,0.7090000000000001,0.291
+1982,Tennessee,Lamar Alexander,Randy Tyree,R,D,0.5956,0.4044
+1982,Texas,Mark White,Bill Clements,D,R,0.532,0.4594
+1982,Vermont,Richard Snelling,Madeleine Kunin,R,D,0.55,0.44
+1982,Wisconsin,Anthony S. Earl,Terry J. Kohler,D,R,0.5676,0.4194
+1982,Wyoming,Edgar Herschler,Warren A. Morton,D,R,0.6314,0.3686
+1983,Kentucky,Martha Layne Collins,Jim Bunning,D,R,0.545,0.4411
+1983,Louisiana,Edwin Edwards,Dave Treen,D,R,0.6231,0.3639
+1983,Mississippi,William Allain,Leon Bramlett,D,R,0.551,0.3888
+1984,Arkansas,Bill Clinton,Woody Freeman,D,R,0.6255,0.3745
+1984,Delaware,Mike Castle,William T. Quillen,R,D,0.5553,0.4447
+1984,Indiana,Robert D. Orr,Wayne Townsend,R,D,0.522,0.472
+1984,Missouri,John Ashcroft,Ken Rothman,R,D,0.5670000000000001,0.433
+1984,Montana,Ted Schwinden,Pat M. Goodover,D,R,0.7034,0.2641
+1984,New Hampshire,John H. Sununu,Chris Spirou,R,D,0.6686,0.3314
+1984,North Carolina,James G. Martin,Rufus L. Edmisten,R,D,0.5426,0.4540999999999999
+1984,North Dakota,George A. Sinner,Allen I. Olson,D,R,0.5529999999999999,0.447
+1984,Rhode Island,Edward D. DiPrete,Anthony J. Solomon,R,D,0.6001,0.3999
+1984,Utah,Norman H. Bangerter,Wayne Owens,R,D,0.5587,0.4378
+1984,Vermont,Madeleine Kunin,John Easton Jr.,D,R,0.5,0.485
+1984,Washington,Booth Gardner,John Spellman,D,R,0.5331,0.4669
+1984,West Virginia,Arch A. Moore Jr.,Clyde M. See Jr.,R,D,0.5326,0.4674
+1985,New Jersey,Thomas Kean,Peter Shapiro,R,D,0.696,0.293
+1985,Virginia,Gerald Baliles,Wyatt Durrette,D,R,0.552,0.4479999999999999
+1986,Alabama,H. Guy Hunt,Bill Baxley,R,D,0.564,0.436
+1986,Alaska,Steve Cowper,Arliss Sturgulewski,D,R,0.4731,0.4261
+1986,Arizona,Evan Mecham,Carolyn Warner,R,D,0.3967,0.3449
+1986,Arkansas,Bill Clinton,Frank D. White,D,R,0.639,0.361
+1986,California,George Deukmejian,Tom Bradley,R,D,0.6053999999999999,0.3738
+1986,Colorado,Roy Romer,Ted L. Strickland,D,R,0.5820000000000001,0.4103
+1986,Connecticut,Bill O'Neill,Julie Belaga,D,R,0.5793,0.4111
+1986,Florida,Bob Martinez,Steve Pajcic,R,D,0.546,0.4539999999999999
+1986,Georgia,Joe Frank Harris,Guy Davis,D,R,0.7051000000000001,0.2949
+1986,Hawaii,John D. Waiheʻe III,D. G. Anderson,D,R,0.52,0.48
+1986,Idaho,Cecil Andrus,David Leroy,D,R,0.499,0.49
+1986,Iowa,Terry Branstad,Lowell Junkins,R,D,0.519,0.48
+1986,Kansas,Mike Hayden,Thomas Docking,R,D,0.519,0.481
+1986,Maine,John McKernan,James Tierney,R,D,0.3989999999999999,0.302
+1986,Maryland,William Donald Schaefer,Thomas J. Mooney,D,R,0.8237000000000001,0.1762999999999999
+1986,Massachusetts,Michael Dukakis,George Kariotis,D,R,0.6879000000000001,0.3121
+1986,Michigan,James Blanchard,William Lucas,D,R,0.6809999999999999,0.3145
+1986,Minnesota,Rudy Perpich,Cal Ludeman,D,R,0.5611,0.4309
+1986,Nebraska,Kay Orr,Helen Boosalis,R,D,0.529,0.47
+1986,Nevada,Richard Bryan,Patty Cafferata,D,R,0.735,0.255
+1986,New Hampshire,John H. Sununu,Paul McEachern,R,D,0.5372,0.4628
+1986,New Mexico,Garrey Carruthers,Ray Powell,R,D,0.5305,0.4695
+1986,New York,Mario Cuomo,Andrew O'Rourke,D,R,0.6463,0.3177
+1986,Ohio,Dick Celeste,Jim Rhodes,D,R,0.606,0.3937
+1986,Oklahoma,Henry Bellmon,David Walters,R,D,0.4745,0.4454
+1986,Oregon,Neil Goldschmidt,Norma Paulus,D,R,0.5185,0.4785
+1986,Pennsylvania,Bob Casey,Bill Scranton III,D,R,0.5069,0.4834
+1986,Rhode Island,Edward D. DiPrete,Bruce Sundlun,R,D,0.647,0.324
+1986,South Carolina,Carroll Campbell,Michael R. Daniel,R,D,0.51,0.479
+1986,South Dakota,George Mickelson,Lars Herseth,R,D,0.518,0.482
+1986,Tennessee,Ned McWherter,Winfield Dunn,D,R,0.5426,0.4574
+1986,Texas,Bill Clements,Mark White,R,D,0.527,0.4604
+1986,Vermont,Madeleine Kunin,Peter Smith,D,R,0.47,0.382
+1986,Wisconsin,Tommy G. Thompson,Anthony S. Earl,R,D,0.5273,0.4621
+1986,Wyoming,Mike Sullivan,Pete Simpson,D,R,0.5396,0.4604
+1987,Kentucky,Wallace Wilkinson,John Harper,D,R,0.645,0.3490999999999999
+1987,Mississippi,Ray Mabus,Jack Reed,D,R,0.5344,0.4656
+1988,Delaware,Mike Castle,Jacob Kreshtool,R,D,0.7073,0.2923
+1988,Indiana,Evan Bayh,John Mutz,D,R,0.532,0.4679999999999999
+1988,Missouri,John Ashcroft,Betty Hearnes,R,D,0.642,0.348
+1988,Montana,Stan Stephens,Thomas Lee Judge,R,D,0.5193,0.4613
+1988,New Hampshire,Judd Gregg,Paul McEachern,R,D,0.6045,0.3904999999999999
+1988,North Carolina,James G. Martin,Robert B. Jordan,R,D,0.5506,0.4493999999999999
+1988,North Dakota,George A. Sinner,Leon Mallberg,D,R,0.599,0.401
+1988,Rhode Island,Edward D. DiPrete,Bruce Sundlun,R,D,0.508,0.492
+1988,Utah,Norman H. Bangerter,Ted Wilson,R,D,0.4013,0.3840999999999999
+1988,Vermont,Madeleine Kunin,Michael Bernhardt,D,R,0.5529999999999999,0.433
+1988,Washington,Booth Gardner,Bob Williams,D,R,0.6221,0.3779
+1988,West Virginia,Gaston Caperton,Arch A. Moore Jr.,D,R,0.589,0.411
+1989,New Jersey,James Florio,Jim Courter,D,R,0.612,0.372
+1989,Virginia,Douglas Wilder,Marshall Coleman,D,R,0.5013000000000001,0.4976
+1990,Alabama,H. Guy Hunt,Paul Hubbert,R,D,0.521,0.479
+1990,Arkansas,Bill Clinton,Sheffield Nelson,D,R,0.5749,0.4249
+1990,California,Pete Wilson,Dianne Feinstein,R,D,0.4925,0.4578
+1990,Colorado,Roy Romer,John Andrews,D,R,0.6189,0.3543
+1990,Florida,Lawton Chiles,Bob Martinez,D,R,0.5650999999999999,0.4349
+1990,Georgia,Zell Miller,Johnny Isakson,D,R,0.5289,0.4454
+1990,Hawaii,John D. Waiheʻe III,Fred Hemmings,D,R,0.598,0.386
+1990,Idaho,Cecil Andrus,Roger Fairchild,D,R,0.682,0.318
+1990,Illinois,Jim Edgar,Neil Hartigan,R,D,0.5075,0.4817
+1990,Iowa,Terry Branstad,Donald Avenson,R,D,0.606,0.389
+1990,Kansas,Joan Finney,Mike Hayden,D,R,0.486,0.426
+1990,Maine,John McKernan,Joseph Brennan,R,D,0.467,0.441
+1990,Maryland,William Donald Schaefer,William S. Shepard,D,R,0.5976,0.4023
+1990,Massachusetts,Bill Weld,John Silber,R,D,0.5019,0.4694
+1990,Michigan,John Engler,James Blanchard,R,D,0.4976,0.4907
+1990,Minnesota,Arne Carlson,Rudy Perpich,R,D,0.5011,0.4675999999999999
+1990,Nebraska,Ben Nelson,Kay A. Orr,D,R,0.4991,0.4922999999999999
+1990,Nevada,Bob Miller,Jim Gallaway,D,R,0.6481,0.2986
+1990,New Hampshire,Judd Gregg,J. Joseph Grandmaison,R,D,0.6026,0.3455
+1990,New Mexico,Bruce King,Frank Bond,D,R,0.5461,0.4515
+1990,New York,Mario Cuomo,Pierre Rinfret,D,R,0.5317000000000001,0.2135
+1990,Ohio,George Voinovich,Anthony J. Celebrezze Jr.,R,D,0.5573,0.4427
+1990,Oklahoma,David Walters,Bill Price,D,R,0.5740999999999999,0.3265
+1990,Oregon,Barbara Roberts,Dave Frohnmayer,D,R,0.4572,0.3996
+1990,Pennsylvania,Bob Casey,Barbara Hafer,D,R,0.6762999999999999,0.3234
+1990,Rhode Island,Bruce Sundlun,Edward D. DiPrete,D,R,0.742,0.258
+1990,South Carolina,Carroll Campbell,Theo Mitchell,R,D,0.695,0.278
+1990,South Dakota,George Mickelson,Bob Samuelson,R,D,0.589,0.411
+1990,Tennessee,Ned McWherter,Dwight Henry,D,R,0.6083,0.3661
+1990,Texas,Ann Richards,Clayton Williams,D,R,0.4947,0.4692
+1990,Vermont,Richard Snelling,Peter Welch,R,D,0.5181,0.4603
+1990,Wisconsin,Tommy Thompson,Thomas A. Loftus,R,D,0.5815,0.4177
+1990,Wyoming,Mike Sullivan,Mary Mead,D,R,0.6535,0.3465
+1991,Kentucky,Brereton Jones,Larry J. Hopkins,D,R,0.6473,0.3527
+1991,Mississippi,Kirk Fordice,Ray Mabus,R,D,0.5083,0.4759
+1992,Delaware,Tom Carper,B. Gary Scott,D,R,0.6474,0.3275
+1992,Indiana,Evan Bayh,Linley E. Pearson,D,R,0.62,0.369
+1992,Missouri,Mel Carnahan,William L. Webster,D,R,0.5870000000000001,0.413
+1992,Montana,Marc Racicot,Dorothy Bradley,R,D,0.513,0.487
+1992,New Hampshire,Steve Merrill,Deborah Arnie Arnesen,R,D,0.5602,0.3995
+1992,North Carolina,Jim Hunt,Jim Gardner,D,R,0.5272,0.4322999999999999
+1992,North Dakota,Ed Schafer,Nicholas Spaeth,R,D,0.58,0.406
+1992,Rhode Island,Bruce Sundlun,Elizabeth A. Leonard,D,R,0.616,0.3429999999999999
+1992,Vermont,Howard Dean,John McClaughry,D,R,0.7473000000000001,0.2304
+1992,Washington,Mike Lowry,Ken Eikenberry,D,R,0.5216,0.4784
+1992,West Virginia,Gaston Caperton,Cleve Benedict,D,R,0.56,0.366
+1993,New Jersey,Christine Todd Whitman,James Florio,R,D,0.4932999999999999,0.4829
+1993,Virginia,George Allen,Mary Sue Terry,R,D,0.5827,0.4089
+1994,Alabama,Fob James,Jim Folsom Jr.,R,D,0.5033,0.4943
+1994,Alaska,Tony Knowles,Jim Campbell,D,R,0.4108,0.4084
+1994,Arizona,Fife Symington,Eddie Basha,R,D,0.5254,0.4432999999999999
+1994,Arkansas,Jim Guy Tucker,Sheffield Nelson,D,R,0.5984,0.4015999999999999
+1994,California,Pete Wilson,Kathleen Brown,R,D,0.5518,0.4061999999999999
+1994,Colorado,Roy Romer,Bruce D. Benson,D,R,0.555,0.387
+1994,Connecticut,John G. Rowland,Bill Curry,R,D,0.362,0.327
+1994,Florida,Lawton Chiles,Jeb Bush,D,R,0.5075,0.4922999999999999
+1994,Georgia,Zell Miller,Guy Millner,D,R,0.5105,0.4895
+1994,Idaho,Phil Batt,Larry Echo Hawk,R,D,0.523,0.439
+1994,Illinois,Jim Edgar,Dawn Clark Netsch,R,D,0.6386999999999999,0.3444
+1994,Iowa,Terry Branstad,Bonnie Campbell,R,D,0.568,0.416
+1994,Kansas,Bill Graves,Jim Slattery,R,D,0.611,0.389
+1994,Maryland,Parris Glendening,Ellen Sauerbrey,D,R,0.5021,0.4978
+1994,Massachusetts,Bill Weld,Mark Roosevelt,R,D,0.7087,0.2827
+1994,Michigan,John Engler,Howard Wolpe,R,D,0.615,0.385
+1994,Minnesota,Arne Carlson,John Marty,R,D,0.6334000000000001,0.3411999999999999
+1994,Nebraska,Ben Nelson,Gene Spence,D,R,0.73,0.256
+1994,Nevada,Bob Miller,Jim Gibbons,D,R,0.5268,0.4132
+1994,New Hampshire,Steve Merrill,Wayne King,R,D,0.6994,0.2555
+1994,New Mexico,Gary Johnson,Bruce King,R,D,0.4981,0.3992
+1994,New York,George Pataki,Mario Cuomo,R,D,0.4879,0.4545
+1994,Ohio,George Voinovich,Rob Burch,R,D,0.7177,0.2498
+1994,Oklahoma,Frank Keating,Jack Mildren,R,D,0.4690999999999999,0.2964
+1994,Oregon,John Kitzhaber,Denny Smith,D,R,0.5095000000000001,0.4241
+1994,Pennsylvania,Tom Ridge,Mark Singel,R,D,0.4539999999999999,0.3988
+1994,Rhode Island,Lincoln Almond,Myrth York,R,D,0.4736999999999999,0.4354
+1994,South Carolina,David Beasley,Nick Theodore,R,D,0.504,0.479
+1994,South Dakota,Bill Janklow,Jim Beddow,R,D,0.5539999999999999,0.405
+1994,Tennessee,Don Sundquist,Phil Bredesen,R,D,0.5427000000000001,0.4467
+1994,Texas,George W. Bush,Ann Richards,R,D,0.5347999999999999,0.4588
+1994,Vermont,Howard Dean,David F. Kelley,D,R,0.6869,0.19
+1994,Wisconsin,Tommy Thompson,Charles Chvala,R,D,0.6723,0.3087999999999999
+1994,Wyoming,Jim Geringer,Kathy Karpan,R,D,0.5871999999999999,0.4017
+1995,Kentucky,Paul Patton,Larry Forgy,D,R,0.5088,0.4871
+1995,Mississippi,Kirk Fordice,Dick Molpus,R,D,0.5556,0.4443999999999999
+1996,Delaware,Tom Carper,Janet Rzewnicki,D,R,0.695,0.305
+1996,Indiana,Frank O'Bannon,Steve Goldsmith,D,R,0.515,0.4679999999999999
+1996,Missouri,Mel Carnahan,Margaret B. Kelly,D,R,0.5717,0.4043
+1996,Montana,Marc Racicot,Judy Jacobson,R,D,0.792,0.208
+1996,New Hampshire,Jeanne Shaheen,Ovide Lamontagne,D,R,0.5720000000000001,0.395
+1996,North Carolina,Jim Hunt,Robin Hayes,D,R,0.5598,0.4275
+1996,North Dakota,Ed Schafer,Lee Kaldor,R,D,0.662,0.3379999999999999
+1996,Utah,Mike Leavitt,Jim Bradley,R,D,0.7497,0.2330999999999999
+1996,Vermont,Howard Dean,John L. Gropper,D,R,0.7051000000000001,0.2245
+1996,Washington,Gary Locke,Ellen Craswell,D,R,0.5796,0.4204
+1996,West Virginia,Cecil Underwood,Charlotte Pritt,R,D,0.5161,0.4584
+1997,New Jersey,Christine Todd Whitman,Jim McGreevey,R,D,0.4686999999999999,0.4582
+1997,Virginia,Jim Gilmore,Don Beyer,R,D,0.5581,0.4256
+1998,Alabama,Don Siegelman,Fob James,D,R,0.5792,0.4208
+1998,Alaska,Tony Knowles,Robin L. Taylor,D,R,0.5127,0.1826
+1998,Arizona,Jane Dee Hull,Paul Johnson,R,D,0.6095,0.3553
+1998,Arkansas,Mike Huckabee,Bill Bristow,R,D,0.5977,0.3865999999999999
+1998,California,Gray Davis,Dan Lungren,D,R,0.5797,0.3838
+1998,Colorado,Bill Owens,Gail Schoettler,R,D,0.4904,0.4842
+1998,Connecticut,John G. Rowland,Barbara B. Kennelly,R,D,0.629,0.354
+1998,Florida,Jeb Bush,Buddy MacKay,R,D,0.5527000000000001,0.4472
+1998,Georgia,Roy Barnes,Guy Millner,D,R,0.5249,0.4407999999999999
+1998,Hawaii,Ben Cayetano,Linda Lingle,D,R,0.5011,0.4882
+1998,Idaho,Dirk Kempthorne,Robert Huntley,R,D,0.677,0.291
+1998,Illinois,George Ryan,Glenn Poshard,R,D,0.5103,0.4746
+1998,Iowa,Tom Vilsack,Jim Ross Lightfoot,D,R,0.523,0.4650999999999999
+1998,Kansas,Bill Graves,Tom Sawyer,R,D,0.7340000000000001,0.2269999999999999
+1998,Maryland,Parris Glendening,Ellen Sauerbrey,D,R,0.5514,0.4482
+1998,Massachusetts,Paul Cellucci,Scott Harshbarger,R,D,0.5086999999999999,0.4744
+1998,Michigan,John Engler,Geoffrey Fieger,R,D,0.622,0.3779999999999999
+1998,Nebraska,Mike Johanns,Bill Hoppner,R,D,0.539,0.4598
+1998,Nevada,Kenny Guinn,Jan Laverty Jones,R,D,0.5163,0.4204
+1998,New Hampshire,Jeanne Shaheen,Jay Lucas,D,R,0.6609999999999999,0.309
+1998,New Mexico,Gary Johnson,Martin Chávez,R,D,0.5453,0.4547
+1998,New York,George Pataki,Peter Vallone Sr.,R,D,0.5432,0.3315999999999999
+1998,Ohio,Bob Taft,Lee Fisher,R,D,0.5005,0.4468999999999999
+1998,Oklahoma,Frank Keating,Laura Boyd,R,D,0.5786,0.4093
+1998,Oregon,John Kitzhaber,Bill Sizemore,D,R,0.6442,0.3001
+1998,Pennsylvania,Tom Ridge,Ivan Itkin,R,D,0.5742,0.3103
+1998,Rhode Island,Lincoln Almond,Myrth York,R,D,0.5097,0.4213
+1998,South Carolina,Jim Hodges,David Beasley,D,R,0.532,0.452
+1998,South Dakota,Bill Janklow,Bernie Hunhoff,R,D,0.64,0.3289999999999999
+1998,Tennessee,Don Sundquist,John Jay Hooker,R,D,0.6862999999999999,0.2948
+1998,Texas,George W. Bush,Garry Mauro,R,D,0.6823999999999999,0.3118
+1998,Vermont,Howard Dean,Ruth Dwyer,D,R,0.5567,0.4114
+1998,Wisconsin,Tommy Thompson,Ed Garvey,R,D,0.5966,0.387
+1998,Wyoming,Jim Geringer,John Vinich,R,D,0.556,0.4046
+1999,Kentucky,Paul Patton,Peppy Martin,D,R,0.607,0.222
+1999,Louisiana,Mike Foster,Bill Jefferson,R,D,0.6217,0.2953
+2000,Delaware,Ruth Ann Minner,John M. Burris,D,R,0.5924,0.3975
+2000,Indiana,Frank O'Bannon,David McIntosh,D,R,0.5656,0.4168
+2000,Missouri,Bob Holden,Jim Talent,D,R,0.4911999999999999,0.4821
+2000,Montana,Judy Martz,Mark O'Keefe,R,D,0.5097999999999999,0.4708
+2000,New Hampshire,Jeanne Shaheen,Gordon Humphrey,D,R,0.4874,0.4376
+2000,North Carolina,Mike Easley,Richard Vinroot,D,R,0.5202,0.4625999999999999
+2000,North Dakota,John Hoeven,Heidi Heitkamp,R,D,0.5503,0.4497
+2000,Utah,Mike Leavitt,Bill Orton,R,D,0.5577000000000001,0.4227
+2000,Vermont,Howard Dean,Ruth Dwyer,D,R,0.5045000000000001,0.3795
+2000,Washington,Gary Locke,John Carlson,D,R,0.5838,0.3968
+2000,West Virginia,Bob Wise,Cecil Underwood,D,R,0.5012,0.4721
+2001,New Jersey,Jim McGreevey,Bret Schundler,D,R,0.5643,0.4168
+2001,Virginia,Mark Warner,Mark Earley,D,R,0.5216,0.4703
+2002,Alabama,Bob Riley,Don Siegelman,R,D,0.4917,0.4895
+2002,Alaska,Frank Murkowski,Fran Ulmer,R,D,0.5585,0.407
+2002,Arizona,Janet Napolitano,Matt Salmon,D,R,0.4619,0.4522
+2002,Arkansas,Mike Huckabee,Jimmie Lou Fisher,R,D,0.5302,0.4696
+2002,California,Gray Davis,Bill Simon,D,R,0.4725999999999999,0.424
+2002,Colorado,Bill Owens,Rollie Heath,R,D,0.6262,0.3364999999999999
+2002,Connecticut,John G. Rowland,Bill Curry,R,D,0.561,0.439
+2002,Florida,Jeb Bush,Bill McBride,R,D,0.5600999999999999,0.4316
+2002,Georgia,Sonny Perdue,Roy Barnes,R,D,0.5142,0.4625
+2002,Hawaii,Linda Lingle,Mazie Hirono,R,D,0.5156000000000001,0.4700999999999999
+2002,Idaho,Dirk Kempthorne,Jerry Brady,R,D,0.563,0.417
+2002,Illinois,Rod Blagojevich,Jim Ryan,D,R,0.5219,0.4507
+2002,Iowa,Tom Vilsack,Doug Gross,D,R,0.5268999999999999,0.4451
+2002,Kansas,Kathleen Sebelius,Tim Shallenburger,D,R,0.5287,0.4509
+2002,Maine,John Baldacci,Peter Cianchette,D,R,0.4715,0.4147
+2002,Maryland,Bob Ehrlich,Kathleen Kennedy Townsend,R,D,0.5155,0.4768
+2002,Massachusetts,Mitt Romney,Shannon O'Brien,R,D,0.4918,0.444
+2002,Michigan,Jennifer Granholm,Dick Posthumus,D,R,0.5142,0.474
+2002,Minnesota,Tim Pawlenty,Roger Moe,R,D,0.444,0.365
+2002,Nebraska,Mike Johanns,Stormy Dean,R,D,0.6868000000000001,0.2752
+2002,Nevada,Kenny Guinn,Joe Neal,R,D,0.6823999999999999,0.2201
+2002,New Hampshire,Craig Benson,Mark Fernald,R,D,0.5861999999999999,0.3821
+2002,New Mexico,Bill Richardson,John Sanchez,D,R,0.5549000000000001,0.3904999999999999
+2002,New York,George Pataki,H. Carl McCall,R,D,0.494,0.335
+2002,Ohio,Bob Taft,Tim Hagan,R,D,0.5776,0.3831
+2002,Oklahoma,Brad Henry,Steve Largent,D,R,0.4327,0.4261
+2002,Oregon,Ted Kulongoski,Kevin Mannix,D,R,0.4903,0.4615999999999999
+2002,Pennsylvania,Ed Rendell,Mike Fisher,D,R,0.5341,0.4437
+2002,Rhode Island,Donald Carcieri,Myrth York,R,D,0.5476,0.4524
+2002,South Carolina,Mark Sanford,Jim Hodges,R,D,0.5285,0.4705
+2002,South Dakota,Mike Rounds,Jim Abbott,R,D,0.568,0.419
+2002,Tennessee,Phil Bredesen,Van Hilleary,D,R,0.5065,0.4759
+2002,Texas,Rick Perry,Tony Sanchez,R,D,0.5781000000000001,0.3996
+2002,Vermont,Jim Douglas,Doug Racine,R,D,0.4493999999999999,0.4239
+2002,Wisconsin,Jim Doyle,Scott McCallum,D,R,0.4509,0.4139
+2002,Wyoming,Dave Freudenthal,Eli Bebout,D,R,0.4996,0.4792
+2003,Kentucky,Ernie Fletcher,Ben Chandler,R,D,0.5504,0.4496
+2003,Mississippi,Haley Barbour,Ronnie Musgrove,R,D,0.5259,0.4581
+2004,Delaware,Ruth Ann Minner,Bill Lee,D,R,0.5086999999999999,0.4579
+2004,Indiana,Mitch Daniels,Joe Kernan,R,D,0.5321,0.4549
+2004,Missouri,Matt Blunt,Claire McCaskill,R,D,0.5083,0.4785
+2004,Montana,Brian Schweitzer,Bob Brown,D,R,0.5044,0.4602
+2004,New Hampshire,John Lynch,Craig Benson,D,R,0.5102,0.4886999999999999
+2004,North Carolina,Mike Easley,Patrick Ballantine,D,R,0.5562,0.4288
+2004,North Dakota,John Hoeven,Joe Satrom,R,D,0.7126,0.2739
+2004,Utah,Jon Huntsman Jr.,Scott Matheson Jr.,R,D,0.5774,0.4135
+2004,Vermont,Jim Douglas,Peter Clavelle,R,D,0.5870000000000001,0.3792999999999999
+2004,Washington,Christine Gregoire,Dino Rossi,D,R,0.48873,0.48868
+2004,West Virginia,Joe Manchin,Monty Warner,D,R,0.6351,0.34
+2005,New Jersey,Jon Corzine,Doug Forrester,D,R,0.5347,0.4302
+2005,Virginia,Tim Kaine,Jerry Kilgore,D,R,0.5172,0.4599
+2006,Alabama,Bob Riley,Lucy Baxley,R,D,0.5745,0.4157
+2006,Alaska,Sarah Palin,Tony Knowles,R,D,0.4833,0.4097
+2006,Arizona,Janet Napolitano,Len Munsil,D,R,0.6258,0.3544
+2006,Arkansas,Mike Beebe,Asa Hutchinson,D,R,0.5561,0.4067
+2006,California,Arnold Schwarzenegger,Phil Angelides,R,D,0.5588000000000001,0.3890999999999999
+2006,Colorado,Bill Ritter,Bob Beauprez,D,R,0.5699000000000001,0.4017
+2006,Connecticut,Jodi Rell,John DeStefano Jr.,R,D,0.632,0.355
+2006,Florida,Charlie Crist,Jim Davis,R,D,0.522,0.451
+2006,Georgia,Sonny Perdue,Mark Taylor,R,D,0.5795,0.3822
+2006,Hawaii,Linda Lingle,Randy Iwase,R,D,0.6253,0.3535
+2006,Idaho,Butch Otter,Jerry Brady,R,D,0.5267000000000001,0.4411
+2006,Illinois,Rod Blagojevich,Judy Baar Topinka,D,R,0.4979,0.3926
+2006,Iowa,Chet Culver,Jim Nussle,D,R,0.5402,0.4438
+2006,Kansas,Kathleen Sebelius,Jim Barnett,D,R,0.579,0.4044
+2006,Maine,John Baldacci,Chandler Woodcock,D,R,0.3811,0.3021
+2006,Maryland,Martin O'Malley,Bob Ehrlich,D,R,0.5268999999999999,0.4615999999999999
+2006,Massachusetts,Deval Patrick,Kerry Healey,D,R,0.5503,0.3495
+2006,Michigan,Jennifer Granholm,Dick DeVos,D,R,0.5636,0.423
+2006,Minnesota,Tim Pawlenty,Mike Hatch,R,D,0.4669,0.4573
+2006,Nebraska,Dave Heineman,David Hahn,R,D,0.7340000000000001,0.2446
+2006,Nevada,Jim Gibbons,Dina Titus,R,D,0.4793,0.4392
+2006,New Hampshire,John Lynch,Jim Coburn,D,R,0.7401000000000001,0.2583
+2006,New Mexico,Bill Richardson,John Dendahl,D,R,0.6881999999999999,0.3118
+2006,New York,Eliot Spitzer,John Faso,D,R,0.657,0.2712
+2006,Ohio,Ted Strickland,Ken Blackwell,D,R,0.6053999999999999,0.3665
+2006,Oklahoma,Brad Henry,Ernest Istook,D,R,0.665,0.335
+2006,Oregon,Ted Kulongoski,Ron Saxton,D,R,0.5073,0.4275
+2006,Pennsylvania,Ed Rendell,Lynn Swann,D,R,0.6036,0.3964
+2006,Rhode Island,Donald Carcieri,Charles Fogarty,R,D,0.5101,0.4899
+2006,South Carolina,Mark Sanford,Tommy Moore,R,D,0.5512,0.4478999999999999
+2006,South Dakota,Mike Rounds,Jack Billion,R,D,0.6169,0.3613
+2006,Tennessee,Phil Bredesen,Jim Bryson,D,R,0.6859999999999999,0.2974
+2006,Texas,Rick Perry,Chris Bell,R,D,0.3903,0.2979
+2006,Vermont,Jim Douglas,Scudder Parker,R,D,0.5636,0.4115999999999999
+2006,Wisconsin,Jim Doyle,Mark Green,D,R,0.527,0.4531
+2006,Wyoming,Dave Freudenthal,Ray Hunkins,D,R,0.6999,0.3001
+2007,Kentucky,Steve Beshear,Ernie Fletcher,D,R,0.5871,0.4129
+2007,Louisiana,Bobby Jindal,Walter Boasso,R,D,0.5390999999999999,0.1744
+2007,Mississippi,Haley Barbour,John Arthur Eaves Jr.,R,D,0.579,0.421
+2008,Delaware,Jack Markell,Bill Lee,D,R,0.6751999999999999,0.3204999999999999
+2008,Indiana,Mitch Daniels,Jill Long Thompson,R,D,0.5784,0.4004
+2008,Missouri,Jay Nixon,Kenny Hulshof,D,R,0.584,0.3949
+2008,Montana,Brian Schweitzer,Roy Brown,D,R,0.6547,0.3252
+2008,New Hampshire,John Lynch,Joseph Kenney,D,R,0.7015,0.2761
+2008,North Carolina,Bev Perdue,Pat McCrory,D,R,0.5027,0.4688
+2008,North Dakota,John Hoeven,Tim Mathern,R,D,0.7444,0.2353
+2008,Utah,Jon Huntsman Jr.,Bob Springmeyer,R,D,0.7763,0.1972
+2008,Washington,Christine Gregoire,Dino Rossi,D,R,0.5324,0.4675999999999999
+2008,West Virginia,Joe Manchin,Russ Weeks,D,R,0.6981,0.2573
+2009,New Jersey,Chris Christie,Jon Corzine,R,D,0.4846,0.4488
+2009,Virginia,Bob McDonnell,Creigh Deeds,R,D,0.5861,0.4125
+2010,Alabama,Robert J. Bentley,Ron Sparks,R,D,0.5758,0.4186999999999999
+2010,Alaska,Sean Parnell,Ethan Berkowitz,R,D,0.5906,0.3767
+2010,Arizona,Jan Brewer,Terry Goddard,R,D,0.5433,0.4243
+2010,Arkansas,Mike Beebe,Jim Keet,D,R,0.6442,0.3363
+2010,California,Jerry Brown,Meg Whitman,D,R,0.5377000000000001,0.4088
+2010,Connecticut,Dannel Malloy,Thomas C. Foley,D,R,0.4951,0.4895
+2010,Florida,Rick Scott,Alex Sink,R,D,0.4886999999999999,0.4772
+2010,Georgia,Nathan Deal,Roy Barnes,R,D,0.5302,0.4296999999999999
+2010,Hawaii,Neil Abercrombie,Duke Aiona,D,R,0.5821999999999999,0.4111999999999999
+2010,Idaho,Butch Otter,Keith G. Allred,R,D,0.5911,0.3285
+2010,Illinois,Pat Quinn,Bill Brady,D,R,0.4679,0.4594
+2010,Iowa,Terry Branstad,Chet Culver,R,D,0.5281,0.4321
+2010,Kansas,Sam Brownback,Tom Holland,R,D,0.6328,0.3221
+2010,Maryland,Martin O'Malley,Bob Ehrlich,D,R,0.5624,0.4179
+2010,Massachusetts,Deval Patrick,Charlie Baker,D,R,0.4842,0.42
+2010,Michigan,Rick Snyder,Virg Bernero,R,D,0.5811,0.3989999999999999
+2010,Minnesota,Mark Dayton,Tom Emmer,D,R,0.4363,0.4321
+2010,Nebraska,Dave Heineman,Mike Meister,R,D,0.7390000000000001,0.261
+2010,Nevada,Brian Sandoval,Rory Reid,R,D,0.5336,0.4160999999999999
+2010,New Hampshire,John Lynch,John Stephen,D,R,0.5263,0.4503
+2010,New Mexico,Susana Martinez,Diane Denish,R,D,0.5329,0.4654999999999999
+2010,New York,Andrew Cuomo,Carl Paladino,D,R,0.6305,0.3353
+2010,Ohio,John Kasich,Ted Strickland,R,D,0.4904,0.4704
+2010,Oklahoma,Mary Fallin,Jari Askins,R,D,0.6045,0.3954999999999999
+2010,Oregon,John Kitzhaber,Chris Dudley,D,R,0.4929,0.4775999999999999
+2010,Pennsylvania,Tom Corbett,Dan Onorato,R,D,0.5449,0.4551
+2010,South Carolina,Nikki Haley,Vincent Sheheen,R,D,0.5136999999999999,0.4690999999999999
+2010,South Dakota,Dennis Daugaard,Scott Heidepriem,R,D,0.6151,0.3849
+2010,Tennessee,Bill Haslam,Mike McWherter,R,D,0.6503,0.3308
+2010,Texas,Rick Perry,Bill White,R,D,0.5497,0.423
+2010,Utah,Gary Herbert,Peter Corroon,R,D,0.6406999999999999,0.319
+2010,Vermont,Peter Shumlin,Brian Dubie,D,R,0.4947999999999999,0.4769
+2010,Wisconsin,Scott Walker,Tom Barrett,R,D,0.5225,0.4648
+2010,Wyoming,Matt Mead,Leslie Petersen,R,D,0.6568,0.2294
+2011,Kentucky,Steve Beshear,David L. Williams,D,R,0.5572,0.3529
+2011,Louisiana,Bobby Jindal,Tara Hollis,R,D,0.6579999999999999,0.1788
+2011,Mississippi,Phil Bryant,Johnny DuPree,R,D,0.6098,0.3902
+2011,West Virginia,Earl Ray Tomblin,Bill Maloney,D,R,0.4955,0.4705
+2012,Delaware,Jack Markell,Jeff Cragg,D,R,0.6934,0.2859
+2012,Indiana,Mike Pence,John R. Gregg,R,D,0.4949,0.4656
+2012,Missouri,Jay Nixon,Dave Spence,D,R,0.5477000000000001,0.4253
+2012,Montana,Steve Bullock,Rick Hill,D,R,0.489,0.4734
+2012,New Hampshire,Maggie Hassan,Ovide Lamontagne,D,R,0.5461,0.4253
+2012,North Carolina,Pat McCrory,Walter H. Dalton,R,D,0.5462,0.4322999999999999
+2012,North Dakota,Jack Dalrymple,Ryan Taylor,R,D,0.631,0.3431
+2012,Utah,Gary Herbert,Peter Cooke,R,D,0.6840999999999999,0.2758
+2012,Vermont,Peter Shumlin,Randy Brock,D,R,0.578,0.3754999999999999
+2012,Washington,Jay Inslee,Rob McKenna,D,R,0.5154,0.4846
+2012,West Virginia,Earl Ray Tomblin,Bill Maloney,D,R,0.5049,0.4564999999999999
+2013,New Jersey,Chris Christie,Barbara Buono,R,D,0.603,0.3818999999999999
+2013,Virginia,Terry McAuliffe,Ken Cuccinelli,D,R,0.4775,0.4523
+2014,Alabama,Robert J. Bentley,Parker Griffith,R,D,0.6356,0.3624
+2014,Arizona,Doug Ducey,Fred DuVal,R,D,0.5344,0.4161999999999999
+2014,Arkansas,Asa Hutchinson,Mike Ross,R,D,0.5544,0.4149
+2014,California,Jerry Brown,Neel Kashkari,D,R,0.5997,0.4003
+2014,Colorado,John Hickenlooper,Bob Beauprez,D,R,0.493,0.4595
+2014,Connecticut,Dannel Malloy,Thomas C. Foley,D,R,0.5073,0.4816
+2014,Florida,Rick Scott,Charlie Crist,R,D,0.4814,0.4707
+2014,Georgia,Nathan Deal,Jason Carter,R,D,0.5274,0.4488
+2014,Hawaii,David Ige,Duke Aiona,D,R,0.4945,0.3707999999999999
+2014,Idaho,Butch Otter,A.J. Balukoff,R,D,0.5352,0.3854999999999999
+2014,Illinois,Bruce Rauner,Pat Quinn,R,D,0.5027,0.4635
+2014,Iowa,Terry Branstad,Jack Hatch,R,D,0.5899,0.3727
+2014,Kansas,Sam Brownback,Paul Davis,R,D,0.4982,0.4613
+2014,Maine,Paul LePage,Mike Michaud,R,D,0.4818,0.4337
+2014,Maryland,Larry Hogan,Anthony Brown,R,D,0.5103,0.4725
+2014,Massachusetts,Charlie Baker,Martha Coakley,R,D,0.484,0.4654
+2014,Michigan,Rick Snyder,Mark Schauer,R,D,0.5092,0.4686
+2014,Minnesota,Mark Dayton,Jeff Johnson,D,R,0.5007,0.4451
+2014,Nebraska,Pete Ricketts,Chuck Hassebrook,R,D,0.5715,0.3923
+2014,Nevada,Brian Sandoval,Bob Goodman,R,D,0.7058,0.2387999999999999
+2014,New Hampshire,Maggie Hassan,Walt Havenstein,D,R,0.5236999999999999,0.4743
+2014,New Mexico,Susana Martinez,Gary King,R,D,0.5722,0.4278
+2014,New York,Andrew Cuomo,Rob Astorino,D,R,0.5428000000000001,0.4031
+2014,Ohio,John Kasich,Ed FitzGerald,R,D,0.6364,0.3303
+2014,Oklahoma,Mary Fallin,Joe Dorman,R,D,0.5581,0.4100999999999999
+2014,Oregon,John Kitzhaber,Dennis Richardson,D,R,0.4989,0.4413
+2014,Pennsylvania,Tom Wolf,Tom Corbett,D,R,0.5493,0.4507
+2014,Rhode Island,Gina Raimondo,Allan Fung,D,R,0.407,0.3624
+2014,South Carolina,Nikki Haley,Vincent Sheheen,R,D,0.5589999999999999,0.4142
+2014,South Dakota,Dennis Daugaard,Susan Wismer,R,D,0.7047,0.2542999999999999
+2014,Tennessee,Bill Haslam,Charles Brown,R,D,0.7031000000000001,0.2284
+2014,Texas,Greg Abbott,Wendy Davis,R,D,0.5927,0.389
+2014,Vermont,Peter Shumlin,Scott Milne,D,R,0.4636,0.451
+2014,Wisconsin,Scott Walker,Mary Burke,R,D,0.5226,0.4659
+2014,Wyoming,Matt Mead,Pete Gosar,R,D,0.5939,0.2725
+2015,Kentucky,Matt Bevin,Jack Conway,R,D,0.5252,0.4382
+2015,Mississippi,Phil Bryant,Robert Gray,R,D,0.6624,0.3238
+2016,Delaware,John Carney,Colin Bonini,D,R,0.5834,0.3918
+2016,Indiana,Eric Holcomb,John R. Gregg,R,D,0.5138,0.4542
+2016,Missouri,Eric Greitens,Chris Koster,R,D,0.5114,0.4557
+2016,Montana,Steve Bullock,Greg Gianforte,D,R,0.5025,0.4635
+2016,New Hampshire,Chris Sununu,Colin Van Ostern,R,D,0.4884,0.4657
+2016,North Carolina,Roy Cooper,Pat McCrory,D,R,0.4901613537977174,0.487979870151097
+2016,North Dakota,Doug Burgum,Marvin Nelson,R,D,0.7652,0.1939
+2016,Oregon,Kate Brown,Bud Pierce,D,R,0.5062,0.4345
+2016,Utah,Gary Herbert,Mike Weinholtz,R,D,0.6674,0.2874
+2016,Vermont,Phil Scott,Sue Minter,R,D,0.529,0.4417
+2016,Washington,Jay Inslee,Bill Bryant,D,R,0.5425,0.4549
+2016,West Virginia,Jim Justice,Bill Cole,D,R,0.4909,0.423
+2017,New Jersey,Phil Murphy,Kim Guadagno,D,R,0.5603,0.4189
+2017,Virginia,Ralph Northam,Ed Gillespie,D,R,0.539,0.4497
+2018,Alabama,Kay Ivey,Walt Maddox,R,D,0.5946,0.4039
+2018,Alaska,Mike Dunleavy,Mark Begich,R,D,0.5144,0.4440999999999999
+2018,Arizona,Doug Ducey,David Garcia,R,D,0.56,0.4184
+2018,Arkansas,Asa Hutchinson,Jared Henderson,R,D,0.6533,0.3177
+2018,California,Gavin Newsom,John H. Cox,D,R,0.6195,0.3804999999999999
+2018,Colorado,Jared Polis,Walker Stapleton,D,R,0.5342,0.428
+2018,Connecticut,Ned Lamont,Bob Stefanowski,D,R,0.4936999999999999,0.4621
+2018,Florida,Ron DeSantis,Andrew Gillum,R,D,0.4959,0.4919
+2018,Georgia,Brian Kemp,Stacey Abrams,R,D,0.5022,0.4882999999999999
+2018,Hawaii,David Ige,Andria Tupola,D,R,0.6267,0.337
+2018,Idaho,Brad Little,Paulette Jordan,R,D,0.5976,0.3818999999999999
+2018,Illinois,JB Pritzker,Bruce Rauner,D,R,0.5453,0.3883
+2018,Iowa,Kim Reynolds,Fred Hubbell,R,D,0.5025999999999999,0.4753
+2018,Kansas,Laura Kelly,Kris Kobach,D,R,0.4800999999999999,0.4297999999999999
+2018,Maine,Janet Mills,Shawn Moody,D,R,0.5089,0.4318
+2018,Maryland,Larry Hogan,Ben Jealous,R,D,0.5535,0.4351
+2018,Massachusetts,Charlie Baker,Jay Gonzalez,R,D,0.6659,0.3312
+2018,Michigan,Gretchen Whitmer,Bill Schuette,D,R,0.5331,0.4375
+2018,Minnesota,Tim Walz,Jeff Johnson,D,R,0.5384,0.4243
+2018,Nebraska,Pete Ricketts,Bob Krist,R,D,0.59,0.41
+2018,Nevada,Steve Sisolak,Adam Laxalt,D,R,0.4939,0.4531
+2018,New Hampshire,Chris Sununu,Molly Kelly,R,D,0.5278,0.4574
+2018,New Mexico,Michelle Lujan Grisham,Steve Pearce,D,R,0.5720000000000001,0.428
+2018,New York,Andrew Cuomo,Marc Molinaro,D,R,0.5954999999999999,0.3616
+2018,Ohio,Mike DeWine,Richard Cordray,R,D,0.504,0.4667
+2018,Oklahoma,Kevin Stitt,Drew Edmondson,R,D,0.5433,0.4222999999999999
+2018,Oregon,Kate Brown,Knute Buehler,D,R,0.5005,0.4365
+2018,Pennsylvania,Tom Wolf,Scott Wagner,D,R,0.5777,0.407
+2018,Rhode Island,Gina Raimondo,Allan Fung,D,R,0.5264,0.3718
+2018,South Carolina,Henry McMaster,James Smith,R,D,0.5396,0.4592
+2018,South Dakota,Kristi Noem,Billie Sutton,R,D,0.5097,0.476
+2018,Tennessee,Bill Lee,Karl Dean,R,D,0.5956,0.3854999999999999
+2018,Texas,Greg Abbott,Lupe Valdez,R,D,0.5581,0.4251
+2018,Vermont,Phil Scott,Christine Hallquist,R,D,0.5519,0.4025
+2018,Wisconsin,Tony Evers,Scott Walker,D,R,0.4954,0.4844
+2018,Wyoming,Mark Gordon,Mary Throne,R,D,0.6712,0.2754
