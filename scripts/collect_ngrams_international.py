@@ -84,12 +84,83 @@ AUS_ELECTIONS = [
     (2019, 'Scott Morrison',   'Bill Shorten',    'Liberal', 'Labor',   51.5, 48.5),
 ]
 
+# ── Canadian Federal Elections ─────────────────────────────────────────────────
+# winner = whoever became PM (largest party); the two figures are always the
+# Liberal vs Progressive-Conservative/Conservative leaders, the only two parties
+# that form government. vote_pct = that party's national popular vote share (%).
+# The 1993/1997/2000 elections are EXCLUDED: the PC party collapsed and the main
+# opposition was Bloc Québécois / Reform / Canadian Alliance, so there is no clean
+# Liberal-vs-Conservative two-leader contest (documented exclusion). 2011 excluded
+# (NDP, not the Liberals, were the Official Opposition).
+# NOTE: vote percentages are from standard Elections Canada / Wikipedia tallies —
+# VERIFY before publishing. Winners/leaders confirmed via Wikipedia.
+CANADA_ELECTIONS = [
+    (1945, 'Mackenzie King',  'John Bracken',     'Liberal',      'PC',           39.8, 27.6),
+    (1949, 'Louis St. Laurent','George Drew',     'Liberal',      'PC',           49.2, 29.7),
+    (1953, 'Louis St. Laurent','George Drew',     'Liberal',      'PC',           48.8, 31.0),
+    (1957, 'John Diefenbaker','Louis St. Laurent','PC',           'Liberal',      38.9, 40.9),  # *PC govt, lower vote
+    (1958, 'John Diefenbaker','Lester Pearson',   'PC',           'Liberal',      53.7, 33.5),
+    (1962, 'John Diefenbaker','Lester Pearson',   'PC',           'Liberal',      37.2, 37.2),
+    (1963, 'Lester Pearson',  'John Diefenbaker', 'Liberal',      'PC',           41.5, 32.7),
+    (1965, 'Lester Pearson',  'John Diefenbaker', 'Liberal',      'PC',           40.2, 32.4),
+    (1968, 'Pierre Trudeau',  'Robert Stanfield', 'Liberal',      'PC',           45.4, 31.4),
+    (1972, 'Pierre Trudeau',  'Robert Stanfield', 'Liberal',      'PC',           38.4, 35.0),
+    (1974, 'Pierre Trudeau',  'Robert Stanfield', 'Liberal',      'PC',           43.2, 35.4),
+    (1979, 'Joe Clark',       'Pierre Trudeau',   'PC',           'Liberal',      35.9, 40.1),  # *PC govt, lower vote
+    (1980, 'Pierre Trudeau',  'Joe Clark',        'Liberal',      'PC',           44.3, 32.5),
+    (1984, 'Brian Mulroney',  'John Turner',      'PC',           'Liberal',      50.0, 28.0),
+    (1988, 'Brian Mulroney',  'John Turner',      'PC',           'Liberal',      43.0, 31.9),
+    (2004, 'Paul Martin',     'Stephen Harper',   'Liberal',      'Conservative', 36.7, 29.6),
+    (2006, 'Stephen Harper',  'Paul Martin',      'Conservative', 'Liberal',      36.3, 30.2),
+    (2008, 'Stephen Harper',  'Stephane Dion',    'Conservative', 'Liberal',      37.7, 26.3),
+    (2015, 'Justin Trudeau',  'Stephen Harper',   'Liberal',      'Conservative', 39.5, 31.9),
+    (2019, 'Justin Trudeau',  'Andrew Scheer',    'Liberal',      'Conservative', 33.1, 34.3),  # *Lib govt, lower vote
+]
+
+# ── New Zealand General Elections ──────────────────────────────────────────────
+# winner = PM after the election; the two figures are the Labour vs National
+# leaders. vote_pct = party vote share (%) (party vote from 1996 under MMP).
+# NOTE: vote percentages from standard tallies — VERIFY before publishing.
+# Many recent NZ leaders are sparse in the (US/UK-dominated) English book corpus,
+# so expect heavy attrition to the usable subset.
+NZ_ELECTIONS = [
+    (1946, 'Peter Fraser',    'Sidney Holland',  'Labour',   'National', 51.3, 48.4),
+    (1949, 'Sidney Holland',  'Peter Fraser',    'National', 'Labour',   51.9, 47.2),
+    (1951, 'Sidney Holland',  'Walter Nash',     'National', 'Labour',   54.0, 45.8),
+    (1954, 'Sidney Holland',  'Walter Nash',     'National', 'Labour',   44.3, 44.1),
+    (1957, 'Walter Nash',     'Keith Holyoake',  'Labour',   'National', 48.3, 44.2),
+    (1960, 'Keith Holyoake',  'Walter Nash',     'National', 'Labour',   47.6, 43.4),
+    (1963, 'Keith Holyoake',  'Arnold Nordmeyer','National', 'Labour',   47.1, 43.7),
+    (1966, 'Keith Holyoake',  'Norman Kirk',     'National', 'Labour',   43.6, 41.4),
+    (1969, 'Keith Holyoake',  'Norman Kirk',     'National', 'Labour',   45.2, 44.2),
+    (1972, 'Norman Kirk',     'Jack Marshall',   'Labour',   'National', 48.4, 41.5),
+    (1975, 'Robert Muldoon',  'Bill Rowling',    'National', 'Labour',   47.6, 39.6),
+    (1978, 'Robert Muldoon',  'Bill Rowling',    'National', 'Labour',   39.8, 40.4),  # *Nat govt, lower vote
+    (1981, 'Robert Muldoon',  'Bill Rowling',    'National', 'Labour',   38.8, 39.0),  # *Nat govt, lower vote
+    (1984, 'David Lange',     'Robert Muldoon',  'Labour',   'National', 43.0, 35.9),
+    (1987, 'David Lange',     'Jim Bolger',      'Labour',   'National', 48.0, 44.0),
+    (1990, 'Jim Bolger',      'Mike Moore',      'National', 'Labour',   47.8, 35.1),
+    (1993, 'Jim Bolger',      'Mike Moore',      'National', 'Labour',   35.1, 34.7),
+    (1999, 'Helen Clark',     'Jenny Shipley',   'Labour',   'National', 38.7, 30.5),
+    (2002, 'Helen Clark',     'Bill English',    'Labour',   'National', 41.3, 20.9),
+    (2005, 'Helen Clark',     'Don Brash',       'Labour',   'National', 41.1, 39.1),
+    (2008, 'John Key',        'Helen Clark',     'National', 'Labour',   44.9, 34.0),
+    (2011, 'John Key',        'Phil Goff',       'National', 'Labour',   47.3, 27.5),
+    (2014, 'John Key',        'David Cunliffe',  'National', 'Labour',   47.0, 25.1),
+]
+
 
 def ngrams_pair(term1, term2, year):
-    year_start = max(1960, year - 1)
-    year_end   = min(2019, year)
     if year > 2019:
         return None, None
+    # 2-year window ending on the election year. NEVER floor year_start at 1960:
+    # pre-1960 elections would make year_start > year_end (an invalid range), and
+    # the Ngrams API then returns an unrelated decade-long series — silently
+    # mis-measuring every pre-1960 election. The en-2019 corpus covers back to
+    # the 1500s, so year-1 is always valid.
+    year_start = year - 1
+    year_end   = min(2019, year)
+    expected   = year_end - year_start + 1
 
     params = {
         'content': f'{term1},{term2}',
@@ -111,7 +182,16 @@ def ngrams_pair(term1, term2, year):
     else:
         return None, None
 
-    freqs = {s['ngram']: sum(s['timeseries']) for s in data}
+    # Guard against the API returning a mismatched-length series (the quirk that
+    # caused the pre-1960 bug): only sum series of the expected window length.
+    freqs = {}
+    for s in data:
+        ts = s['timeseries']
+        if len(ts) != expected:
+            raise ValueError(
+                f'Ngrams returned {len(ts)} pts for {s["ngram"]!r} '
+                f'(window {year_start}-{year_end} expects {expected}).')
+        freqs[s['ngram']] = sum(ts)
     return freqs.get(term1, 0.0), freqs.get(term2, 0.0)
 
 
@@ -167,4 +247,8 @@ if __name__ == '__main__':
     collect(UK_ELECTIONS, 'UK', 'uk')
     print('\n=== Australian Federal Elections ===')
     collect(AUS_ELECTIONS, 'Australia', 'australia')
+    print('\n=== Canadian Federal Elections ===')
+    collect(CANADA_ELECTIONS, 'Canada', 'canada')
+    print('\n=== New Zealand General Elections ===')
+    collect(NZ_ELECTIONS, 'New Zealand', 'new_zealand')
     print('\nDone.')

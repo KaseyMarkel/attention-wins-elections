@@ -877,62 +877,72 @@ save(fig, 'figures/figS2_window_sensitivity.png')
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# INTERNATIONAL FIGURES (Google Ngrams — UK + Australia)
+# INTERNATIONAL FIGURES (Google Ngrams — UK, Australia, Canada, New Zealand)
 # ══════════════════════════════════════════════════════════════════════════════
 
 uk_ng  = pd.read_csv('data/raw/ngrams/uk_mention_shares.csv')
 aus_ng = pd.read_csv('data/raw/ngrams/australia_mention_shares.csv')
+can_ng = pd.read_csv('data/raw/ngrams/canada_mention_shares.csv')
+nz_ng  = pd.read_csv('data/raw/ngrams/new_zealand_mention_shares.csv')
 
-# ── Figure I1: H1 win rate — UK + Australia ───────────────────────────────────
+# (display name, dataframe, accent colour, span)
 INTL = [
-    ('UK General Elections',   uk_ng,  '#8B0000'),
-    ('Australian Federal',     aus_ng, '#00614A'),
+    ('United Kingdom',  uk_ng,  '#8B0000', '1945–2019'),
+    ('Australia',       aus_ng, '#00614A', '1949–2019'),
+    ('Canada',          can_ng, '#C8102E', '1945–2019'),
+    ('New Zealand',     nz_ng,  '#1f3a93', '1946–2014'),
 ]
+GRID_RC = [(1, 1), (1, 2), (2, 1), (2, 2)]
 
-fig = make_subplots(rows=1, cols=2,
-    subplot_titles=[f'({chr(65+i)}) {n} (n={len(d)})' for i, (n, d, _) in enumerate(INTL)],
-    horizontal_spacing=0.14)
+# Pooled H1 across all four countries
+pool_k = sum(int(d['attention_leader_won'].sum()) for _, d, _, _ in INTL)
+pool_n = sum(len(d) for _, d, _, _ in INTL)
+pool_p = binomtest(pool_k, pool_n, 0.5, alternative='two-sided').pvalue
+pool_p_s = 'p < 0.001' if pool_p < 0.001 else f'p = {pool_p:.3f}'
 
-for ci, (country, df, color) in enumerate(INTL, 1):
+# ── Figure I1: H1 win rate — four countries (2×2) ─────────────────────────────
+fig = make_subplots(rows=2, cols=2,
+    subplot_titles=[f'{n} (n={len(d)})' for n, d, _, _ in INTL],
+    horizontal_spacing=0.13, vertical_spacing=0.16)
+
+for (country, df, color, span), (rr, cc) in zip(INTL, GRID_RC):
     k, n, rate, lo, hi, pval = h1_stats(df)
-    err_lo = rate - lo
-    err_hi = hi - rate
+    err_lo, err_hi = rate - lo, hi - rate
     fig.add_trace(go.Bar(
         x=[country], y=[rate],
         error_y=dict(type='data', array=[err_hi], arrayminus=[err_lo], thickness=2, width=10),
-        marker_color=color, showlegend=False,
+        marker_color=color, showlegend=False, width=0.5,
         hovertemplate=f'{rate:.0%}<br>n={n}<br>p={pval:.3f}<extra></extra>',
-    ), row=1, col=ci)
+    ), row=rr, col=cc)
     ps = 'p < 0.001' if pval < 0.001 else f'p = {pval:.3f}'
-    fig.add_annotation(x=country, y=rate + err_hi + 0.04,
-        text=f'<b>{rate:.0%}</b><br><span style="font-size:10px">{ps}</span>',
+    fig.add_annotation(x=country, y=rate + err_hi + 0.05,
+        text=f'<b>{rate:.0%}</b> · <span style="font-size:10px">{ps}</span>',
         showarrow=False, font=dict(size=12, color=color),
-        yanchor='bottom', xanchor='center', row=1, col=ci)
-    fig.add_hline(y=0.5, line_dash='dot', line_color='#999', line_width=1.5, row=1, col=ci)
-    fig.update_yaxes(tickformat='.0%', range=[0, 1.1], title_text='Attention leader win rate',
-                     row=1, col=ci)
+        yanchor='bottom', xanchor='center', row=rr, col=cc)
+    fig.add_hline(y=0.5, line_dash='dot', line_color='#999', line_width=1.5, row=rr, col=cc)
+    fig.update_yaxes(tickformat='.0%', range=[0, 1.18], title_text='Win rate', row=rr, col=cc)
+    fig.update_xaxes(showticklabels=False, row=rr, col=cc)
 
 style(fig, 'Figure I1. International replication: does the attention leader win?',
-      'Google Ngrams · UK 1945–2019 · Australia 1949–2019',
-      w=900, h=520)
+      f'Google Ngrams · 4 Anglosphere democracies · '
+      f'pooled {pool_k}/{pool_n} = {pool_k/pool_n:.0%} ({pool_p_s})',
+      w=920, h=720)
 save(fig, 'figures/figI1_international_h1.png')
 
 
-# ── Figure I2: H2 scatter — mention share vs. vote share (UK + Australia) ────
-# Use BOTH candidates per election (winner + loser), exactly like the US H2
-# (Fig 2). Plotting only winners conditions on winning — a selection/collider
-# effect that spuriously flips the correlation negative (famous losing leaders
-# such as Churchill 1945 sit at high mention share but are excluded). With both
-# candidates the relationship is positive and consistent with the US results.
-# Centre-right party (Conservative / Liberal) = blue; centre-left = red.
-# Map each party to a left/right bloc so one legend reads correctly for both
-# countries (UK Conservative/Labour, Australia Liberal/Labor).
-INTL_BLOC = {'Conservative': 'Centre-right (Con/Lib)', 'Liberal': 'Centre-right (Con/Lib)',
-             'Labour': 'Centre-left (Lab/ALP)',        'Labor': 'Centre-left (Lab/ALP)'}
-BLOC_CLR  = {'Centre-right (Con/Lib)': '#1560BD', 'Centre-left (Lab/ALP)': '#E4003B'}
+# ── Figure I2: H2 scatter — four countries (2×2) ──────────────────────────────
+# BOTH candidates per election (winner + loser), like the US H2 (Fig 2).
+# Plotting winners only conditions on winning — a selection/collider effect that
+# spuriously flips the correlation negative (famous losing leaders such as
+# Churchill 1945 sit at high mention share but get excluded). With both
+# candidates the relationship is positive in every country, matching the US.
+# Centre-right bloc (Conservative/Liberal/National) = blue; centre-left = red.
+INTL_BLOC = {'Conservative': 'right', 'Liberal': 'right', 'PC': 'right', 'National': 'right',
+             'Labour': 'left', 'Labor': 'left'}
+BLOC_CLR  = {'right': '#1560BD', 'left': '#E4003B'}
+BLOC_NAME = {'right': 'Centre-right (Con/Lib/Nat)', 'left': 'Centre-left (Lab)'}
 
 def intl_both(df):
-    """Long-form (party, mention_share, vote_pct, name, year) for both candidates."""
     w = df[['year', 'winner_party', 'winner_mention_share', 'winner_vote_pct', 'winner_name']].rename(
         columns={'winner_party': 'party', 'winner_mention_share': 'ms',
                  'winner_vote_pct': 'vs', 'winner_name': 'name'})
@@ -941,48 +951,46 @@ def intl_both(df):
                  'loser_vote_pct': 'vs', 'loser_name': 'name'})
     return pd.concat([w, l], ignore_index=True)
 
-intl_scatter = {country: intl_both(df) for country, df, _ in INTL}
+fig = make_subplots(rows=2, cols=2,
+    subplot_titles=[f'{n}' for n, _, _, _ in INTL],
+    horizontal_spacing=0.12, vertical_spacing=0.14)
 
-fig = make_subplots(rows=1, cols=2,
-    subplot_titles=[f'(A) UK (n={len(intl_scatter["UK General Elections"])})',
-                    f'(B) Australia (n={len(intl_scatter["Australian Federal"])})'],
-    horizontal_spacing=0.12)
-
-intl_r = {}
-bloc_legend_added = set()
-for ci, (country, df, _) in enumerate(INTL, 1):
-    sc = intl_scatter[country]
-    sc = sc.assign(bloc=sc['party'].map(INTL_BLOC).fillna('Other'))
+intl_r, pooled_ms, pooled_vs = {}, [], []
+legend_added = set()
+for (country, df, _, _), (rr, cc) in zip(INTL, GRID_RC):
+    sc = intl_both(df)
+    sc = sc.assign(bloc=sc['party'].map(INTL_BLOC).fillna('left'))
     r_i, p_i = pearsonr(sc['ms'], sc['vs'])
     intl_r[country] = (r_i, p_i)
-    for bloc in sc['bloc'].unique():
+    pooled_ms += list(sc['ms']); pooled_vs += list(sc['vs'])
+    for bloc in ['left', 'right']:
         sub = sc[sc['bloc'] == bloc]
-        show = bloc not in bloc_legend_added
-        bloc_legend_added.add(bloc)
+        if sub.empty:
+            continue
+        show = bloc not in legend_added
+        legend_added.add(bloc)
         fig.add_trace(go.Scatter(
             x=sub['ms'], y=sub['vs'], mode='markers',
-            marker=dict(color=BLOC_CLR.get(bloc, '#888'), size=9,
-                        line=dict(color='white', width=1.2)),
-            name=bloc, legendgroup=bloc, showlegend=show,
+            marker=dict(color=BLOC_CLR[bloc], size=8, line=dict(color='white', width=1.1)),
+            name=BLOC_NAME[bloc], legendgroup=bloc, showlegend=show,
             text=sub['name'].str.split().str[-1] + " '" + sub['year'].astype(str).str[-2:],
             hovertemplate='%{text}<br>Mention: %{x:.1%}<br>Vote: %{y:.1f}%<extra></extra>',
-        ), row=1, col=ci)
+        ), row=rr, col=cc)
     m_i, b_i = np.polyfit(sc['ms'], sc['vs'], 1)
     xr = np.linspace(sc['ms'].min() - 0.02, sc['ms'].max() + 0.02, 200)
     fig.add_trace(go.Scatter(x=xr, y=m_i * xr + b_i, mode='lines',
-        line=dict(color='#555', dash='dash', width=1.5), showlegend=False,
-    ), row=1, col=ci)
-    ols_label(fig, r_i, sc['ms'].values, sc['vs'].values, row=1, col=ci)
-    fig.update_xaxes(tickformat='.0%', title_text='Mention share (year of election)', row=1, col=ci)
-    fig.update_yaxes(title_text='Vote share (%)', row=1, col=ci)
+        line=dict(color='#555', dash='dash', width=1.5), showlegend=False), row=rr, col=cc)
+    ols_label(fig, r_i, sc['ms'].values, sc['vs'].values, row=rr, col=cc)
+    fig.update_xaxes(tickformat='.0%', title_text='Mention share', row=rr, col=cc)
+    fig.update_yaxes(title_text='Vote share (%)', row=rr, col=cc)
 
+pooled_r, pooled_rp = pearsonr(pooled_ms, pooled_vs)
 fig.update_xaxes(showgrid=True, gridcolor=GRID, zeroline=False)
 fig.update_yaxes(showgrid=True, gridcolor=GRID, zeroline=False)
-style(fig, 'Figure I2. Mention share vs. vote share — UK and Australia',
+style(fig, 'Figure I2. Mention share vs. vote share — four countries',
       f'Google Ngrams · both major candidates per election · '
-      f'UK r = {intl_r["UK General Elections"][0]:.2f} · '
-      f'Australia r = {intl_r["Australian Federal"][0]:.2f}',
-      w=1050, h=540)
+      f'positive in every country · pooled r = {pooled_r:.2f} (n={len(pooled_ms)})',
+      w=1000, h=760)
 save(fig, 'figures/figI2_international_h2.png')
 
 
@@ -1026,7 +1034,7 @@ fig.update_xaxes(tickformat='.0%', title='Conservative leader attention share', 
 fig.update_yaxes(tickformat='.0%', title='Conservative seat share (of Con+Lab)', range=[0.2, 0.8])
 style(fig,
       f'Figure I3. UK House of Commons: does the party with the more-covered leader win more seats? (r = {r_uc:.2f})',
-      f'Google Ngrams · 17 UK general elections 1945–2019 · {p_uc_s} · '
+      f'Google Ngrams · {n_uc} UK general elections 1945–2019 · {p_uc_s} · '
       f'attention-leading party won the seat count in {k_uc}/{n_uc} elections',
       w=860, h=600)
 save(fig, 'figures/figI3_uk_commons.png')

@@ -35,11 +35,14 @@ Two confirmatory hypotheses:
 | **US Senate** | **77%** | 521 | <0.0001 | 0.63 |
 | **US Governor** | **69%** | 753 | <0.0001 | 0.24 |
 | **US House** (party-level) | 66% | 29 cycles | 0.14 | 0.60 |
-| **UK** (PM / general election) | 71% | 17 | 0.14 | 0.23 |
-| **Australia** (PM / federal) | **79%** | 24 | 0.007 | **0.40** |
-| **UK House of Commons** (party-level) | 71% | 17 | 0.14 | 0.43 |
+| **UK** (PM / general election) | 68% | 19 | 0.17 | 0.20 |
+| **Australia** (PM / federal) | **79%** | 28 | 0.004 | 0.35 |
+| **Canada** (PM / federal) | **75%** | 20 | 0.041 | 0.29 |
+| **New Zealand** (PM / general) | 65% | 23 | 0.21 | 0.16 |
+| **International pooled** (4 countries) | **72%** | 90 | **<0.001** | 0.16 |
+| **UK House of Commons** (party-level) | 68% | 19 | 0.17 | 0.38 |
 
-The candidate with more book coverage wins clearly more often than chance at every individual-race level, with the largest and most significant effects where the sample is largest (Senate, Governor). The party-aggregate levels (US House, UK Commons) are noisier — most individual down-ballot races fly below the national book-corpus radar — but still lean the same way. The international H2 correlations are positive and consistent with the US (Australia *r* = 0.40, p = 0.005), once both candidates are included (see the note under Figure I2).
+The candidate with more book coverage wins clearly more often than chance at every individual-race level, with the largest and most significant effects where the sample is largest (Senate, Governor). The party-aggregate levels (US House, UK Commons) are noisier — most individual down-ballot races fly below the national book-corpus radar — but still lean the same way. The four-country international result is pooled **65/90 (72%, p < 0.001)** for H1, and the H2 correlation is positive in *every* country once both candidates are included (see the note under Figure I2).
 
 ---
 
@@ -101,25 +104,27 @@ H1 win rate by source and race level. Google Ngrams (top) is fully collected acr
 
 ## Part 4 — International Replication (Anglosphere)
 
-Does the pattern hold outside the US? We replicate in the UK and Australia, the two large English-language parliamentary democracies with long Ngrams coverage.
+Does the pattern hold outside the US? We replicate across the four large English-language parliamentary democracies with long Ngrams coverage — the **UK, Australia, Canada, and New Zealand** — using each country's two governing-party leaders (the PM contenders).
 
 ### Figure I1. Does the attention leader win abroad?
 
 ![Figure I1](figures/figI1_international_h1.png)
 
-The leader with more book coverage becomes PM in **12/17 (71%)** UK general elections and **19/24 (79%, p = 0.007)** Australian federal elections.
+The leader with more book coverage becomes PM in 68% of UK general elections, 79% in Australia (p = 0.004), 75% in Canada (p = 0.041), and 65% in New Zealand. **Pooled across all four countries: 65/90 (72%), p < 0.001.** The effect is not a US peculiarity.
 
-### Figure I2. Mention share vs. vote share — UK and Australia
+### Figure I2. Mention share vs. vote share — four countries
 
 ![Figure I2](figures/figI2_international_h2.png)
 
-Both major candidates per election (as in the US H2, Fig 2): mention share tracks vote share positively (UK *r* = 0.23, Australia *r* = 0.40, p = 0.005). Plotting *winners only* spuriously reverses the sign — a selection effect, because famous losing leaders (e.g. Churchill in 1945) sit at very high mention share but are excluded — so the correct H2 uses both candidates.
+Both major candidates per election (as in the US H2, Fig 2): mention share tracks vote share positively in *every* country (pooled *r* = 0.16, n = 180). Note that plotting *winners only* spuriously reverses the sign — a selection effect, because famous losing leaders (e.g. Churchill in 1945) sit at very high mention share but are excluded — so the correct H2 uses both candidates.
+
+> **Data note:** Canada uses the Liberal-vs-Conservative/PC contest and excludes 1993–2000 (PC collapse) and 2011 (NDP opposition); New Zealand uses Labour-vs-National. Vote shares for the newly added countries are from standard election tallies and should be independently verified before formal publication.
 
 ### Figure I3. UK House of Commons: party coverage vs. seats
 
 ![Figure I3](figures/figI3_uk_commons.png)
 
-The UK down-ballot analogue of the US House figure. The major party whose leader dominates book coverage wins the larger share of Commons seats in **12/17** elections (*r* = 0.43). The clearest exceptions are 1945 and 1950, when Churchill dominated book coverage but Labour won the seats — a wartime-prominence effect.
+The UK down-ballot analogue of the US House figure. The major party whose leader dominates book coverage wins the larger share of Commons seats in **13/19** elections (*r* = 0.38). The clearest exceptions are 1945 and 1950, when Churchill dominated book coverage but Labour won the seats — a wartime-prominence effect.
 
 ---
 
@@ -147,7 +152,7 @@ Because Ngrams is annual data, the pre-registered window robustness check is imp
 
 | Source | Coverage in this study | Levels collected |
 |--------|------------------------|------------------|
-| **Google Ngrams** | 1960–2019 (book corpus) | Presidential, Senate, Governor, House, UK, Australia |
+| **Google Ngrams** | 1945–2019 (book corpus) | Presidential, Senate, Governor, House; UK, Australia, Canada, New Zealand |
 | **Google Trends** | 2004–2024 (search volume) | Presidential, Senate |
 | **Wikipedia Pageviews** | 2008–2024 (article views) | Presidential, Senate |
 | **GDELT News** | global news (small n so far) | Presidential |

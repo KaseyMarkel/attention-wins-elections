@@ -71,15 +71,18 @@ Governors are now integrated as a 4th level in Figs 4, 6, and 7. (Figs I1/I2 are
 - **Fig S2 built** — window-length sensitivity (`collect_ngrams_windows.py` → `presidential_windows.csv`). H1 identical (80%) across 1/2/3-year windows; H2 r = 0.36–0.40.
 - **Fig 6** — switched to violin + box + raw points, plotted on `log10(gap)` linear axis so the KDE is sensible; "Equal attention (1×)" label moved off the presidential box.
 - **Fig 7** — dropped the empty pending rows, Ngrams moved to top with all 4 levels spread + `n=` labels, small-n rows (n<5) faded so their wide CIs don't dominate.
-- **UK section** — added `collect_uk_commons.py` → `uk_commons.csv` and **Fig I3** (UK Commons party attention vs. seat share, 12/17, r=0.43). PM-level UK stays in Figs I1/I2. No UK Senate/Governor analogue exists with quality Ngrams data (no elected upper house; devolved govts post-1999 too thin).
-- **README fully rewritten** with real numbers/structure; removed synthetic/Zorblaxian content.
-- **Removed stale artifacts**: `mention_share_FAKE.csv`, `table_s1_presidential_FAKE.csv`, `generate_fake_data_and_figures.py`.
+- **UK section** — added `collect_uk_commons.py` → `uk_commons.csv` and **Fig I3** (UK Commons party attention vs. seat share, now 13/19, r=0.38). No UK Senate/Governor analogue exists with quality Ngrams data.
+- **Fig I2 fixed to use both candidates** (was winner-only, a selection/collider artifact that flipped r negative). Positive in every country now.
+- **Fig 4 is now 3 panels**: (A) win rate, (B) attention leader's vote/seat share (continuous, clusters >50%), (C) vote margin.
+- **Pre-1960 international bug fixed** (`ngrams_pair` floored year_start at 1960 → invalid range → wrong decade-long series for every pre-1960 election). Fixed; re-collection added usable years (UK 17→19, Aus 24→28), no winners flipped.
+- **Added Canada + New Zealand.** International now 4 countries (UK/Aus/Canada/NZ), pooled **65/90 = 72%, p<0.001**. Figs I1/I2 are 2×2. Canada/NZ vote shares need user verification before formal publication (winners verified via Wikipedia).
+- **README fully rewritten**; removed stale `*_FAKE.csv` + `generate_fake_data_and_figures.py`.
 
-## Known limitations / future work
-
-- **Fig I2 fixed to use both candidates** (was winner-only, a selection/collider artifact that flipped r negative). Both-candidates H2 is positive and consistent with the US: UK r=+0.23, Australia r=+0.40 (p=0.005). Fig 2-style construction.
-- **Fig 4 is now 3 panels**: (A) win rate, (B) attention leader's vote/seat share (continuous, clusters >50%), (C) vote margin. Panel A's jittered binary points kept per user request.
-- **GDELT News / Reddit presidential have n=2** — shown faded in Fig 7, not reliable. **GDELT TV / MediaCloud** still uncollected.
+## In progress / remaining (user requested A+B+C+D expansions)
+- [x] A: Canada, New Zealand (done)
+- [ ] B: GDELT TV (broadcast) source for Fig 7
+- [ ] C: verify/extend Trends + Wikipedia senate coverage
+- [ ] D: US presidential primaries (purest attention test)
 - **State assembly elections**: too many obscure candidates for Ngrams. Skip.
 
 ## Git state
