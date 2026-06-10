@@ -687,6 +687,7 @@ def house_level_entry():
 senate_trends = pd.read_csv('data/raw/trends/senate_mention_shares.csv')
 senate_trends = senate_trends[senate_trends['attention_leader_won'].notna()].copy()
 senate_wiki   = pd.read_csv('data/raw/wikipedia/senate_mention_shares.csv')
+gdelt_tv_pres = pd.read_csv('data/raw/gdelt_tv/presidential_mention_shares.csv')
 
 # pres sources use winner_vote_pct as percentage; senate CSVs have it as fraction already
 SOURCE_LEVELS = [
@@ -705,6 +706,7 @@ SOURCE_LEVELS = [
         level_entry(senate_wiki, 'Senate',        'winner_vote_pct', is_pct=False),
     ]),
     ('GDELT News',  SRC_PALETTE[0], [level_entry(gdelt_pres,  'Presidential', 'winner_vote_pct', is_pct=True)]),
+    ('GDELT TV',    SRC_PALETTE[4], [level_entry(gdelt_tv_pres, 'Presidential', 'winner_vote_pct', is_pct=True)]),
     ('Reddit',      SRC_PALETTE[5], [level_entry(reddit_pres, 'Presidential', 'winner_vote_pct', is_pct=True)]),
 ]
 # ── H1 forest: sources on a numeric y-axis, race levels offset within each row ─
@@ -764,8 +766,8 @@ fig.update_yaxes(
 )
 style(fig,
       'Figure 7. Attention leader win rate across data sources and race levels',
-      'H1 win rate by source · ● Presidential  ■ Senate  ▲ Governor  ◆ House · '
-      'faded markers = small samples (n&lt;5) · GDELT TV &amp; MediaCloud not yet collected',
+      '● Presidential  ■ Senate  ▲ Governor  ◆ House · '
+      'faded = small samples (n&lt;5; their CIs span most of the axis) · MediaCloud not yet collected',
       w=820, h=540)
 save(fig, 'figures/fig7_multi_source_forest.png')
 

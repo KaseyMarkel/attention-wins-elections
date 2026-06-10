@@ -98,7 +98,9 @@ Violin + box + raw points for the winner ÷ loser mention ratio (log scale). Sen
 
 ![Figure 7](figures/fig7_multi_source_forest.png)
 
-H1 win rate by source and race level. Google Ngrams (top) is fully collected across all four levels; Google Trends and Wikipedia Pageviews add Senate coverage. Faded markers flag small samples (n < 5) whose confidence intervals span most of the axis and should not be over-read. GDELT TV and MediaCloud are not yet collected.
+H1 win rate by source and race level. Google Ngrams (top) is fully collected across all four levels; Google Trends and Wikipedia Pageviews add Senate coverage. Faded markers flag small samples (n < 5) whose confidence intervals span most of the axis and should not be over-read.
+
+One source is worth calling out: **broadcast TV airtime (GDELT TV, 2012–2024) does *not* predict the popular-vote winner** (2/4). Trump dominated cable airtime in 2016 (10.4% vs Clinton's 5.8%) yet lost the popular vote, and Romney out-aired Obama in 2012. Raw broadcast volume appears to track controversy and novelty rather than electoral strength — a useful reminder that *which kind* of attention you measure matters. (Only MediaCloud remains uncollected.)
 
 ---
 
@@ -157,7 +159,7 @@ Because Ngrams is annual data, the pre-registered window robustness check is imp
 | **Wikipedia Pageviews** | 2008–2024 (article views) | Presidential, Senate |
 | **GDELT News** | global news (small n so far) | Presidential |
 | **Reddit** | political subreddits (small n so far) | Presidential |
-| **GDELT TV** | broadcast transcripts | *not yet collected* |
+| **GDELT TV** | 2012–2024 (cable airtime: CNN/Fox/MSNBC) | Presidential (n=4; null — see Fig 7) |
 | **MediaCloud** | academic news index | *not yet collected* |
 
 ---

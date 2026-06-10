@@ -1,0 +1,5 @@
+year,source,winner_name,loser_name,winner_party,winner_mention_share,loser_mention_share,winner_vote_pct,loser_vote_pct,attention_leader_won,winner_airtime_pct,loser_airtime_pct,stations
+2012,GDELT TV,Barack Obama,Mitt Romney,D,0.167502,0.832498,51.06,47.2,0,0.7454,3.7047,CNN+FoxNews+MSNBC
+2016,GDELT TV,Hillary Clinton,Donald Trump,D,0.358915,0.641085,48.18,46.09,0,5.8259,10.406,CNN+FoxNews+MSNBC
+2020,GDELT TV,Joe Biden,Donald Trump,D,0.593617,0.406383,51.31,46.86,1,2.0608,1.4108,CNN+FoxNews+MSNBC
+2024,GDELT TV,Donald Trump,Kamala Harris,R,0.831147,0.168853,49.84,48.36,1,5.6958,1.1571,CNN+FoxNews+MSNBC
