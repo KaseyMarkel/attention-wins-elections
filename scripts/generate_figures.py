@@ -772,6 +772,63 @@ style(fig,
 save(fig, 'figures/fig7_multi_source_forest.png')
 
 
+# ── Figure 8: Primaries — search attention does NOT pick the nominee ──────────
+# The purest attention test (intra-party, no party-ID confound), but using
+# Google Trends search interest in the invisible-primary window. The most-
+# searched candidate is usually the insurgent who LOSES to the establishment
+# nominee — search captures curiosity/novelty, not electoral strength.
+prim = pd.read_csv('data/raw/trends/primaries_mention_shares.csv')
+prim['race'] = prim['cycle'].astype(str) + ' ' + prim['party']
+race_order = prim[['cycle', 'party', 'race']].drop_duplicates().sort_values(['cycle', 'party'])
+races_list = race_order['race'].tolist()
+
+n_won = 0
+fig = go.Figure()
+leg_done = set()
+for yi, race in enumerate(races_list):
+    g = prim[prim['race'] == race]
+    leader = g.loc[g['search_interest'].idxmax(), 'candidate']
+    nominee_row = g[g['is_nominee'] == 1].iloc[0]
+    nominee = nominee_row['candidate']
+    n_won += int(leader == nominee)
+    # non-nominee candidates (grey dots)
+    nonnom = g[g['is_nominee'] == 0]
+    fig.add_trace(go.Scatter(
+        x=nonnom['attention_share'], y=[yi] * len(nonnom), mode='markers',
+        marker=dict(color='#bbb', size=10, line=dict(color='white', width=1)),
+        name='Other candidates', legendgroup='other',
+        showlegend='other' not in leg_done,
+        text=nonnom['candidate'], hovertemplate='%{text}<br>%{x:.0%}<extra></extra>',
+    ))
+    leg_done.add('other')
+    # eventual nominee (gold star)
+    fig.add_trace(go.Scatter(
+        x=[nominee_row['attention_share']], y=[yi], mode='markers',
+        marker=dict(color='#E8A33D', size=16, symbol='star',
+                    line=dict(color='#7a5210', width=1)),
+        name='Eventual nominee', legendgroup='nom',
+        showlegend='nom' not in leg_done,
+        text=[nominee], hovertemplate='%{text} (nominee)<br>%{x:.0%}<extra></extra>',
+    ))
+    leg_done.add('nom')
+    # name the most-searched candidate just past the rightmost dot
+    x_right = g['attention_share'].max()
+    fig.add_annotation(x=x_right + 0.015, y=yi, xref='x', yref='y',
+        text=f'<span style="font-size:9px;color:#999">↑ most searched: {leader.split()[-1]}</span>',
+        showarrow=False, xanchor='left', yanchor='middle')
+
+fig.update_yaxes(tickmode='array', tickvals=list(range(len(races_list))),
+                 ticktext=races_list, range=[-0.6, len(races_list) - 0.4],
+                 title='Contested primary')
+fig.update_xaxes(tickformat='.0%', range=[0, 1.15], title='Google Trends search-interest share (invisible-primary window)')
+style(fig,
+      f'Figure 8. In primaries, search attention does NOT pick the nominee ({n_won}/{len(races_list)})',
+      'Google Trends · the most-searched primary candidate is usually the insurgent '
+      '(Paul, Sanders) who loses · search = curiosity, not electoral strength',
+      w=900, h=520)
+save(fig, 'figures/fig8_primaries.png')
+
+
 # ── Figure S1: By media era (Ngrams presidential, 1960–2016) ──────────────────
 ERAS = [
     ('Print / Radio\n1960–1972', [1960, 1964, 1968, 1972]),

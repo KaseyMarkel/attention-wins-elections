@@ -130,6 +130,20 @@ The UK down-ballot analogue of the US House figure. The major party whose leader
 
 ---
 
+## Part 5 — Which *kind* of attention? (Primaries)
+
+Primaries are the purest attention test: every candidate shares the voter's party, so the "I vote my party" confound is largely gone. Here we measure attention with **Google Trends search interest** in the *invisible-primary* window (the ~7 months before the first nominating contest, so the measure is predictive rather than circular).
+
+### Figure 8. In primaries, search attention does *not* pick the nominee
+
+![Figure 8](figures/fig8_primaries.png)
+
+The most-searched primary candidate became the nominee in only **2 of 7** contested races — *below* chance. The most-searched candidate is usually the **insurgent** (Ron Paul 2012, Bernie Sanders 2016 & 2020) who loses to the establishment nominee. Only Donald Trump (2016, 2024) was both most-searched and nominated.
+
+This is not a contradiction — it's the most important nuance in the study. **The kind of attention matters.** Book and news *prominence* (Ngrams, GDELT News) predicts winners; *curiosity/novelty* attention does not — and search interest (Fig 7, Google Trends presidential, ~17%) and broadcast airtime (Fig 7, GDELT TV, 2/4) both behave like curiosity, not endorsement. Raw volume of attention is not the same as the durable prominence that tracks electoral success.
+
+---
+
 ## Supplemental Figures
 
 ### Figure S1. Does the effect vary by media era?
