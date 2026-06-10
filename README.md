@@ -35,13 +35,11 @@ Two confirmatory hypotheses:
 | **US Senate** | **77%** | 521 | <0.0001 | 0.63 |
 | **US Governor** | **69%** | 753 | <0.0001 | 0.24 |
 | **US House** (party-level) | 66% | 29 cycles | 0.14 | 0.60 |
-| **UK** (PM / general election) | 71% | 17 | 0.14 | — *(see note)* |
-| **Australia** (PM / federal) | **79%** | 24 | 0.007 | — *(see note)* |
+| **UK** (PM / general election) | 71% | 17 | 0.14 | 0.23 |
+| **Australia** (PM / federal) | **79%** | 24 | 0.007 | **0.40** |
 | **UK House of Commons** (party-level) | 71% | 17 | 0.14 | 0.43 |
 
-The candidate with more book coverage wins clearly more often than chance at every individual-race level, with the largest and most significant effects where the sample is largest (Senate, Governor). The party-aggregate levels (US House, UK Commons) are noisier — most individual down-ballot races fly below the national book-corpus radar — but still lean the same way.
-
-*Note on international H2:* in multiparty, first-past-the-post systems the winner's national vote share is capped well below 50%, so the continuous mention-share↔vote-share correlation is weak or slightly negative for the **PM** measure (UK r = −0.24, Australia r = −0.14). The robust international finding is **H1** (who wins), and the **UK Commons** party-vs-seats measure (r = 0.43), which is constructed the same way as the US House figure.
+The candidate with more book coverage wins clearly more often than chance at every individual-race level, with the largest and most significant effects where the sample is largest (Senate, Governor). The party-aggregate levels (US House, UK Commons) are noisier — most individual down-ballot races fly below the national book-corpus radar — but still lean the same way. The international H2 correlations are positive and consistent with the US (Australia *r* = 0.40, p = 0.005), once both candidates are included (see the note under Figure I2).
 
 ---
 
@@ -75,7 +73,7 @@ The presidential finding rests on only 15 elections. Senate (521), gubernatorial
 
 ![Figure 4](figures/fig4_win_rate_comparison.png)
 
-Win rate (left) and vote-margin distribution (right) for all four US levels. The effect is strongest where samples are largest; the House party-aggregate signal is weakest because most individual House races attract little national book coverage.
+Three views of all four US levels: (A) the H1 win rate, (B) the attention leader's own vote/seat share — which sits above 50% at every level, the continuous counterpart to panel A — and (C) the vote-margin distribution split by whether the attention leader won. The effect is strongest where samples are largest; the House party-aggregate signal is weakest because most individual House races attract little national book coverage.
 
 ### Figure 5. House: does the party dominating coverage win the chamber?
 
@@ -115,7 +113,7 @@ The leader with more book coverage becomes PM in **12/17 (71%)** UK general elec
 
 ![Figure I2](figures/figI2_international_h2.png)
 
-The continuous vote-share relationship is weak for the PM measure (see the international-H2 note above): national vote shares are capped by multiparty FPTP, and famous wartime/long-serving leaders inflate book mentions independent of their vote share.
+Both major candidates per election (as in the US H2, Fig 2): mention share tracks vote share positively (UK *r* = 0.23, Australia *r* = 0.40, p = 0.005). Plotting *winners only* spuriously reverses the sign — a selection effect, because famous losing leaders (e.g. Churchill in 1945) sit at very high mention share but are excluded — so the correct H2 uses both candidates.
 
 ### Figure I3. UK House of Commons: party coverage vs. seats
 

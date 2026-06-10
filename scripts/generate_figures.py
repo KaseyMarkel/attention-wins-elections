@@ -404,12 +404,25 @@ p4     = [p_p, p_s, p_g, p_h]
 xlabs4 = ['Presidential', 'Senate', 'Governor', 'House\n(party-level)']
 bar_colors4 = [NAVY, '#2d4a7a', '#3d6b9e', '#5a8ec4']
 
-fig = make_subplots(rows=1, cols=2,
+# Attention leader's own outcome share per race (continuous analogue of "did
+# they win"): vote share for candidate levels, winning-party seat share for the
+# House. Clusters above 50% exactly when the attention leader tends to win.
+pres_ng['leader_share'] = np.where(pres_ng['attention_leader_won'] == 1,
+                                   pres_ng['winner_vote_frac'], pres_ng['loser_vote_frac'])
+senate_ng['leader_share'] = np.where(senate_ng['attention_leader_won'] == 1,
+                                     senate_ng['winner_vote_pct'], senate_ng['loser_vote_pct'])
+gov_ng['leader_share'] = np.where(gov_ng['attention_leader_won'] == 1,
+                                  gov_ng['winner_vote_pct'], gov_ng['loser_vote_pct'])
+house_ng['leader_share'] = np.where(house_ng['attention_majority'] == 'D',
+                                    house_ng['d_seat_share'], house_ng['r_seat_share'])
+
+fig = make_subplots(rows=1, cols=3,
     subplot_titles=[
         '(A) H1: attention leader win rate',
-        '(B) Vote margin: attention leaders vs underdogs',
+        '(B) Attention leader vote / seat share',
+        '(C) Vote margin: leaders vs underdogs',
     ],
-    horizontal_spacing=0.10)
+    horizontal_spacing=0.075)
 
 # Panel A: bars + raw data jittered
 rng4 = np.random.default_rng(99)
@@ -478,8 +491,34 @@ fig.update_xaxes(row=1, col=1, tickmode='array',
     ticktext=[x.replace('\n', '<br>') for x in xlabs4],
     range=[-0.5, len(xlabs4) - 0.5])
 
-# Panel B: vote margin distribution by level, split by attention outcome
-# Presidential
+# ── Panel B: attention leader's vote/seat share — box + all raw points ────────
+B_LEVELS = [
+    (pres_ng,   'Presidential',            8, None),
+    (senate_ng, 'Senate',                  3, 250),
+    (gov_ng,    'Governor',                3, 250),
+    (house_ng,  'House<br>(party-level)',  6, None),
+]
+for sub, xlab, ptsize, samp in B_LEVELS:
+    vals = sub['leader_share']
+    if samp and len(vals) > samp:
+        vals = vals.sample(samp, random_state=7)
+    fig.add_trace(go.Box(
+        x=[xlab] * len(vals), y=vals,
+        name=xlab, showlegend=False,
+        marker_color=WINNER_CLR, line_color='#1f5a55',
+        fillcolor='rgba(44,120,115,0.15)',
+        boxpoints='all', jitter=0.4, pointpos=0,
+        marker=dict(size=ptsize, opacity=0.45, line=dict(color='white', width=0.5)),
+        width=0.45,
+    ), row=1, col=2)
+fig.add_hline(y=0.5, line_dash='dot', line_color='#999', line_width=1.5,
+    annotation_text='50%', annotation_position='right', row=1, col=2)
+fig.update_yaxes(tickformat='.0%', title='Attention leader vote / seat share',
+                 range=[0, 1], row=1, col=2)
+fig.update_xaxes(categoryorder='array',
+    categoryarray=['Presidential', 'Senate', 'Governor', 'House<br>(party-level)'], row=1, col=2)
+
+# ── Panel C: vote margin distribution by level, split by attention outcome ─────
 for attn_won, color, label, show_leg in [
     (1, WINNER_CLR, 'Attention leader won', True),
     (0, UPSET_CLR,  'Attention underdog won', True),
@@ -509,20 +548,18 @@ for attn_won, color, label, show_leg in [
             boxpoints='all', jitter=0.4, pointpos=0,
             marker=dict(size=5 if xlab not in ('Senate', 'Governor') else 3, opacity=0.5),
             width=0.35,
-        ), row=1, col=2)
+        ), row=1, col=3)
 
-house_ng['margin'] = abs(house_ng['d_seat_share'] - 0.5) * 2
-
-fig.update_yaxes(tickformat='.1%', title='Vote margin (winner − loser)', row=1, col=2)
+fig.update_yaxes(tickformat='.1%', title='Vote margin (winner − loser)', row=1, col=3)
 fig.update_xaxes(categoryorder='array',
-    categoryarray=['Presidential', 'Senate', 'Governor', 'House<br>(party-level)'], row=1, col=2)
+    categoryarray=['Presidential', 'Senate', 'Governor', 'House<br>(party-level)'], row=1, col=3)
 fig.update_xaxes(showgrid=True, gridcolor=GRID, zeroline=False)
 fig.update_yaxes(showgrid=True, gridcolor=GRID, zeroline=False)
 p4l = ['p < 0.001' if pv < 0.001 else f'p = {pv:.3f}' for pv in p4]
 style(fig,
-      'Figure 4. Attention leader win rate and vote margin at every level of government',
+      'Figure 4. Attention leader win rate, vote share, and margin at every level of government',
       f'Google Ngrams · Presidential {p4l[0]} · Senate {p4l[1]} · Governor {p4l[2]} · House {p4l[3]}',
-      w=1100, h=560)
+      w=1480, h=560)
 save(fig, 'figures/fig4_win_rate_comparison.png')
 
 
@@ -882,35 +919,70 @@ save(fig, 'figures/figI1_international_h1.png')
 
 
 # ── Figure I2: H2 scatter — mention share vs. vote share (UK + Australia) ────
+# Use BOTH candidates per election (winner + loser), exactly like the US H2
+# (Fig 2). Plotting only winners conditions on winning — a selection/collider
+# effect that spuriously flips the correlation negative (famous losing leaders
+# such as Churchill 1945 sit at high mention share but are excluded). With both
+# candidates the relationship is positive and consistent with the US results.
+# Centre-right party (Conservative / Liberal) = blue; centre-left = red.
+# Map each party to a left/right bloc so one legend reads correctly for both
+# countries (UK Conservative/Labour, Australia Liberal/Labor).
+INTL_BLOC = {'Conservative': 'Centre-right (Con/Lib)', 'Liberal': 'Centre-right (Con/Lib)',
+             'Labour': 'Centre-left (Lab/ALP)',        'Labor': 'Centre-left (Lab/ALP)'}
+BLOC_CLR  = {'Centre-right (Con/Lib)': '#1560BD', 'Centre-left (Lab/ALP)': '#E4003B'}
+
+def intl_both(df):
+    """Long-form (party, mention_share, vote_pct, name, year) for both candidates."""
+    w = df[['year', 'winner_party', 'winner_mention_share', 'winner_vote_pct', 'winner_name']].rename(
+        columns={'winner_party': 'party', 'winner_mention_share': 'ms',
+                 'winner_vote_pct': 'vs', 'winner_name': 'name'})
+    l = df[['year', 'loser_party', 'loser_mention_share', 'loser_vote_pct', 'loser_name']].rename(
+        columns={'loser_party': 'party', 'loser_mention_share': 'ms',
+                 'loser_vote_pct': 'vs', 'loser_name': 'name'})
+    return pd.concat([w, l], ignore_index=True)
+
+intl_scatter = {country: intl_both(df) for country, df, _ in INTL}
+
 fig = make_subplots(rows=1, cols=2,
-    subplot_titles=[f'(A) UK (n={len(uk_ng)})', f'(B) Australia (n={len(aus_ng)})'],
-    horizontal_spacing=0.14)
+    subplot_titles=[f'(A) UK (n={len(intl_scatter["UK General Elections"])})',
+                    f'(B) Australia (n={len(intl_scatter["Australian Federal"])})'],
+    horizontal_spacing=0.12)
 
-for ci, (country, df, color) in enumerate(INTL, 1):
-    r_i, p_i = pearsonr(df['winner_mention_share'], df['winner_vote_pct'])
-    m_i, b_i = np.polyfit(df['winner_mention_share'], df['winner_vote_pct'], 1)
-    xr = np.linspace(df['winner_mention_share'].min() - 0.02,
-                     df['winner_mention_share'].max() + 0.02, 200)
-    fig.add_trace(go.Scatter(
-        x=df['winner_mention_share'], y=df['winner_vote_pct'],
-        mode='markers+text',
-        text=df['winner_name'].str.split().str[-1] + " '" + df['year'].astype(str).str[-2:],
-        textposition='top center', textfont=dict(size=8, color='#555'),
-        marker=dict(color=color, size=9, line=dict(color='white', width=1.5)),
-        showlegend=False,
-        hovertemplate='%{text}<br>Mention: %{x:.1%}<br>Vote: %{y:.1f}%<extra></extra>',
-    ), row=1, col=ci)
+intl_r = {}
+bloc_legend_added = set()
+for ci, (country, df, _) in enumerate(INTL, 1):
+    sc = intl_scatter[country]
+    sc = sc.assign(bloc=sc['party'].map(INTL_BLOC).fillna('Other'))
+    r_i, p_i = pearsonr(sc['ms'], sc['vs'])
+    intl_r[country] = (r_i, p_i)
+    for bloc in sc['bloc'].unique():
+        sub = sc[sc['bloc'] == bloc]
+        show = bloc not in bloc_legend_added
+        bloc_legend_added.add(bloc)
+        fig.add_trace(go.Scatter(
+            x=sub['ms'], y=sub['vs'], mode='markers',
+            marker=dict(color=BLOC_CLR.get(bloc, '#888'), size=9,
+                        line=dict(color='white', width=1.2)),
+            name=bloc, legendgroup=bloc, showlegend=show,
+            text=sub['name'].str.split().str[-1] + " '" + sub['year'].astype(str).str[-2:],
+            hovertemplate='%{text}<br>Mention: %{x:.1%}<br>Vote: %{y:.1f}%<extra></extra>',
+        ), row=1, col=ci)
+    m_i, b_i = np.polyfit(sc['ms'], sc['vs'], 1)
+    xr = np.linspace(sc['ms'].min() - 0.02, sc['ms'].max() + 0.02, 200)
     fig.add_trace(go.Scatter(x=xr, y=m_i * xr + b_i, mode='lines',
-        line=dict(color=color, dash='dash', width=1.5), showlegend=False,
+        line=dict(color='#555', dash='dash', width=1.5), showlegend=False,
     ), row=1, col=ci)
-    ols_label(fig, r_i, df['winner_mention_share'].values, df['winner_vote_pct'].values,
-              row=1, col=ci, color=color)
-    fig.update_xaxes(tickformat='.0%', title_text='Winner mention share', row=1, col=ci)
-    fig.update_yaxes(title_text='Winner vote %', row=1, col=ci)
+    ols_label(fig, r_i, sc['ms'].values, sc['vs'].values, row=1, col=ci)
+    fig.update_xaxes(tickformat='.0%', title_text='Mention share (year of election)', row=1, col=ci)
+    fig.update_yaxes(title_text='Vote share (%)', row=1, col=ci)
 
+fig.update_xaxes(showgrid=True, gridcolor=GRID, zeroline=False)
+fig.update_yaxes(showgrid=True, gridcolor=GRID, zeroline=False)
 style(fig, 'Figure I2. Mention share vs. vote share — UK and Australia',
-      'Google Ngrams · winner mention share in year of election',
-      w=1050, h=520)
+      f'Google Ngrams · both major candidates per election · '
+      f'UK r = {intl_r["UK General Elections"][0]:.2f} · '
+      f'Australia r = {intl_r["Australian Federal"][0]:.2f}',
+      w=1050, h=540)
 save(fig, 'figures/figI2_international_h2.png')
 
 

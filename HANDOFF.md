@@ -77,7 +77,8 @@ Governors are now integrated as a 4th level in Figs 4, 6, and 7. (Figs I1/I2 are
 
 ## Known limitations / future work
 
-- **International H2 is weak/negative for the PM measure** (UK r=−0.24, Aus r=−0.14): multiparty FPTP caps winner vote share, and famous long-serving leaders inflate book mentions. H1 (win rate) is the robust international result; UK Commons H2 (r=0.43) is the US-House-style party-vs-seats measure. Framed honestly in README + Fig I2 subtitle.
+- **Fig I2 fixed to use both candidates** (was winner-only, a selection/collider artifact that flipped r negative). Both-candidates H2 is positive and consistent with the US: UK r=+0.23, Australia r=+0.40 (p=0.005). Fig 2-style construction.
+- **Fig 4 is now 3 panels**: (A) win rate, (B) attention leader's vote/seat share (continuous, clusters >50%), (C) vote margin. Panel A's jittered binary points kept per user request.
 - **GDELT News / Reddit presidential have n=2** — shown faded in Fig 7, not reliable. **GDELT TV / MediaCloud** still uncollected.
 - **State assembly elections**: too many obscure candidates for Ngrams. Skip.
 
