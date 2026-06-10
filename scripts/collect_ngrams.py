@@ -65,12 +65,21 @@ def ngrams_query(terms: list[str], year_start: int, year_end: int,
     raw_path.write_bytes(raw)
 
     result = {}
+    expected = year_end - year_start + 1
     for series in data:
         name = series['ngram']
-        result[name] = dict(zip(series['timeseries'], series['timeseries']))
-        # timeseries is a list of floats; years run year_start..year_end
+        ts = series['timeseries']
+        # Ngrams quirk: when year_start == year_end the API ignores the range
+        # and returns the full corpus series (1500–2019). Guard against any
+        # length mismatch so years never silently misalign with values.
+        if len(ts) != expected:
+            raise ValueError(
+                f'Ngrams returned {len(ts)} points for {name!r} but the '
+                f'window {year_start}-{year_end} expects {expected}. '
+                f'Use a multi-year window (year_start < year_end).'
+            )
         years = list(range(year_start, year_end + 1))
-        result[name] = dict(zip(years, series['timeseries']))
+        result[name] = dict(zip(years, ts))
     return result
 
 
@@ -84,7 +93,11 @@ def get_candidate_freq(name: str, year: int) -> float:
     if year > 2019:
         return None
 
-    year_start = max(1960, year - 1)
+    # Always use a 2-year window (year-1, year). Never let year_start == year_end:
+    # the Ngrams API treats a single-year range as "return the whole corpus",
+    # which previously zeroed out 1960 (Kennedy/Nixon). The en-2019 corpus
+    # covers 1959, so the floor that caused this is removed.
+    year_start = year - 1
     year_end = min(2019, year)
 
     time.sleep(1.0)  # be polite to the API

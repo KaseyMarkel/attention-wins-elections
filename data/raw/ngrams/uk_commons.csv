@@ -1,0 +1,18 @@
+year,source,con_attention_share,lab_attention_share,con_seats,lab_seats,con_seat_share,majority,attn_majority,attn_predicts_majority
+1945,Google Ngrams,0.933359,0.066641,197,393,0.333898,Lab,Con,0
+1950,Google Ngrams,0.937053,0.062947,298,315,0.486134,Lab,Con,0
+1951,Google Ngrams,0.940471,0.059529,321,295,0.521104,Con,Con,1
+1955,Google Ngrams,0.902003,0.097997,345,277,0.554662,Con,Con,1
+1959,Google Ngrams,0.681003,0.318997,365,258,0.585875,Con,Con,1
+1966,Google Ngrams,0.128282,0.871718,253,364,0.410049,Lab,Lab,1
+1970,Google Ngrams,0.255149,0.744851,330,288,0.533981,Con,Lab,0
+1974,Google Ngrams,0.37596,0.62404,297,301,0.496656,Lab,Lab,1
+1983,Google Ngrams,0.916656,0.083344,397,209,0.655116,Con,Con,1
+1987,Google Ngrams,0.782619,0.217381,376,229,0.621488,Con,Con,1
+1992,Google Ngrams,0.800401,0.199599,336,271,0.553542,Con,Con,1
+1997,Google Ngrams,0.553917,0.446083,165,418,0.283019,Lab,Con,0
+2001,Google Ngrams,0.103695,0.896305,166,412,0.287197,Lab,Lab,1
+2005,Google Ngrams,0.140601,0.859399,198,355,0.358047,Lab,Lab,1
+2015,Google Ngrams,0.80446,0.19554,330,232,0.587189,Con,Con,1
+2017,Google Ngrams,0.616313,0.383687,317,262,0.547496,Con,Con,1
+2019,Google Ngrams,0.40781,0.59219,365,202,0.643739,Con,Lab,0

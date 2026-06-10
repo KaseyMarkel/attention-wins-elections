@@ -1,143 +1,161 @@
 # Is Attention All You Need (to Win Elections)?
 
-> A pre-registered study testing whether the candidate who receives the most media coverage also wins — across US presidential, Senate, and House elections from 1960 to 2024.
+> A pre-registered study testing whether the candidate who receives the most media coverage also wins — across US presidential, Senate, gubernatorial, and House elections from 1960 onward, with international replication in the UK and Australia.
 
 ---
 
 ## Background
 
-A [2026 Nature paper](https://www.nature.com/articles/s41586-026-10536-1) (Brady et al.) ran a field experiment on Bluesky during the 2024 election, randomly assigning 2,000 users to different feed algorithms. One of their figures shows something striking: Trump received roughly **3× more mentions** than Harris across every feed condition tested.
+A [2026 Nature paper](https://www.nature.com/articles/s41586-026-10536-1) (Brady et al.) ran a field experiment on Bluesky during the 2024 election, randomly assigning ~2,000 users to different feed algorithms. One of their figures shows something striking: Trump received roughly **3× more mentions** than Harris across every feed condition tested.
 
-That raises a broader question: is lopsided attention distribution a consistent feature of elections that the winner dominates? Does it hold not just on social media in 2024, but across all of modern electoral history — and at every level of government?
+That raises a broader question: is lopsided attention a consistent feature of elections that the *winner* dominates? Does it hold not just on social media in 2024, but across modern electoral history — and at every level of government?
 
 ---
 
 ## Pre-Registration
 
-This study was **pre-registered before any data was collected.** The initial commit of this repository timestamps our hypotheses, data sources, and statistical analysis plan. We committed to our methods before seeing results — the same approach Brady et al. used.
+This study was **pre-registered before any data was collected.** The initial commit of this repository timestamps our hypotheses, data sources, and statistical analysis plan. See [`PREREGISTRATION.md`](PREREGISTRATION.md) for the full design.
 
-See [`PREREGISTRATION.md`](PREREGISTRATION.md) for the full design.
+Two confirmatory hypotheses:
 
-| | |
-|---|---|
-| **Presidential elections** | 1960–2024 (17 elections) |
-| **Senate races** | ~33 races/cycle, every 2 years 1960–2024 (~500 races) |
-| **House** | Party-aggregate attention share vs. seat share, 33 cycles |
-| **Attention metric** | Mention share = candidate mentions ÷ total candidate mentions, 12 months pre-election |
-| **Primary outcome** | Popular vote winner (Presidential); race winner (Senate); chamber majority (House) |
-| **Data sources** | 7 independent sources (see below) |
+- **H1** — The candidate with the higher **mention share** in the run-up to the election wins more often than chance (binomial test vs. 50%).
+- **H2** — Mention share positively correlates with vote share (Pearson *r*).
+
+**Attention metric.** Mention share = a candidate's media mentions ÷ total major-candidate mentions in the pre-election window.
+
+**Primary source.** Google Books Ngrams (English corpus, `en-2019`). Because the corpus ends in 2019, the presidential series runs **1960–2016 (15 elections)**, not through 2024. Ngrams is annual book-frequency data — a slow-moving, editorial-prestige signal — which lets us reach back to 1960 across thousands of races. We triangulate against faster-moving sources (Trends, Wikipedia, news) where coverage allows.
 
 ---
 
-## Data Sources
+## Headline Results (Google Ngrams)
 
-The study triangulates across 7 independent media measurement channels. Convergent results across sources strengthen causal inference — if the pattern holds in books, TV transcripts, search queries, and Reddit posts independently, it is harder to attribute to any single platform's quirks.
+| Race level | H1: attention leader wins | n | p | H2: mention vs. vote (*r*) |
+|---|---|---|---|---|
+| **US Presidential** | **80%** | 15 | 0.035 | 0.42 |
+| **US Senate** | **77%** | 521 | <0.0001 | 0.63 |
+| **US Governor** | **69%** | 753 | <0.0001 | 0.24 |
+| **US House** (party-level) | 66% | 29 cycles | 0.14 | 0.60 |
+| **UK** (PM / general election) | 71% | 17 | 0.14 | — *(see note)* |
+| **Australia** (PM / federal) | **79%** | 24 | 0.007 | — *(see note)* |
+| **UK House of Commons** (party-level) | 71% | 17 | 0.14 | 0.43 |
 
-| Source | Coverage | What it measures |
-|--------|----------|-----------------|
-| **GDELT News** | 1979–2024 | ~800 global news outlets (wire services, newspapers, online) |
-| **Google Ngrams** | 1960–2024 | Book corpus frequency — slower-moving, editorial prestige signal |
-| **Google Trends** | 2004–2024 | Search query volume — public curiosity, not just journalist coverage |
-| **Wikipedia Pageviews** | 2008–2024 | Article views — crowd-sourced interest signal |
-| **GDELT TV** | 2009–2024 | Broadcast TV transcripts (CNN, Fox, MSNBC, ABC, CBS, NBC) |
-| **Reddit Posts** | 2007–2024 | Political subreddit post counts — grassroots online attention |
-| **MediaCloud** | 2010–2024 | Academic news index — curated, deduplicated outlet sample |
+The candidate with more book coverage wins clearly more often than chance at every individual-race level, with the largest and most significant effects where the sample is largest (Senate, Governor). The party-aggregate levels (US House, UK Commons) are noisier — most individual down-ballot races fly below the national book-corpus radar — but still lean the same way.
 
----
-
-## Results
-
-> ⚠️ **The figures below use synthetic data** generated to validate the analysis pipeline and figure layouts. All candidate names are fictional Zorblaxian placeholders. Real data collection is in progress.
+*Note on international H2:* in multiparty, first-past-the-post systems the winner's national vote share is capped well below 50%, so the continuous mention-share↔vote-share correlation is weak or slightly negative for the **PM** measure (UK r = −0.24, Australia r = −0.14). The robust international finding is **H1** (who wins), and the **UK Commons** party-vs-seats measure (r = 0.43), which is constructed the same way as the US House figure.
 
 ---
 
-### Part 1 — Presidential Elections
+## Part 1 — US Presidential Elections
 
-#### Figure 1. Does the attention leader win the popular vote?
+### Figure 1. Does the attention leader win the popular vote?
 
-The candidate with higher mention share in the 12 months before election day wins the popular vote in **13 out of 17 elections (76%)** — significantly above the 50% you'd expect by chance (p = 0.049).
+The candidate with the higher mention share in the run-up to the election wins the popular vote in **12 of 15 elections (80%)** — above the 50% expected by chance (binomial p = 0.035).
 
 ![Figure 1](figures/fig1_h1_win_rate.png)
 
----
-
-#### Figure 2. Does mention share track vote share continuously?
-
-Beyond predicting winners, mention share correlates with the actual vote percentage each candidate receives. Left panel: presidential elections (r = 0.44). Right panel: Senate races (r = 0.72, n = 2,178).
+### Figure 2. Does mention share track vote share continuously?
 
 ![Figure 2](figures/fig2_h2_scatter.png)
 
-*Each dot is a candidate-election. Blue = Democrat, Red = Republican. Zorblaxian placeholder names.*
+Left: presidential elections (*r* = 0.42). Right: Senate races (*r* = 0.63, n = 1,042 candidate-races). Blue = Democrat, red = Republican. A large share of Senate races have one candidate near 0% or 100% mention share — famous incumbents vs. little-known challengers — which is real, not an artifact.
 
----
-
-#### Figure 3. Does a bigger attention gap mean a bigger win?
-
-Left: scatter of attention ratio vs. vote margin. Right: timeline of attention ratios by election year. Red bars = attention upsets — elections where the less-covered candidate won.
+### Figure 3. Does a bigger attention gap mean a bigger win?
 
 ![Figure 3](figures/fig3_gap_and_timeline.png)
 
+Attention ratio (winner ÷ loser mentions) vs. popular-vote margin, for presidential (left) and Senate (right, log scale). Amber points are *attention upsets* — the less-covered candidate won (e.g., Kennedy 1960, who trailed Nixon in book mentions and narrowly won the popular vote).
+
 ---
 
-### Part 2 — Scaling Up: Senate and House
+## Part 2 — Scaling Up: Senate, Governors, House
 
-The presidential finding is suggestive but rests on only 17 elections. Senate races provide ~1,089 independent tests of the same hypothesis. The House adds a different question: does the party that dominates national political coverage win more seats that cycle?
+The presidential finding rests on only 15 elections. Senate (521), gubernatorial (753), and House races provide thousands of additional tests.
 
-#### Figure 4. The effect holds at every level of government
+### Figure 4. The effect holds at every level of government
 
 ![Figure 4](figures/fig4_win_rate_comparison.png)
 
-The effect replicates in Senate races (1,089 contests, 81% win rate). The House signal is weaker — most individual House races fly below the national media radar, diluting the party-aggregate signal.
+Win rate (left) and vote-margin distribution (right) for all four US levels. The effect is strongest where samples are largest; the House party-aggregate signal is weakest because most individual House races attract little national book coverage.
 
----
-
-#### Figure 5. House: does the party dominating coverage win the chamber?
-
-Each point is one election cycle. Color indicates which party held the majority. The positive slope suggests that the party with more national coverage tends to win more seats — but the signal is noisier than at the individual-race level.
+### Figure 5. House: does the party dominating coverage win the chamber?
 
 ![Figure 5](figures/fig5_house_seat_share.png)
 
----
+Each point is one election cycle; color marks which party held the majority. Party-level national attention share tracks seat share (*r* = 0.60), though more noisily than at the individual-race level.
 
-#### Figure 6. How lopsided is attention, and does it vary by race type?
-
-Presidential races (right) show a tighter spread than Senate races (left) — Senate contests include many blowouts with large attention asymmetries, while presidential races cluster more tightly.
+### Figure 6. How lopsided is attention, and how does it vary by race type?
 
 ![Figure 6](figures/fig6_gap_distribution.png)
 
+Violin + box + raw points for the winner ÷ loser mention ratio (log scale). Senate and gubernatorial races include enormous attention asymmetries (famous incumbents); presidential races cluster much closer to parity.
+
 ---
 
-### Part 3 — Multi-Source Triangulation
+## Part 3 — Multi-Source Triangulation
 
-#### Figure 7. Does the finding replicate across 7 independent data sources?
-
-Forest plot showing H1 (win rate) and H2 (Pearson r) for each of the 7 data sources independently. If the effect is real, it should appear across all channels — book corpora, search queries, broadcast TV, and social media alike.
+### Figure 7. Does the finding replicate across independent data sources?
 
 ![Figure 7](figures/fig7_multi_source_forest.png)
+
+H1 win rate by source and race level. Google Ngrams (top) is fully collected across all four levels; Google Trends and Wikipedia Pageviews add Senate coverage. Faded markers flag small samples (n < 5) whose confidence intervals span most of the axis and should not be over-read. GDELT TV and MediaCloud are not yet collected.
+
+---
+
+## Part 4 — International Replication (Anglosphere)
+
+Does the pattern hold outside the US? We replicate in the UK and Australia, the two large English-language parliamentary democracies with long Ngrams coverage.
+
+### Figure I1. Does the attention leader win abroad?
+
+![Figure I1](figures/figI1_international_h1.png)
+
+The leader with more book coverage becomes PM in **12/17 (71%)** UK general elections and **19/24 (79%, p = 0.007)** Australian federal elections.
+
+### Figure I2. Mention share vs. vote share — UK and Australia
+
+![Figure I2](figures/figI2_international_h2.png)
+
+The continuous vote-share relationship is weak for the PM measure (see the international-H2 note above): national vote shares are capped by multiparty FPTP, and famous wartime/long-serving leaders inflate book mentions independent of their vote share.
+
+### Figure I3. UK House of Commons: party coverage vs. seats
+
+![Figure I3](figures/figI3_uk_commons.png)
+
+The UK down-ballot analogue of the US House figure. The major party whose leader dominates book coverage wins the larger share of Commons seats in **12/17** elections (*r* = 0.43). The clearest exceptions are 1945 and 1950, when Churchill dominated book coverage but Labour won the seats — a wartime-prominence effect.
 
 ---
 
 ## Supplemental Figures
 
-#### Figure S1. Does the effect vary by media era?
-
-The attention–outcome link appears across all four media eras, though with wide confidence intervals given the small number of elections per era.
+### Figure S1. Does the effect vary by media era?
 
 ![Figure S1](figures/figS1_by_era.png)
 
----
+The attention–outcome link appears across all four media eras (print/radio → social), with wide confidence intervals given few elections per era.
 
-#### Figure S2. Sensitivity: does the measurement window matter?
-
-The 12-month window (primary pre-registered measure) performs consistently. Shorter windows are noisier proxies of sustained attention.
+### Figure S2. Sensitivity: does the measurement window length matter?
 
 ![Figure S2](figures/figS2_window_sensitivity.png)
 
+Because Ngrams is annual data, the pre-registered window robustness check is implemented as the number of years averaged (1, 2, or 3 years ending on the election year). H1 is **identical (80%)** across all three windows and H2 is stable (*r* = 0.36–0.40) — the result does not depend on window length.
+
+### Table S1. Presidential elections: complete data
+
+[`data/processed/table_s1_presidential_real.csv`](data/processed/table_s1_presidential_real.csv) — all 15 elections (1960–2016) with real candidate names, mention shares, vote shares, and whether the attention leader won.
+
 ---
 
-#### Table S1. Presidential elections: complete data
+## Data Sources
 
-[`data/processed/table_s1_presidential_FAKE.csv`](data/processed/table_s1_presidential_FAKE.csv) — all 17 elections with Zorblaxian placeholder names, mention shares, vote shares, and whether the attention leader won. *(Synthetic data.)*
+| Source | Coverage in this study | Levels collected |
+|--------|------------------------|------------------|
+| **Google Ngrams** | 1960–2019 (book corpus) | Presidential, Senate, Governor, House, UK, Australia |
+| **Google Trends** | 2004–2024 (search volume) | Presidential, Senate |
+| **Wikipedia Pageviews** | 2008–2024 (article views) | Presidential, Senate |
+| **GDELT News** | global news (small n so far) | Presidential |
+| **Reddit** | political subreddits (small n so far) | Presidential |
+| **GDELT TV** | broadcast transcripts | *not yet collected* |
+| **MediaCloud** | academic news index | *not yet collected* |
 
 ---
 
@@ -145,52 +163,39 @@ The 12-month window (primary pre-registered measure) performs consistently. Shor
 
 ```
 attention-wins-elections/
-├── PREREGISTRATION.md                      # Full pre-registered design (read first)
+├── PREREGISTRATION.md                  # Full pre-registered design (read first)
+├── HANDOFF.md                          # Current state + how to reproduce
 ├── data/
-│   ├── raw/                                # Raw query results (post-collection)
-│   ├── processed/
-│   │   ├── election_results.csv            # Official vote shares, 1960–2024
-│   │   ├── mention_share.csv               # Computed mention shares (post-collection)
-│   │   └── table_s1_presidential_FAKE.csv  # Supplemental Table S1 (synthetic)
-│   └── edge_cases.md                       # Disambiguation decisions (Bush, Clinton, etc.)
-├── figures/                                # All exported figures (fig1–fig7, figS1–figS2)
-├── notebooks/
-│   ├── 01_data_collection.ipynb            # GDELT + Ngrams queries
-│   ├── 02_data_cleaning.ipynb              # Standardize and compute mention share
-│   └── 03_analysis.ipynb                   # Hypothesis tests + figures
+│   ├── raw/ngrams/                     # Mention-share CSVs + raw API JSON (all levels)
+│   ├── raw/{trends,wikipedia,gdelt_news,reddit}/
+│   └── processed/                      # election_results.csv, table_s1_presidential_real.csv
+├── figures/                            # fig1–7, figS1–S2, figI1–I3
 ├── scripts/
-│   └── generate_fake_data_and_figures.py   # Synthetic data for layout testing
+│   ├── collect_ngrams.py               # Presidential collection
+│   ├── collect_ngrams_windows.py       # Window-sensitivity (Fig S2)
+│   ├── collect_uk_commons.py           # UK Commons party-vs-seats (Fig I3)
+│   ├── collect_*                       # Other sources/levels
+│   └── generate_figures.py             # Builds every figure from real data
 └── requirements.txt
 ```
 
 ## Running
 
 ```bash
-git clone https://github.com/KaseyMarkel/attention-wins-elections
-cd attention-wins-elections
-pip install -r requirements.txt
-
-# Reproduce synthetic figures
-python scripts/generate_fake_data_and_figures.py
-
-# Real data pipeline
-jupyter lab  # → notebooks/01_data_collection.ipynb
+pip install -r requirements.txt          # or use the bundled .venv
+.venv/bin/python3 scripts/generate_figures.py
 ```
+
+All figures regenerate from the committed CSVs in `data/raw/`. Re-running the `collect_*.py` scripts re-queries the upstream APIs.
 
 ---
 
-## Status
+## Limitations
 
-- [x] Pre-registration committed
-- [x] Figure layout validated with synthetic data (presidential + senate + house + multi-source)
-- [x] Supplemental figures (by era, window sensitivity) + Table S1
-- [x] 7-source triangulation plan (GDELT, Ngrams, Trends, Wikipedia, GDELT TV, Reddit, MediaCloud)
-- [ ] Data collection — GDELT 1979–2024
-- [ ] Data collection — Google Ngrams 1960–1978
-- [ ] Data collection — Google Trends, Wikipedia API, GDELT TV, Reddit/Pushshift, MediaCloud
-- [ ] Data cleaning and mention share computation
-- [ ] Analysis with real data
-- [ ] Blog post
+- **Ngrams ends in 2019** — the 2020 and 2024 US presidential elections are out of the primary corpus.
+- **Books lag events.** Ngrams measures durable editorial attention, not real-time campaign coverage; it complements rather than replaces news/search signals.
+- **Not a causal claim.** We test whether attention *predicts* outcomes, not whether it *causes* them. Famous incumbents attract both coverage and votes.
+- **Small-n sources** (GDELT News, Reddit at the presidential level) are shown but should not be over-interpreted; two sources remain uncollected.
 
 ---
 

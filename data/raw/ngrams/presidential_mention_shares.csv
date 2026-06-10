@@ -1,5 +1,5 @@
 year,source,winner_name,loser_name,winner_party,winner_mention_share,loser_mention_share,winner_vote_pct,loser_vote_pct,attention_leader_won,winner_raw_freq,loser_raw_freq,corpus,query_window
-1960,Google Ngrams,John Kennedy,Richard Nixon,D,0.5,0.5,49.72,49.55,0,0.0,0.0,en-2019,1959-1960
+1960,Google Ngrams,John Kennedy,Richard Nixon,D,0.444137,0.555863,49.72,49.55,0,5.431466121308404e-07,6.797781679779291e-07,en-2019,1959-1960
 1964,Google Ngrams,Lyndon Johnson,Barry Goldwater,D,0.536857,0.463143,61.05,38.47,1,1.5188653321729362e-06,1.310316690705804e-06,en-2019,1963-1964
 1968,Google Ngrams,Richard Nixon,Hubert Humphrey,R,0.535124,0.464876,43.42,42.72,1,1.1878130976583634e-06,1.0318839827050397e-06,en-2019,1967-1968
 1972,Google Ngrams,Richard Nixon,George McGovern,R,0.71439,0.28561,60.67,37.52,1,3.403224468456756e-06,1.3605950925921206e-06,en-2019,1971-1972
